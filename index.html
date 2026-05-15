@@ -6,7 +6,7 @@
 
   <!-- ═══ SEO BÁSICO ═══ -->
   <title>Natalia López Carmona | Diseño Web, Data Viz & UX en Colombia</title>
-  <meta name="description" content="Portafolio de Natalia López Carmona: diseño web UX/UI, dashboards interactivos en Power BI, branding, e-learning y estrategia digital. +10 años de experiencia en Manizales, Colombia.">
+  <meta name="description" content="Portafolio de Natalia López Carmona: diseño web UX/UI, dashboards interactivos en Power BI, e-learning, branding y estrategia digital. +12 años de experiencia en Manizales, Colombia.">
   <meta name="keywords" content="diseño web Colombia, UX UI Manizales, branding Colombia, visualización de datos, dashboard Power BI, e-learning diseño instruccional, estrategia digital, producción audiovisual, diseñadora freelance Colombia">
   <meta name="author" content="Natalia López Carmona">
   <meta name="robots" content="index, follow">
@@ -24,13 +24,13 @@
   <!-- <meta property="og:url" content="https://wunderdesigners.com/"> -->
   <meta property="og:site_name" content="Wunder Designers">
   <meta property="og:title" content="Wunder Designers — Natalia López Carmona | Diseño Web, Data Viz & UX">
-  <meta property="og:description" content="Diseño web UX/UI, dashboards en Power BI, branding, e-learning y estrategia digital. +10 años de experiencia en Manizales, Colombia.">
+  <meta property="og:description" content="Diseño web UX/UI, dashboards en Power BI, e-learning, branding y estrategia digital. +12 años de experiencia en Manizales, Colombia.">
   <meta property="og:locale" content="es_CO">
 
   <!-- ═══ TWITTER CARD ═══ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Wunder Designers — Natalia López Carmona">
-  <meta name="twitter:description" content="Diseño web UX/UI, dashboards en Power BI, branding y estrategia digital. +10 años de experiencia en Manizales, Colombia.">
+  <meta name="twitter:description" content="Diseño web UX/UI, dashboards en Power BI, e-learning y estrategia digital. +12 años de experiencia en Manizales, Colombia.">
   <meta name="twitter:creator" content="@wunderdesigners">
 
   <!-- ═══ DATOS ESTRUCTURADOS JSON-LD ═══ -->
@@ -40,10 +40,10 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Natalia López Carmona",
-      "jobTitle": "Diseñadora Web · Estratega Digital · Visualización de Datos",
+      "jobTitle": "Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning",
       <!-- "url": "https://wunderdesigners.com", -->
       "email": "natalia.lopez.wd@gmail.com",
-      "telephone": "+573024260911",
+      "telephone": ["+573024260911", "+573137486249"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Manizales",
@@ -52,14 +52,16 @@
       },
       "sameAs": [
         "https://www.linkedin.com/in/natalia-lopez-carmona/",
-        "https://www.behance.net/natalialpez21"
+        "https://www.behance.net/natalialpez21",
+        "https://natalia-lopez-carmona.github.io"
       ],
       "knowsAbout": [
         "Diseño Web", "UX/UI", "Branding", "Identidad Visual",
-        "Visualización de Datos", "Power BI", "D3.js",
-        "E-Learning", "Diseño Instruccional",
+        "Visualización de Datos", "Power BI", "D3.js", "Tableau",
+        "E-Learning", "Diseño Instruccional", "Storyline 360",
         "Estrategia Digital", "SEO", "Marketing de Contenidos",
-        "Producción Audiovisual", "Divulgación Científica"
+        "Producción Audiovisual", "Divulgación Científica",
+        "Inteligencia Artificial", "DSpace", "Diseño Interactivo"
       ],
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -130,7 +132,8 @@
   <div class="page active" id="page-portfolio">
 
     <!-- ▓▓▓ HERO — DARK ▓▓▓ --> //
-    <section class="hero"> 
+    <section class="hero">
+      <canvas class="hero-canvas" id="hc-portfolio" aria-hidden="true"></canvas>
       <p class="hero-tag reveal" data-i18n="hero.tag">Diseño · Estrategia · Datos · Comunicación</p>
       <h1 class="reveal" style="transition-delay:.12s">
         <span class="g" data-i18n="hero.h1a">Datos que</span>
@@ -138,7 +141,7 @@
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.24s" data-i18n="hero.sub">
         Se transforma información compleja en experiencias visuales que impulsan decisiones.
-        Más de 10 años integrando pensamiento crítico, narrativa digital y tecnología.
+        12 años integrando pensamiento crítico, narrativa digital y tecnología.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.36s">
         <button class="btn-lime" onclick="scrollToEl('proyectos')" data-i18n="hero.btn1">Ver Proyectos →</button>
@@ -168,7 +171,7 @@
           </div>
           <div class="stat-c s-vt reveal" style="transition-delay:.2s">
             <div class="stat-icon">📊</div>
-            <div class="stat-num" data-target="10">0</div>
+            <div class="stat-num" data-target="12">0</div>
             <div class="stat-label" data-i18n="stat.years">Años Exp.</div>
           </div>
           <div class="stat-c s-or reveal" style="transition-delay:.3s">
@@ -368,13 +371,15 @@
       <div class="cv-header reveal">
         <div class="cv-ring"><div class="cv-ring-inner">NL</div></div>
         <h1 class="cv-name">Natalia <span>López</span> Carmona</h1>
-        <p class="cv-role" data-i18n="about.role">Diseñadora · Filósofa · Estratega</p>
+        <p class="cv-role" data-i18n="about.role">Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning</p>
         <div class="cv-contact-row">
           <span class="cv-ci">📍 Manizales, Colombia</span>
           <a href="mailto:natalia.lopez.wd@gmail.com" class="cv-ci">✉ natalia.lopez.wd@gmail.com</a>
           <a href="tel:+573024260911" class="cv-ci">📱 +57 302 426 0911</a>
+          <a href="tel:+573137486249" class="cv-ci">📱 +57 313 748 6249</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cv-ci">LinkedIn</a>
           <a href="https://www.behance.net/natalialpez21" target="_blank" class="cv-ci">Behance</a>
+          <a href="https://natalia-lopez-carmona.github.io" target="_blank" class="cv-ci">GitHub</a>
         </div>
         <div class="cv-download-row" id="cv-dl">
           <button class="btn-dl" onclick="generateCV()" data-i18n="about.download">↓ Descargar CV en PDF (formato ATS)</button>
@@ -385,7 +390,7 @@
       <div class="cv-sec reveal">
         <h2 class="cv-sec-title" data-i18n="about.profile.title">Perfil Profesional</h2>
         <div class="cv-profile" data-i18n-html="about.profile.text">
-          Profesional con más de <strong>10 años de experiencia</strong> en diseño interactivo, visualización de datos, comunicación estratégica y gestión de proyectos digitales. Maestría en Diseño y Creación Interactiva, con formación en Filosofía y Sistemas Informáticos. Especializada en <strong>diseño web UX/UI</strong>, creación de <strong>dashboards interactivos</strong> y experiencias de datos que transforman información compleja en decisiones claras. Integro <strong>pensamiento crítico, narrativa digital</strong> y código limpio para crear interfaces que comunican con impacto.
+          Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y <strong>12 años de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y <strong>diseño UX/UI, visualización de datos e inteligencia artificial</strong> para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.
         </div>
       </div>
 
@@ -395,36 +400,81 @@
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Profesional en Investigación</p><p class="cv-exp-company">Consortia SAS</p></div>
+            <div><p class="cv-exp-role">Research & Data Analyst</p><p class="cv-exp-company">Consortia Colombia</p></div>
             <span class="cv-exp-date">Mar 2025 – Feb 2026</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Gestión estratégica de Acuerdos Transformativos para publicación en Acceso Abierto.</li>
-            <li>Estrategias de fidelización de instituciones académicas en ciencia abierta.</li>
-            <li>Implementación de políticas de publicación científica y visibilidad institucional.</li>
-            <li>Articulación entre editoriales, universidades y equipos técnicos.</li>
+            <li>Diseño y estructuración visual del dashboard de Acuerdos Transformativos en Power BI, centralizando métricas de publicación en acceso abierto para más de 30 IES en Colombia.</li>
+            <li>Análisis de producción académica institucional y elaboración de informes estratégicos sobre comportamiento editorial.</li>
+            <li>Apoyo a procesos de fidelización institucional y gestión de acuerdos transformativos.</li>
           </ul>
         </div>
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Docente – Diplomado en Marketing Digital</p><p class="cv-exp-company">Universidad de Caldas</p></div>
-            <span class="cv-exp-date">Feb – Mar 2025</span>
+            <div><p class="cv-exp-role">Docente – Comunicación Digital y Analítica Web</p><p class="cv-exp-company">Universidad de Caldas – Técnico Profesional en Marketing Digital</p></div>
+            <span class="cv-exp-date">Feb–Mar 2025 / Mar–May 2026</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Diseño y orientación de módulo en Comunicación Digital.</li>
-            <li>Acompañamiento en construcción de propuestas de valor y presencia digital.</li>
+            <li>Diseño y dictado de los módulos de Comunicación Digital y Analítica Web.</li>
+            <li>Apoyo en construcción de propuesta de valor y presencia digital para estudiantes.</li>
           </ul>
         </div>
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Consultora en Diseño Web y Comunicación</p><p class="cv-exp-company">Wunder Designers – Independiente</p></div>
-            <span class="cv-exp-date">2022 – Actualidad</span>
+            <div><p class="cv-exp-role">Design Lead</p><p class="cv-exp-company">Blue Studies International (Australia, remoto)</p></div>
+            <span class="cv-exp-date">Mar – Oct 2024</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Diseño y desarrollo de sitios web con HTML, CSS, JavaScript y WordPress.</li>
-            <li>Creación de dashboards interactivos y visualizaciones de datos.</li>
+            <li>Dirección creativa y diseño de interfaces digitales para proyectos internacionales.</li>
+            <li>Desarrollo de identidad visual y coordinación con equipos multidisciplinarios remotos.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Diseñadora Gráfica y Contenido Digital</p><p class="cv-exp-company">Stanton Optical (EE.UU., remoto)</p></div>
+            <span class="cv-exp-date">Nov 2023 – Feb 2024</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño de piezas gráficas y animadas para campañas en redes sociales en múltiples estados.</li>
+            <li>Producción en flujos ágiles manteniendo consistencia de marca.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Consultora – Visualización de Datos y Dashboards</p><p class="cv-exp-company">Laboratorio de Desarrollo Territorial de Risaralda</p></div>
+            <span class="cv-exp-date">May – Dic 2023</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y estructuración visual de tableros de indicadores socioeconómicos por municipio en Tableau, traduciendo datasets complejos en narrativas visuales accesibles.</li>
+            <li>Definición de arquitectura de información y jerarquía visual para tomadores de decisión no técnicos.</li>
+            <li>Colaboración interdisciplinaria con analistas de datos para alinear análisis y comunicación visual.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Diseñadora de Unidad Virtual – E-learning y Estrategia Digital</p><p class="cv-exp-company">Universidad Autónoma de Manizales</p></div>
+            <span class="cv-exp-date">Ene – Nov 2023</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y creación de interfaces interactivas para múltiples cursos virtuales en Moodle y Storyline 360.</li>
+            <li>Estructuración visual y narrativa de cursos para educación superior con enfoque en usabilidad.</li>
+            <li>Optimización de experiencia de usuario en plataformas educativas digitales.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Proyectos Independientes – Diseño Web y Datos</p><p class="cv-exp-company">Wunder Designers – Independiente</p></div>
+            <span class="cv-exp-date">2022 – Presente</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.</li>
+            <li>Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.</li>
             <li>Estrategias de comunicación, branding e identidad visual.</li>
             <li>Diseño de experiencias de aprendizaje digital (e-learning).</li>
           </ul>
@@ -432,37 +482,36 @@
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Docente Universitaria</p><p class="cv-exp-company">U. Católica Luis Amigó / Unitécnica</p></div>
-            <span class="cv-exp-date">2022</span>
+            <div><p class="cv-exp-role">Docente – Producción Audiovisual y Herramientas Digitales</p><p class="cv-exp-company">Universidad Católica Luis Amigó / Unitécnica</p></div>
+            <span class="cv-exp-date">2022 – 2023</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Diseño e implementación de cursos de teoría y práctica audiovisual.</li>
-            <li>Fomento de creatividad y pensamiento crítico en estudiantes.</li>
+            <li>Formación en producción audiovisual, narrativas visuales y herramientas digitales.</li>
+            <li>Acompañamiento a estudiantes en construcción de narrativas visuales y sonoras.</li>
           </ul>
         </div>
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Coordinadora de Diseño y Comunicación Digital</p><p class="cv-exp-company">Biblioteca Centro Cultural Rogelio Salmona – U. de Caldas</p></div>
-            <span class="cv-exp-date">2014 – 2022</span>
+            <div><p class="cv-exp-role">Coordinadora de Diseño y Comunicación Digital</p><p class="cv-exp-company">Centro de Bibliotecas Rogelio Salmona – U. de Caldas</p></div>
+            <span class="cv-exp-date">Ago 2014 – Sep 2022</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Estrategias de visibilidad académica y posicionamiento digital.</li>
-            <li>Campañas de comunicación institucional con identidad visual coherente.</li>
-            <li>Diseño web y gestión de plataformas digitales.</li>
-            <li>Formación en herramientas digitales y alfabetización informacional.</li>
-            <li>Gestión de proyectos interdisciplinarios.</li>
+            <li>Creación e implementación del primer sistema de diseño y comunicación institucional de la biblioteca, estableciendo identidad visual coherente y lineamientos para todas las plataformas.</li>
+            <li>Generación y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.</li>
+            <li>Diseño y facilitación de talleres de formación en herramientas digitales.</li>
+            <li>Participación en implementación del Repositorio Institucional (DSpace) y acompañamiento a investigadores en visibilidad académica (Scopus, WoS, Google Scholar).</li>
+            <li>Diseño web y gestión de plataformas digitales institucionales.</li>
           </ul>
         </div>
 
         <div class="cv-exp">
           <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Realizadora Audiovisual y Editora de Documentales</p><p class="cv-exp-company">Universidad de Caldas</p></div>
-            <span class="cv-exp-date">2006 – 2014</span>
+            <div><p class="cv-exp-role">Productora Audiovisual y Editora de Documentales</p><p class="cv-exp-company">Universidad de Caldas</p></div>
+            <span class="cv-exp-date">2004 – 2014</span>
           </div>
           <ul class="cv-exp-list">
-            <li>Producción y edición de documentales de divulgación científica.</li>
-            <li>Narrativas audiovisuales para comunicación del conocimiento.</li>
+            <li>Producción y edición de documentales de divulgación científica e institucional.</li>
           </ul>
         </div>
       </div>
@@ -471,25 +520,50 @@
       <div class="cv-sec reveal">
         <h2 class="cv-sec-title" data-i18n="about.edu.title">Educación</h2>
         <div class="cv-edu-grid">
-          <div class="cv-edu"><span class="cv-edu-year">2018</span><h4>Maestría en Diseño y Creación Interactiva</h4><p>Universidad de Caldas</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2010</span><h4>Pregrado en Filosofía y Letras</h4><p>Universidad de Caldas</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2009</span><h4>Tecnología en Sistemas Informáticos</h4><p>Universidad de Caldas</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2013 – 2018</span><h4>Maestría en Diseño y Creación Interactiva</h4><p>Universidad de Caldas</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2002 – 2010</span><h4>Profesional en Filosofía y Letras</h4><p>Universidad de Caldas</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2007 – 2009</span><h4>Tecnóloga en Sistemas Informáticos</h4><p>Universidad de Caldas</p></div>
+        </div>
+      </div>
+
+      <!-- Formación Complementaria -->
+      <div class="cv-sec reveal">
+        <h2 class="cv-sec-title" data-i18n="about.comp.title">Formación Complementaria</h2>
+        <div class="cv-edu-grid">
+          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4>Bootcamp de Programación con Inteligencia Artificial</h4><p></p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4>AI Literacy</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2025</span><h4>Fundamentos de Power BI</h4><p>CONFA</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Enterprise Design Thinking Practitioner</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Agile Explorer</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>User Experience for Web Design</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>Figma for UX Design</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>JavaScript: Animación Web</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>SEO</h4><p>HubSpot Academy</p></div>
         </div>
       </div>
 
       <!-- Habilidades -->
       <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.skills.title">Habilidades</h2>
+        <h2 class="cv-sec-title" data-i18n="about.skills.title">Habilidades Técnicas</h2>
         <div class="cv-skills-cloud">
           <span class="cv-sk tv">HTML5 / CSS3 / JS</span>
           <span class="cv-sk tl">Diseño Responsivo</span>
           <span class="cv-sk to">SVG / Canvas</span>
           <span class="cv-sk tv">WordPress</span>
-          <span class="cv-sk tl">Visualización de Datos</span>
-          <span class="cv-sk to">Dashboard Design</span>
-          <span class="cv-sk tv">UX/UI Design</span>
-          <span class="cv-sk tl">Figma</span>
-          <span class="cv-sk to">Adobe Suite</span>
+          <span class="cv-sk tl">React</span>
+          <span class="cv-sk to">Python</span>
+          <span class="cv-sk tv">Visualización de Datos</span>
+          <span class="cv-sk tl">Dashboard Design</span>
+          <span class="cv-sk to">Power BI</span>
+          <span class="cv-sk tv">Tableau</span>
+          <span class="cv-sk tl">D3.js</span>
+          <span class="cv-sk to">UX/UI Design</span>
+          <span class="cv-sk tv">Figma</span>
+          <span class="cv-sk tl">Adobe Suite</span>
+          <span class="cv-sk to">Moodle</span>
+          <span class="cv-sk tv">Storyline 360</span>
+          <span class="cv-sk tl">DSpace</span>
+          <span class="cv-sk to">Git / GitHub</span>
           <span class="cv-sk tv">Estrategia Digital</span>
           <span class="cv-sk tl">Branding</span>
           <span class="cv-sk to">Storytelling</span>
@@ -502,10 +576,29 @@
         </div>
       </div>
 
+      <!-- Habilidades Blandas -->
+      <div class="cv-sec reveal">
+        <h2 class="cv-sec-title" data-i18n="about.softskills.title">Habilidades Blandas</h2>
+        <div class="cv-skills-cloud">
+          <span class="cv-sk tv">Trabajo en equipo</span>
+          <span class="cv-sk tl">Comunicación asertiva</span>
+          <span class="cv-sk to">Resolución de conflictos</span>
+          <span class="cv-sk tv">Pensamiento crítico</span>
+          <span class="cv-sk tl">Colaboración interdisciplinaria</span>
+          <span class="cv-sk to">Adaptabilidad</span>
+        </div>
+      </div>
+
       <!-- Idiomas -->
       <div class="cv-sec reveal">
         <h2 class="cv-sec-title" data-i18n="about.lang.title">Idiomas</h2>
-        <p style="font-size:.85rem;color:var(--gray)" data-i18n-html="about.lang.text">Español — Nativo &nbsp;·&nbsp; Inglés — Intermedio</p>
+        <p style="font-size:.85rem;color:var(--gray)" data-i18n-html="about.lang.text">Español — Nativo &nbsp;·&nbsp; Inglés — B1</p>
+      </div>
+
+      <!-- Publicaciones -->
+      <div class="cv-sec reveal">
+        <h2 class="cv-sec-title" data-i18n="about.pub.title">Publicaciones</h2>
+        <p style="font-size:.85rem;color:var(--gray)"><em>Exploraciones Hermenéutico-Ricoeurianas en Diseño</em> — Universidad de Caldas</p>
       </div>
 
       <!-- Download CTA -->
@@ -546,6 +639,7 @@
   <!-- BRANDING & IDENTIDAD -->
   <div class="page" id="page-srv-branding">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-branding" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.branding.page.tag">Servicios · Branding</p>
       <h1 class="reveal" style="transition-delay:.08s">
@@ -591,6 +685,7 @@
   <!-- ESTRATEGIA DIGITAL -->
   <div class="page" id="page-srv-estrategia">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-estrategia" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.estrategia.page.tag">Servicios · Estrategia</p>
       <h1 class="reveal" style="transition-delay:.08s">
@@ -636,6 +731,7 @@
   <!-- DASHBOARDS & DATA VIZ -->
   <div class="page" id="page-srv-dashboards">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-dashboards" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.dashboards.page.tag">Servicios · Data</p>
       <h1 class="reveal" style="transition-delay:.08s">
@@ -681,6 +777,7 @@
   <!-- E-LEARNING -->
   <div class="page" id="page-srv-elearning">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-elearning" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.elearning.page.tag">Servicios · E-Learning</p>
       <h1 class="reveal" style="transition-delay:.08s">
@@ -726,6 +823,7 @@
   <!-- DISEÑO WEB & UX -->
   <div class="page" id="page-srv-web">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-web" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.web.page.tag">Servicios · Web & UX</p>
       <h1 class="reveal" style="transition-delay:.08s">
@@ -771,6 +869,7 @@
   <!-- PRODUCCIÓN AUDIOVISUAL -->
   <div class="page" id="page-srv-audiovisual">
     <section class="hero srv-hero">
+      <canvas class="hero-canvas" id="hc-audiovisual" aria-hidden="true"></canvas>
       <button class="srv-back" onclick="switchPage('portfolio')" data-i18n="srv.back.btn">← Portafolio</button>
       <p class="hero-tag reveal" data-i18n="srv.audiovisual.page.tag">Servicios · Audiovisual</p>
       <h1 class="reveal" style="transition-delay:.08s">

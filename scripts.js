@@ -50,11 +50,11 @@ document.querySelectorAll('.stat-num[data-target]').forEach(el => numObserver.ob
 const pageMeta = {
   portfolio: {
     title: 'Wunder Designers — Natalia López Carmona | Diseño Web, Data Viz & UX en Colombia',
-    description: 'Portafolio de Natalia López Carmona: diseño web UX/UI, dashboards en Power BI, branding, e-learning y estrategia digital. +10 años de experiencia en Manizales, Colombia.'
+    description: 'Portafolio de Natalia López Carmona: diseño web UX/UI, dashboards en Power BI, e-learning, branding y estrategia digital. +12 años de experiencia en Manizales, Colombia.'
   },
   about: {
-    title: 'Sobre Mí — Natalia López Carmona | Diseñadora, Filósofa & Estratega',
-    description: 'Natalia López Carmona: diseñadora con maestría en Diseño Interactivo y más de 10 años en diseño web, visualización de datos y comunicación digital en Manizales, Colombia.'
+    title: 'Sobre Mí — Natalia López Carmona | Diseñadora UX/UI, Datos & E-learning',
+    description: 'Natalia López Carmona: diseñadora con maestría en Diseño Interactivo y más de 12 años en diseño web, visualización de datos y comunicación digital en Manizales, Colombia.'
   },
   'srv-branding': {
     title: 'Branding & Identidad Visual — Wunder Designers | Manizales, Colombia',
@@ -104,6 +104,7 @@ function switchPage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setTimeout(initReveals, 100);
   document.getElementById('navLinks').classList.remove('open');
+  HeroAnimationManager.activate(page);
 }
 
 function scrollToEl(id) {
@@ -120,7 +121,7 @@ const translations = {
   es: {
     'nav.portfolio':'Portafolio','nav.about':'Sobre Mí','nav.contact':'Contacto','nav.cv':'↓ Descargar CV',
     'hero.tag':'Diseño · Estrategia · Datos · Comunicación','hero.h1a':'Datos que','hero.h1b':'inspiran diseño',
-    'hero.sub':'Se transforma información compleja en experiencias visuales que impulsan decisiones. Más de 10 años integrando pensamiento crítico, narrativa digital y tecnología.',
+    'hero.sub':'Se transforma información compleja en experiencias visuales que impulsan decisiones. 12 años integrando pensamiento crítico, narrativa digital y tecnología.',
     'hero.btn1':'Ver Proyectos →','hero.btn2':'Conóceme',
     'stat.projects':'Proyectos','stat.clients':'Clientes','stat.years':'Años Exp.','stat.degrees':'Títulos',
     'srv.section.tag':'Servicios','srv.section.title':'Lo que <em>se puede hacer</em> por ti','srv.section.sub':'Se combinan diseño, estrategia y tecnología para crear experiencias que conectan.',
@@ -134,11 +135,11 @@ const translations = {
     'dash.tag':'Analytics en Acción','dash.title':'Dashboard <em>Demo</em>','dash.sub':'Así se transforman datos en visualizaciones accionables.',
     'contact.tag':'Contacto','contact.title':'¿Lista para <em>transformar</em> tu proyecto?',
     'contact.sub':'Cuéntale sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.','contact.email':'✉ Escríbele',
-    'about.role':'Diseñadora · Filósofa · Estratega','about.download':'↓ Descargar CV en PDF (formato ATS)','about.download2':'↓ Descargar CV completo en PDF (formato ATS)',
+    'about.role':'Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning','about.download':'↓ Descargar CV en PDF (formato ATS)','about.download2':'↓ Descargar CV completo en PDF (formato ATS)',
     'about.profile.title':'Perfil Profesional',
-    'about.profile.text':'Profesional con más de <strong>10 años de experiencia</strong> en diseño interactivo, visualización de datos, comunicación estratégica y gestión de proyectos digitales. Maestría en Diseño y Creación Interactiva, con formación en Filosofía y Sistemas Informáticos. Especializada en <strong>diseño web UX/UI</strong>, creación de <strong>dashboards interactivos</strong> y experiencias de datos que transforman información compleja en decisiones claras. Se integran el <strong>pensamiento crítico, la narrativa digital</strong> y el código limpio en interfaces que comunican con impacto.',
-    'about.exp.title':'Experiencia Profesional','about.edu.title':'Educación','about.skills.title':'Habilidades','about.lang.title':'Idiomas',
-    'about.lang.text':'Español — Nativo &nbsp;·&nbsp; Inglés — Intermedio',
+    'about.profile.text':'Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y <strong>12 años de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y <strong>diseño UX/UI, visualización de datos e inteligencia artificial</strong> para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.',
+    'about.exp.title':'Experiencia Profesional','about.edu.title':'Educación','about.comp.title':'Formación Complementaria','about.skills.title':'Habilidades Técnicas','about.softskills.title':'Habilidades Blandas','about.lang.title':'Idiomas','about.pub.title':'Publicaciones',
+    'about.lang.text':'Español — Nativo &nbsp;·&nbsp; Inglés — B1',
     'srv.back.btn':'← Portafolio','srv.page.includes':'¿Qué incluye?','srv.page.ready':'¿Lista?',
     'srv.page.cta':'Hablemos de tu proyecto →','srv.page.back':'Ver más servicios',
     'srv.branding.page.tag':'Servicios · Branding','srv.branding.page.h1a':'Tu marca,','srv.branding.page.h1b':'una historia coherente',
@@ -164,7 +165,7 @@ const translations = {
   en: {
     'nav.portfolio':'Portfolio','nav.about':'About Me','nav.contact':'Contact','nav.cv':'↓ Download CV',
     'hero.tag':'Design · Strategy · Data · Communication','hero.h1a':'Data that','hero.h1b':'inspires design',
-    'hero.sub':'Transforming complex information into visual experiences that drive decisions. Over 10 years integrating critical thinking, digital storytelling and technology.',
+    'hero.sub':'Transforming complex information into visual experiences that drive decisions. 12 years integrating critical thinking, digital storytelling and technology.',
     'hero.btn1':'View Projects →','hero.btn2':'About Me',
     'stat.projects':'Projects','stat.clients':'Clients','stat.years':'Yrs. Exp.','stat.degrees':'Degrees',
     'srv.section.tag':'Services','srv.section.title':'What can be <em>done for you</em>','srv.section.sub':'Combining design, strategy and technology to create experiences that connect.',
@@ -178,11 +179,11 @@ const translations = {
     'dash.tag':'Analytics in Action','dash.title':'Dashboard <em>Demo</em>','dash.sub':'Turning data into actionable visualizations.',
     'contact.tag':'Contact','contact.title':'Ready to <em>transform</em> your project?',
     'contact.sub':'Tell her about your project. Whether design, strategy, dashboards or training.','contact.email':'✉ Write to her',
-    'about.role':'Designer · Philosopher · Strategist','about.download':'↓ Download CV in PDF (ATS format)','about.download2':'↓ Download full CV in PDF (ATS format)',
+    'about.role':'Interactive UX/UI Designer · Data Visualization · E-learning','about.download':'↓ Download CV in PDF (ATS format)','about.download2':'↓ Download full CV in PDF (ATS format)',
     'about.profile.title':'Professional Profile',
-    'about.profile.text':'Professional with over <strong>10 years of experience</strong> in interactive design, data visualization, strategic communication and digital project management. Master\'s in Interactive Design & Creation, with a background in Philosophy and Computer Systems. Specialized in <strong>UX/UI web design</strong>, creating <strong>interactive dashboards</strong> and data experiences that transform complex information into clear decisions. Integrating <strong>critical thinking, digital storytelling</strong> and clean code to build interfaces that communicate with impact.',
-    'about.exp.title':'Professional Experience','about.edu.title':'Education','about.skills.title':'Skills','about.lang.title':'Languages',
-    'about.lang.text':'Spanish — Native &nbsp;·&nbsp; English — Intermediate',
+    'about.profile.text':'Master\'s in Interactive Design & Creation, with a background in Philosophy and Computer Systems (Universidad de Caldas), and <strong>12 years of experience</strong> building web interfaces, interactive dashboards and digital educational experiences. Integrating humanistic critical thinking, technical foundation and <strong>UX/UI design, data visualization and AI</strong> to transform complex information into clear, actionable solutions. Collaborative, assertive communicator with a problem-solving orientation.',
+    'about.exp.title':'Professional Experience','about.edu.title':'Education','about.comp.title':'Complementary Training','about.skills.title':'Technical Skills','about.softskills.title':'Soft Skills','about.lang.title':'Languages','about.pub.title':'Publications',
+    'about.lang.text':'Spanish — Native &nbsp;·&nbsp; English — B1',
     'srv.back.btn':'← Portfolio','srv.page.includes':'What\'s included?','srv.page.ready':'Ready?',
     'srv.page.cta':'Let\'s talk about your project →','srv.page.back':'View more services',
     'srv.branding.page.tag':'Services · Branding','srv.branding.page.h1a':'Your brand,','srv.branding.page.h1b':'a coherent story',
@@ -589,111 +590,625 @@ document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.c
 initCanvas();
 animate();
 
+// ═══ HERO ANIMATIONS ════════════════════════════════════════════════════════
+
+// ── Manager ──────────────────────────────────────────────────────────────────
+const HeroAnimationManager = {
+  registry: new Map(),
+  activeId: null,
+  rafId: null,
+  lastTs: 0,
+
+  register(id, inst) { this.registry.set(id, inst); },
+
+  activate(pageId) {
+    if (this.activeId) {
+      const prev = this.registry.get(this.activeId);
+      if (prev) prev.canvas.classList.remove('hc-active');
+    }
+    const inst = this.registry.get(pageId);
+    this.activeId = inst ? pageId : null;
+    if (inst) {
+      const hero = inst.canvas.closest('.hero');
+      inst.resize(hero.offsetWidth, hero.offsetHeight);
+      inst.canvas.classList.add('hc-active');
+    }
+    if (!this.rafId) this._startLoop();
+  },
+
+  _startLoop() {
+    const loop = ts => {
+      this.rafId = requestAnimationFrame(loop);
+      const dt = Math.min(ts - this.lastTs, 50);
+      this.lastTs = ts;
+      if (!this.activeId) return;
+      const inst = this.registry.get(this.activeId);
+      if (inst) inst.draw(dt);
+    };
+    this.rafId = requestAnimationFrame(loop);
+  }
+};
+
+document.addEventListener('mousemove', e => {
+  if (!HeroAnimationManager.activeId) return;
+  const inst = HeroAnimationManager.registry.get(HeroAnimationManager.activeId);
+  if (!inst) return;
+  const r = inst.canvas.getBoundingClientRect();
+  inst.mx = e.clientX - r.left;
+  inst.my = e.clientY - r.top;
+});
+
+let _hcRT;
+window.addEventListener('resize', () => {
+  clearTimeout(_hcRT);
+  _hcRT = setTimeout(() => {
+    if (!HeroAnimationManager.activeId) return;
+    const inst = HeroAnimationManager.registry.get(HeroAnimationManager.activeId);
+    if (!inst) return;
+    const hero = inst.canvas.closest('.hero');
+    inst.resize(hero.offsetWidth, hero.offsetHeight);
+  }, 120);
+});
+
+// ── Base class ────────────────────────────────────────────────────────────────
+class HeroAnim {
+  constructor(id) {
+    this.canvas = document.getElementById(id);
+    this.ctx = this.canvas.getContext('2d');
+    this.w = 0; this.h = 0;
+    this.mx = -999; this.my = -999;
+    this.t = 0;
+    this.mobile = window.matchMedia('(max-width:768px),(hover:none)').matches;
+  }
+  resize(w, h) { this.w = this.canvas.width = w; this.h = this.canvas.height = h; this._init(); }
+  draw(dt) { this.t += dt; this._draw(dt); }
+  _init() {} _draw() {}
+}
+
+// ── 1. NodeNetworkAnim — Portfolio ───────────────────────────────────────────
+class NodeNetworkAnim extends HeroAnim {
+  _init() {
+    const n = this.mobile ? 25 : 45;
+    this.nodes = Array.from({length: n}, () => ({
+      x: Math.random() * this.w,
+      y: Math.random() * this.h,
+      vx: (Math.random() - .5) * .4,
+      vy: (Math.random() - .5) * .4,
+      r: Math.random() * 2 + 2
+    }));
+  }
+  _draw() {
+    const {ctx, w, h, nodes, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    for (const nd of nodes) {
+      const dx = mx - nd.x, dy = my - nd.y;
+      const d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 120 && d > 0) {
+        nd.vx += (dx/d) * .012; nd.vy += (dy/d) * .012;
+      }
+      nd.vx *= .97; nd.vy *= .97;
+      nd.x += nd.vx; nd.y += nd.vy;
+      if (nd.x < 0) nd.x = w; if (nd.x > w) nd.x = 0;
+      if (nd.y < 0) nd.y = h; if (nd.y > h) nd.y = 0;
+    }
+    // líneas
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i+1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 130) {
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(204,255,0,${0.07*(1-d/130)})`;
+          ctx.lineWidth = .7;
+          ctx.stroke();
+        }
+      }
+    }
+    // nodos
+    for (const nd of nodes) {
+      const d = Math.hypot(mx - nd.x, my - nd.y);
+      const hot = d < 120;
+      ctx.beginPath();
+      ctx.arc(nd.x, nd.y, hot ? nd.r * 1.9 : nd.r, 0, Math.PI*2);
+      ctx.fillStyle = hot ? 'rgba(255,87,51,.9)' : 'rgba(123,97,217,.65)';
+      ctx.fill();
+    }
+  }
+}
+
+// ── 2. MorphShapesAnim — Branding ────────────────────────────────────────────
+class MorphShapesAnim extends HeroAnim {
+  _rndPoly(cx, cy, n, r) {
+    return Array.from({length: n}, (_, i) => {
+      const a = (i/n) * Math.PI*2;
+      return { x: cx + Math.cos(a)*(r + (Math.random()-.5)*r*.5),
+               y: cy + Math.sin(a)*(r + (Math.random()-.5)*r*.5) };
+    });
+  }
+  _init() {
+    const W = this.w, H = this.h;
+    this.shapes = Array.from({length: 6}, () => {
+      const cx = Math.random()*W, cy = Math.random()*H;
+      const n = 5 + Math.floor(Math.random()*4);
+      const r = 40 + Math.random()*60;
+      const a = this._rndPoly(cx, cy, n, r);
+      const b = this._rndPoly(cx, cy, n, r);
+      return { cx, cy, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25,
+               a, b, n, r, prog:Math.random(), spd:(.003+Math.random()*.003) };
+    });
+  }
+  _eio(t) { return t < .5 ? 2*t*t : -1+(4-2*t)*t; }
+  _draw() {
+    const {ctx, w, h, shapes, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    for (const s of shapes) {
+      s.prog += s.spd;
+      if (s.prog >= 1) {
+        s.a = s.b;
+        s.b = this._rndPoly(s.cx, s.cy, s.n, s.r);
+        s.prog = 0;
+      }
+      const e = this._eio(s.prog);
+      const verts = s.a.map((pa, i) => {
+        const pb = s.b[i];
+        let vx = pa.x + (pb.x - pa.x)*e;
+        let vy = pa.y + (pb.y - pa.y)*e;
+        const d = Math.hypot(mx - vx, my - vy);
+        if (d < 150 && d > 0) { vx += (vx-mx)/d*((150-d)/150)*18; vy += (vy-my)/d*((150-d)/150)*18; }
+        return {x:vx, y:vy};
+      });
+      const distC = Math.hypot(mx - s.cx, my - s.cy);
+      const hot = distC < 160;
+      ctx.beginPath();
+      ctx.moveTo(verts[0].x, verts[0].y);
+      for (let i = 1; i < verts.length; i++) ctx.lineTo(verts[i].x, verts[i].y);
+      ctx.closePath();
+      ctx.strokeStyle = hot ? 'rgba(255,87,51,.45)' : 'rgba(123,97,217,.28)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      s.cx += s.vx; s.cy += s.vy;
+      if (s.cx < 0 || s.cx > w) s.vx *= -1;
+      if (s.cy < 0 || s.cy > h) s.vy *= -1;
+    }
+  }
+}
+
+// ── 3. SignalWavesAnim — Estrategia ──────────────────────────────────────────
+class SignalWavesAnim extends HeroAnim {
+  _init() {
+    this.waves = Array.from({length: 5}, (_, i) => ({
+      amp:  30 + Math.random()*40,
+      freq: .008 + Math.random()*.012,
+      phase: Math.random()*Math.PI*2,
+      spd:  .018 + Math.random()*.025,
+      yBase: this.h * (.2 + i*.15)
+    }));
+    this.ripple = null;
+    this.pmx = -999; this.pmy = -999;
+  }
+  _draw(dt) {
+    const {ctx, w, h, waves, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    const speed = Math.hypot(mx - this.pmx, my - this.pmy);
+    if (speed > 12 && mx > 0 && mx < w) this.ripple = {x:mx, y:my, r:0, a:.28};
+    this.pmx = mx; this.pmy = my;
+    for (const wv of waves) {
+      wv.phase += wv.spd * dt/16;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 3) {
+        let y = wv.yBase + wv.amp * Math.sin(wv.freq*x + wv.phase);
+        const dxm = x - mx, dym = y - my;
+        const dm = Math.sqrt(dxm*dxm + dym*dym);
+        if (dm < 110) y += ((110-dm)/110)*22*Math.sin(dxm*.05);
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = 'rgba(204,255,0,.15)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+    if (this.ripple) {
+      const rp = this.ripple;
+      rp.r += 2.5 * dt/16;
+      rp.a -= .006 * dt/16;
+      if (rp.a <= 0) { this.ripple = null; }
+      else {
+        ctx.beginPath();
+        ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI*2);
+        ctx.strokeStyle = `rgba(123,97,217,${rp.a})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+// ── 4. DataGridAnim — Dashboards ─────────────────────────────────────────────
+class DataGridAnim extends HeroAnim {
+  _init() {
+    const gs = 40;
+    this.gs = gs;
+    const cols = Math.ceil(this.w / gs), rows = Math.ceil(this.h / gs);
+    // barras en columnas pares
+    this.bars = [];
+    for (let c = 2; c < cols-1; c += 3) {
+      const x = c * gs;
+      this.bars.push({ x, h: 30, th: 30 + Math.random()*80, w: 6+Math.random()*5, timer: 0 });
+    }
+    this.bars = this.bars.slice(0, 12);
+    // partículas
+    this.parts = Array.from({length: this.mobile?12:22}, () => this._newPart());
+  }
+  _newPart() {
+    const gs = this.gs;
+    const cols = Math.floor(this.w / gs), rows = Math.floor(this.h / gs);
+    const ci = Math.floor(Math.random()*cols), ri = Math.floor(Math.random()*rows);
+    const horiz = Math.random() > .5;
+    return { x: ci*gs, y: ri*gs, dir: horiz ? 1 : 2, speed: 1+Math.random(), ci, ri };
+  }
+  _draw(dt) {
+    const {ctx, w, h, gs, bars, parts, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    // grid
+    ctx.strokeStyle = 'rgba(123,97,217,.07)';
+    ctx.lineWidth = .5;
+    for (let x = 0; x < w; x += gs) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for (let y = 0; y < h; y += gs) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+    // puntos de intersección
+    for (let x = 0; x <= w; x += gs) {
+      for (let y = 0; y <= h; y += gs) {
+        const d = Math.hypot(mx-x, my-y);
+        ctx.beginPath();
+        ctx.arc(x, y, 2, 0, Math.PI*2);
+        ctx.fillStyle = d < 80 ? 'rgba(204,255,0,.5)' : 'rgba(123,97,217,.15)';
+        ctx.fill();
+      }
+    }
+    // barras
+    const yBase = h * .72;
+    for (const b of bars) {
+      b.timer += dt;
+      if (b.timer > 1200 + Math.random()*800) { b.th = 20 + Math.random()*100; b.timer = 0; }
+      b.h += (b.th - b.h) * .05;
+      const d = Math.abs(mx - b.x);
+      const hot = d < 55;
+      if (hot) { ctx.fillStyle = 'rgba(255,87,51,.75)'; }
+      else { ctx.fillStyle = 'rgba(204,255,0,.45)'; }
+      const bh = hot ? b.h * 2 : b.h;
+      ctx.fillRect(b.x - b.w/2, yBase - bh, b.w, bh);
+      // reflejo
+      ctx.fillStyle = hot ? 'rgba(255,87,51,.15)' : 'rgba(204,255,0,.1)';
+      ctx.fillRect(b.x - b.w/2, yBase, b.w, bh * .3);
+    }
+    // partículas
+    for (const p of parts) {
+      const inMouseQ = (mx > 0 && Math.abs(mx - p.x) < w/2 && Math.abs(my - p.y) < h/2);
+      const spd = (p.speed * (inMouseQ ? 2 : 1)) * dt/16;
+      if (p.dir === 1) p.x += spd; else p.y += spd;
+      const cols = Math.floor(w/gs), rows = Math.floor(h/gs);
+      if (p.x > (p.ci+1)*gs) { p.ci++; if (p.ci >= cols) { Object.assign(p, this._newPart()); continue; } p.x = p.ci*gs; if (Math.random()>.5) p.dir = 2; }
+      if (p.y > (p.ri+1)*gs) { p.ri++; if (p.ri >= rows) { Object.assign(p, this._newPart()); continue; } p.y = p.ri*gs; if (Math.random()>.5) p.dir = 1; }
+      ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(204,255,0,.55)'; ctx.fill();
+    }
+  }
+}
+
+// ── 5. ConstellationAnim — E-Learning ────────────────────────────────────────
+class ConstellationAnim extends HeroAnim {
+  _init() {
+    const W = this.w, H = this.h;
+    this.nodes = Array.from({length: 3}, (_, i) => {
+      const cx = W * (.25 + i*.25), cy = H * (.3 + Math.random()*.4);
+      const orbs = Array.from({length: 5}, (__, j) => ({
+        angle: (j/5)*Math.PI*2 + Math.random(),
+        radius: 50 + Math.random()*50,
+        aspd: .012 + Math.random()*.013,
+        x: 0, y: 0
+      }));
+      return { cx, cy, vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2, orbs };
+    });
+  }
+  _draw(dt) {
+    const {ctx, w, h, nodes, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    // recopilar satélites para conexiones cruzadas
+    const allOrbs = [];
+    for (const nd of nodes) {
+      nd.cx += nd.vx; nd.cy += nd.vy;
+      if (nd.cx < 60 || nd.cx > w-60) nd.vx *= -1;
+      if (nd.cy < 60 || nd.cy > h-60) nd.vy *= -1;
+      const d = Math.hypot(mx - nd.cx, my - nd.cy);
+      const spd = d < 110 ? 2.5 : 1;
+      for (const ob of nd.orbs) {
+        ob.angle += ob.aspd * spd * dt/16;
+        ob.x = nd.cx + ob.radius * Math.cos(ob.angle);
+        ob.y = nd.cy + ob.radius * Math.sin(ob.angle);
+        allOrbs.push(ob);
+        ctx.beginPath(); ctx.moveTo(nd.cx, nd.cy); ctx.lineTo(ob.x, ob.y);
+        ctx.strokeStyle = 'rgba(204,255,0,.1)'; ctx.lineWidth = .6; ctx.stroke();
+        ctx.beginPath(); ctx.arc(ob.x, ob.y, 3.5, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(255,87,51,.65)'; ctx.fill();
+      }
+      // halo
+      ctx.save();
+      ctx.shadowBlur = 18; ctx.shadowColor = '#CCFF00';
+      ctx.beginPath(); ctx.arc(nd.cx, nd.cy, 10, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(123,97,217,.8)'; ctx.fill();
+      ctx.restore();
+    }
+    // conexiones cruzadas entre satélites
+    for (let i = 0; i < allOrbs.length; i++) {
+      for (let j = i+1; j < allOrbs.length; j++) {
+        const d = Math.hypot(allOrbs[i].x - allOrbs[j].x, allOrbs[i].y - allOrbs[j].y);
+        if (d < 70) {
+          ctx.beginPath();
+          ctx.moveTo(allOrbs[i].x, allOrbs[i].y);
+          ctx.lineTo(allOrbs[j].x, allOrbs[j].y);
+          ctx.strokeStyle = `rgba(123,97,217,${.08*(1-d/70)})`;
+          ctx.lineWidth = .5; ctx.stroke();
+        }
+      }
+    }
+  }
+}
+
+// ── 6. WireframeAnim — Web & UX ──────────────────────────────────────────────
+class WireframeAnim extends HeroAnim {
+  _init() {
+    const W = this.w, H = this.h;
+    this.rects = [
+      {x:.05,y:.1,w:.9,h:.12},  // header
+      {x:.05,y:.28,w:.28,h:.55}, // sidebar
+      {x:.36,y:.28,w:.28,h:.26}, // card 1
+      {x:.67,y:.28,w:.28,h:.26}, // card 2
+      {x:.36,y:.58,w:.28,h:.25}, // card 3
+      {x:.67,y:.58,w:.28,h:.25}, // card 4
+      {x:.05,y:.88,w:.9,h:.08},  // footer
+      {x:.38,y:.3,w:.22,h:.06},  // label en card
+      {x:.69,y:.3,w:.22,h:.06},
+      {x:.38,y:.6,w:.22,h:.06},
+      {x:.69,y:.6,w:.22,h:.06},
+    ].map(r => ({
+      ax: r.x*W, ay: r.y*H, aw: r.w*W, ah: r.h*H,
+      gx: 0, gy: 0
+    }));
+  }
+  _draw(dt) {
+    const {ctx, w, h, rects, mx, my, t} = this;
+    ctx.clearRect(0, 0, w, h);
+    // guías
+    ctx.strokeStyle = 'rgba(204,255,0,.03)';
+    ctx.lineWidth = .5;
+    for (let x = 0; x < w; x += 80) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for (let y = 0; y < h; y += 80) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+    for (const r of rects) {
+      const cx = r.ax + r.aw/2, cy = r.ay + r.ah/2;
+      const d = Math.hypot(mx - cx, my - cy);
+      const hot = d < 90;
+      const force = hot ? (90-d)/90 : 0;
+      r.gx += (Math.sin(t*.0003)*3*force - r.gx) * .12;
+      r.gy += (Math.cos(t*.0004)*3*force - r.gy) * .12;
+      const rx = r.ax + r.gx, ry = r.ay + r.gy;
+      ctx.strokeStyle = hot ? `rgba(204,255,0,${.2+force*.25})` : 'rgba(123,97,217,.22)';
+      ctx.lineWidth = hot ? 1 : .7;
+      ctx.strokeRect(rx, ry, r.aw, r.ah);
+      // puntos de anclaje en esquinas
+      const alpha = hot ? .6 : .18;
+      for (const [ox, oy] of [[rx,ry],[rx+r.aw,ry],[rx,ry+r.ah],[rx+r.aw,ry+r.ah]]) {
+        ctx.beginPath(); ctx.arc(ox, oy, 2.5, 0, Math.PI*2);
+        ctx.fillStyle = hot ? `rgba(204,255,0,${alpha})` : `rgba(123,97,217,${alpha})`;
+        ctx.fill();
+      }
+      // línea de "texto" interna
+      if (r.aw > 60 && r.ah > 20) {
+        ctx.beginPath();
+        ctx.moveTo(rx+8+r.gx, ry+10); ctx.lineTo(rx+r.aw*.6+r.gx, ry+10);
+        ctx.strokeStyle = hot ? 'rgba(204,255,0,.25)' : 'rgba(123,97,217,.15)';
+        ctx.lineWidth = 1; ctx.stroke();
+      }
+    }
+  }
+}
+
+// ── 7. WaveformAnim — Audiovisual ────────────────────────────────────────────
+class WaveformAnim extends HeroAnim {
+  _init() {
+    this.nb = this.mobile ? 18 : 35;
+    this.bars = Array.from({length: this.nb}, (_, i) => ({
+      h: 20 + Math.random()*60, th: 20, i
+    }));
+  }
+  _draw(dt) {
+    const {ctx, w, h, bars, mx, my, t, nb} = this;
+    ctx.clearRect(0, 0, w, h);
+    const yC = h * .5;
+    const ampMul = my > 0 && my < h ? .4 + (1 - my/h)*1.2 : 1;
+    const bw = (w - 40) / nb;
+    // barras
+    for (const b of bars) {
+      const bx = 20 + b.i * bw + bw/2;
+      b.th = (15 + Math.abs(Math.sin(t*.0013 + b.i*.4))*70) * ampMul;
+      const d = Math.abs(mx - bx);
+      const hot = d < bw * 1.5;
+      if (hot) b.th *= 2.2;
+      b.h += (b.th - b.h) * .08;
+      ctx.fillStyle = hot ? 'rgba(255,87,51,.75)' : 'rgba(204,255,0,.45)';
+      ctx.fillRect(bx - bw*.3, yC - b.h, bw*.6, b.h);
+      // reflejo
+      ctx.fillStyle = hot ? 'rgba(255,87,51,.18)' : 'rgba(204,255,0,.12)';
+      ctx.fillRect(bx - bw*.3, yC, bw*.6, b.h * .35);
+    }
+    // onda principal
+    const waveY = x => yC + ampMul*(
+      28*Math.sin(.012*x + t*.0015) +
+      14*Math.sin(.024*x - t*.002) +
+       8*Math.sin(.038*x + t*.001)
+    );
+    ctx.beginPath();
+    for (let x = 0; x <= w; x += 2) {
+      const y = waveY(x); x === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = 'rgba(204,255,0,.7)';
+    ctx.lineWidth = 2; ctx.stroke();
+    // reflejo de onda
+    ctx.beginPath();
+    for (let x = 0; x <= w; x += 2) {
+      const y = 2*yC - waveY(x); x === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = 'rgba(204,255,0,.2)';
+    ctx.lineWidth = 1; ctx.stroke();
+  }
+}
+
+// ── Registro e inicialización ─────────────────────────────────────────────────
+HeroAnimationManager.register('portfolio',      new NodeNetworkAnim('hc-portfolio'));
+HeroAnimationManager.register('srv-branding',   new MorphShapesAnim('hc-branding'));
+HeroAnimationManager.register('srv-estrategia', new SignalWavesAnim('hc-estrategia'));
+HeroAnimationManager.register('srv-dashboards', new DataGridAnim('hc-dashboards'));
+HeroAnimationManager.register('srv-elearning',  new ConstellationAnim('hc-elearning'));
+HeroAnimationManager.register('srv-web',        new WireframeAnim('hc-web'));
+HeroAnimationManager.register('srv-audiovisual',new WaveformAnim('hc-audiovisual'));
+HeroAnimationManager.activate('portfolio');
+
 // ═══ CV DATA & PDF GENERATOR ════════════════════════════════════════════════
 const cvData = {
   es: {
     name: 'Natalia López Carmona',
-    role: 'Diseñadora · Filósofa · Estratega',
+    role: 'Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning',
     contact: {
-      email: 'natalia.lopez@wunderdesigners.com',
-      phone: '+57 302 426 0911',
+      email: 'natalia.lopez.wd@gmail.com',
+      phone: '+57 302 426 0911  ·  +57 313 748 6249',
       linkedin: 'linkedin.com/in/natalia-lopez-carmona',
       location: 'Manizales, Colombia'
     },
-    profile: 'Profesional con más de 10 años de experiencia en diseño interactivo, visualización de datos, comunicación estratégica y gestión de proyectos digitales. Maestría en Diseño y Creación Interactiva, con formación en Filosofía y Sistemas Informáticos. Especializada en diseño web UX/UI, creación de dashboards interactivos y experiencias de datos que transforman información compleja en decisiones claras. Se integran el pensamiento crítico, la narrativa digital y el código limpio en interfaces que comunican con impacto.',
-    labels: { profile: 'Perfil Profesional', experience: 'Experiencia Profesional', education: 'Educación', skills: 'Habilidades', languages: 'Idiomas', filename: 'NataliaLopez_CV.pdf' },
+    profile: 'Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y 12 años de experiencia construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y diseño UX/UI, visualización de datos e inteligencia artificial para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.',
+    labels: { profile: 'Perfil Profesional', experience: 'Experiencia Profesional', education: 'Educación', skills: 'Habilidades Técnicas', languages: 'Idiomas', filename: 'NataliaLopez_CV.pdf' },
     experience: [
-      { role: 'Profesional en Investigación', company: 'Consortia SAS', period: '2025 – Actualidad', bullets: [
-        'Gestión estratégica de Acuerdos Transformativos para publicación en Acceso Abierto.',
-        'Estrategias de fidelización de instituciones académicas en ciencia abierta.',
-        'Implementación de políticas de publicación científica y visibilidad institucional.',
-        'Articulación entre editoriales, universidades y equipos técnicos.'
+      { role: 'Research & Data Analyst', company: 'Consortia Colombia', period: 'Mar 2025 – Feb 2026', bullets: [
+        'Diseño y estructuración visual del dashboard de Acuerdos Transformativos en Power BI, centralizando métricas de publicación en acceso abierto para más de 30 IES en Colombia.',
+        'Análisis de producción académica institucional y elaboración de informes estratégicos sobre comportamiento editorial.',
+        'Apoyo a procesos de fidelización institucional y gestión de acuerdos transformativos.'
       ]},
-      { role: 'Docente – Diplomado en Marketing Digital', company: 'Universidad de Caldas', period: 'Feb – Mar 2025', bullets: [
-        'Diseño y orientación de módulo en Comunicación Digital.',
-        'Acompañamiento en construcción de propuestas de valor y presencia digital.'
+      { role: 'Docente – Comunicación Digital y Analítica Web', company: 'Universidad de Caldas – Técnico Profesional en Marketing Digital', period: 'Feb–Mar 2025 / Mar–May 2026', bullets: [
+        'Diseño y dictado de los módulos de Comunicación Digital y Analítica Web.',
+        'Apoyo en construcción de propuesta de valor y presencia digital para estudiantes.'
       ]},
-      { role: 'Consultora en Diseño Web y Comunicación', company: 'Wunder Designers – Independiente', period: '2022 – Actualidad', bullets: [
-        'Diseño y desarrollo de sitios web con HTML, CSS, JavaScript y WordPress.',
-        'Creación de dashboards interactivos y visualizaciones de datos.',
+      { role: 'Design Lead', company: 'Blue Studies International (Australia, remoto)', period: 'Mar – Oct 2024', bullets: [
+        'Dirección creativa y diseño de interfaces digitales para proyectos internacionales.',
+        'Desarrollo de identidad visual y coordinación con equipos multidisciplinarios remotos.'
+      ]},
+      { role: 'Diseñadora Gráfica y Contenido Digital', company: 'Stanton Optical (EE.UU., remoto)', period: 'Nov 2023 – Feb 2024', bullets: [
+        'Diseño de piezas gráficas y animadas para campañas en redes sociales en múltiples estados.',
+        'Producción en flujos ágiles manteniendo consistencia de marca.'
+      ]},
+      { role: 'Consultora – Visualización de Datos y Dashboards', company: 'Laboratorio de Desarrollo Territorial de Risaralda', period: 'May – Dic 2023', bullets: [
+        'Diseño y estructuración visual de tableros de indicadores socioeconómicos por municipio en Tableau.',
+        'Definición de arquitectura de información y jerarquía visual para tomadores de decisión no técnicos.',
+        'Colaboración interdisciplinaria con analistas de datos para alinear análisis y comunicación visual.'
+      ]},
+      { role: 'Diseñadora de Unidad Virtual – E-learning y Estrategia Digital', company: 'Universidad Autónoma de Manizales', period: 'Ene – Nov 2023', bullets: [
+        'Diseño y creación de interfaces interactivas para múltiples cursos virtuales en Moodle y Storyline 360.',
+        'Estructuración visual y narrativa de cursos para educación superior con enfoque en usabilidad.',
+        'Optimización de experiencia de usuario en plataformas educativas digitales.'
+      ]},
+      { role: 'Proyectos Independientes – Diseño Web y Datos', company: 'Wunder Designers – Independiente', period: '2022 – Presente', bullets: [
+        'Diseño y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.',
+        'Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.',
         'Estrategias de comunicación, branding e identidad visual.',
         'Diseño de experiencias de aprendizaje digital (e-learning).'
       ]},
-      { role: 'Docente Universitaria', company: 'U. Católica Luis Amigó / Unitécnica', period: '2022', bullets: [
-        'Diseño e implementación de cursos de teoría y práctica audiovisual.',
-        'Fomento de creatividad y pensamiento crítico en estudiantes.'
+      { role: 'Docente – Producción Audiovisual y Herramientas Digitales', company: 'Universidad Católica Luis Amigó / Unitécnica', period: '2022 – 2023', bullets: [
+        'Formación en producción audiovisual, narrativas visuales y herramientas digitales.',
+        'Acompañamiento a estudiantes en construcción de narrativas visuales y sonoras.'
       ]},
-      { role: 'Coordinadora de Diseño y Comunicación Digital', company: 'Biblioteca Centro Cultural Rogelio Salmona – U. de Caldas', period: '2014 – 2022', bullets: [
-        'Estrategias de visibilidad académica y posicionamiento digital.',
-        'Campañas de comunicación institucional con identidad visual coherente.',
-        'Diseño web y gestión de plataformas digitales.',
-        'Formación en herramientas digitales y alfabetización informacional.',
-        'Gestión de proyectos interdisciplinarios.'
+      { role: 'Coordinadora de Diseño y Comunicación Digital', company: 'Centro de Bibliotecas Rogelio Salmona – U. de Caldas', period: 'Ago 2014 – Sep 2022', bullets: [
+        'Creación e implementación del primer sistema de diseño y comunicación institucional de la biblioteca, estableciendo identidad visual coherente para todas las plataformas.',
+        'Generación y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.',
+        'Diseño y facilitación de talleres de formación en herramientas digitales.',
+        'Implementación del Repositorio Institucional (DSpace) y acompañamiento en visibilidad académica (Scopus, WoS, Google Scholar).',
+        'Diseño web y gestión de plataformas digitales institucionales.'
       ]},
-      { role: 'Realizadora Audiovisual y Editora de Documentales', company: 'Universidad de Caldas', period: '2006 – 2014', bullets: [
-        'Producción y edición de documentales de divulgación científica.',
-        'Narrativas audiovisuales para comunicación del conocimiento.'
+      { role: 'Productora Audiovisual y Editora de Documentales', company: 'Universidad de Caldas', period: '2004 – 2014', bullets: [
+        'Producción y edición de documentales de divulgación científica e institucional.'
       ]}
     ],
     education: [
-      { year: '2018', degree: 'Maestría en Diseño y Creación Interactiva', institution: 'Universidad de Caldas' },
-      { year: '2010', degree: 'Pregrado en Filosofía y Letras', institution: 'Universidad de Caldas' },
-      { year: '2009', degree: 'Tecnología en Sistemas Informáticos', institution: 'Universidad de Caldas' }
+      { year: '2013 – 2018', degree: 'Maestría en Diseño y Creación Interactiva', institution: 'Universidad de Caldas' },
+      { year: '2002 – 2010', degree: 'Profesional en Filosofía y Letras', institution: 'Universidad de Caldas' },
+      { year: '2007 – 2009', degree: 'Tecnóloga en Sistemas Informáticos', institution: 'Universidad de Caldas' }
     ],
-    skills: 'HTML5 · CSS3 · JavaScript · WordPress · Figma · Adobe Suite · React · D3.js · Python · Power BI · Moodle · UX/UI Design · Dashboard Design · Diseño Responsivo · Storytelling · Marketing de Contenidos · Gestión de Proyectos · Producción Audiovisual · Comunicación Estratégica · Pensamiento Crítico',
-    languages: [{ lang: 'Español', level: 'Nativo' }, { lang: 'Inglés', level: 'Intermedio' }]
+    skills: 'HTML5 · CSS3 · JavaScript · React · WordPress · Figma · Adobe Suite · D3.js · Python · Power BI · Tableau · Moodle · Storyline 360 · DSpace · Git · UX/UI Design · Dashboard Design · Diseño Interactivo · Diseño Responsivo · Visualización de Datos · Storytelling · E-learning · Producción Audiovisual · Gestión de Proyectos · Comunicación Estratégica · Marketing de Contenidos · Pensamiento Crítico',
+    languages: [{ lang: 'Español', level: 'Nativo' }, { lang: 'Inglés', level: 'B1' }]
   },
   en: {
     name: 'Natalia López Carmona',
-    role: 'Designer · Philosopher · Strategist',
+    role: 'Interactive UX/UI Designer · Data Visualization · E-learning',
     contact: {
-      email: 'natalia.lopez@wunderdesigners.com',
-      phone: '+57 302 426 0911',
+      email: 'natalia.lopez.wd@gmail.com',
+      phone: '+57 302 426 0911  ·  +57 313 748 6249',
       linkedin: 'linkedin.com/in/natalia-lopez-carmona',
       location: 'Manizales, Colombia'
     },
-    profile: "Professional with over 10 years of experience in interactive design, data visualization, strategic communication and digital project management. Master's in Interactive Design & Creation, with a background in Philosophy and Computer Systems. Specialized in UX/UI web design, interactive dashboards and data experiences that transform complex information into clear decisions. Integrating critical thinking, digital storytelling and clean code to build interfaces that communicate with impact.",
-    labels: { profile: 'Professional Profile', experience: 'Professional Experience', education: 'Education', skills: 'Skills', languages: 'Languages', filename: 'NataliaLopez_CV_EN.pdf' },
+    profile: "Master's in Interactive Design & Creation, with a background in Philosophy and Computer Systems (Universidad de Caldas), and 12 years of experience building web interfaces, interactive dashboards and digital educational experiences. Integrating humanistic critical thinking, technical foundation and UX/UI design, data visualization and AI to transform complex information into clear, actionable solutions. Collaborative, assertive communicator with a problem-solving orientation.",
+    labels: { profile: 'Professional Profile', experience: 'Professional Experience', education: 'Education', skills: 'Technical Skills', languages: 'Languages', filename: 'NataliaLopez_CV_EN.pdf' },
     experience: [
-      { role: 'Research Professional', company: 'Consortia SAS', period: '2025 – Present', bullets: [
-        'Strategic management of Transformative Agreements for Open Access scientific publishing.',
-        'Loyalty strategies for academic institutions in open science.',
-        'Implementation of scientific publishing policies and institutional visibility.',
-        'Liaison between publishers, universities and technical teams.'
+      { role: 'Research & Data Analyst', company: 'Consortia Colombia', period: 'Mar 2025 – Feb 2026', bullets: [
+        'Design and visual structuring of the Transformative Agreements Power BI dashboard, centralizing open access publishing metrics for 30+ HEIs in Colombia.',
+        'Institutional academic production analysis and strategic reporting on editorial behavior.',
+        'Support for institutional retention processes and transformative agreement management.'
       ]},
-      { role: 'Lecturer – Digital Marketing Program', company: 'Universidad de Caldas', period: 'Feb – Mar 2025', bullets: [
-        'Design and delivery of Digital Communication module.',
-        'Support in value proposition building and digital presence.'
+      { role: 'Lecturer – Digital Communication & Web Analytics', company: 'Universidad de Caldas – Professional Technical Program in Digital Marketing', period: 'Feb–Mar 2025 / Mar–May 2026', bullets: [
+        'Design and delivery of the Digital Communication and Web Analytics modules.',
+        'Support in value proposition building and digital presence for students.'
       ]},
-      { role: 'Web Design & Communication Consultant', company: 'Wunder Designers – Freelance', period: '2022 – Present', bullets: [
-        'Design and development of websites with HTML, CSS, JavaScript and WordPress.',
-        'Interactive dashboards and data visualizations.',
+      { role: 'Design Lead', company: 'Blue Studies International (Australia, remote)', period: 'Mar – Oct 2024', bullets: [
+        'Creative direction and digital interface design for international projects.',
+        'Visual identity development and coordination with remote multidisciplinary teams.'
+      ]},
+      { role: 'Graphic Designer & Digital Content', company: 'Stanton Optical (USA, remote)', period: 'Nov 2023 – Feb 2024', bullets: [
+        'Design of graphic and animated assets for social media campaigns across multiple states.',
+        'Production in agile workflows while maintaining brand consistency.'
+      ]},
+      { role: 'Data Visualization & Dashboard Consultant', company: 'Laboratorio de Desarrollo Territorial de Risaralda', period: 'May – Dec 2023', bullets: [
+        'Design and visual structuring of socioeconomic indicator dashboards by municipality in Tableau.',
+        'Information architecture and visual hierarchy definition for non-technical decision-makers.',
+        'Interdisciplinary collaboration with data analysts to align analysis and visual communication.'
+      ]},
+      { role: 'Virtual Unit Designer – E-learning & Digital Strategy', company: 'Universidad Autónoma de Manizales', period: 'Jan – Nov 2023', bullets: [
+        'Design and development of interactive interfaces for multiple virtual courses in Moodle and Storyline 360.',
+        'Visual and narrative structuring of higher education courses with a usability focus.',
+        'User experience optimization on digital educational platforms.'
+      ]},
+      { role: 'Independent Projects – Web Design & Data', company: 'Wunder Designers – Freelance', period: '2022 – Present', bullets: [
+        'Design and development of websites with HTML5, CSS3, JavaScript and WordPress.',
+        'Interactive dashboards and data visualizations with D3.js and Power BI.',
         'Communication strategies, branding and visual identity.',
         'Digital learning experience design (e-learning).'
       ]},
-      { role: 'University Lecturer', company: 'U. Católica Luis Amigó / Unitécnica', period: '2022', bullets: [
-        'Design and delivery of audiovisual theory and practice courses.',
-        'Fostering creativity and critical thinking in students.'
+      { role: 'Lecturer – Audiovisual Production & Digital Tools', company: 'Universidad Católica Luis Amigó / Unitécnica', period: '2022 – 2023', bullets: [
+        'Training in audiovisual production, visual narratives and digital tools.',
+        'Student support in building visual and sound narratives.'
       ]},
-      { role: 'Design & Digital Communication Coordinator', company: 'Biblioteca Rogelio Salmona – U. de Caldas', period: '2014 – 2022', bullets: [
-        'Academic visibility strategies and digital positioning.',
-        'Institutional communication campaigns with coherent visual identity.',
-        'Web design and management of institutional digital platforms.',
-        'Training in digital tools and information literacy.',
-        'Interdisciplinary project management.'
+      { role: 'Design & Digital Communication Coordinator', company: 'Centro de Bibliotecas Rogelio Salmona – U. de Caldas', period: 'Aug 2014 – Sep 2022', bullets: [
+        'Creation and implementation of the library\'s first institutional design and communication system, establishing coherent visual identity across all platforms.',
+        'Leadership of cultural and digital humanities community spaces.',
+        'Design and delivery of digital tools training workshops.',
+        'Implementation of Institutional Repository (DSpace) and academic visibility support (Scopus, WoS, Google Scholar).',
+        'Web design and management of institutional digital platforms.'
       ]},
-      { role: 'Audiovisual Producer & Documentary Editor', company: 'Universidad de Caldas', period: '2006 – 2014', bullets: [
-        'Production and editing of scientific outreach documentaries.',
-        'Audiovisual narratives for knowledge communication.'
+      { role: 'Audiovisual Producer & Documentary Editor', company: 'Universidad de Caldas', period: '2004 – 2014', bullets: [
+        'Production and editing of scientific outreach and institutional documentaries.'
       ]}
     ],
     education: [
-      { year: '2018', degree: "Master's in Interactive Design & Creation", institution: 'Universidad de Caldas' },
-      { year: '2010', degree: "Bachelor's in Philosophy and Letters", institution: 'Universidad de Caldas' },
-      { year: '2009', degree: 'Technical Degree in Computer Systems', institution: 'Universidad de Caldas' }
+      { year: '2013 – 2018', degree: "Master's in Interactive Design & Creation", institution: 'Universidad de Caldas' },
+      { year: '2002 – 2010', degree: "Bachelor's in Philosophy and Letters", institution: 'Universidad de Caldas' },
+      { year: '2007 – 2009', degree: 'Technical Degree in Computer Systems', institution: 'Universidad de Caldas' }
     ],
-    skills: 'HTML5 · CSS3 · JavaScript · WordPress · Figma · Adobe Suite · React · D3.js · Python · Power BI · Moodle · UX/UI Design · Dashboard Design · Responsive Design · Storytelling · Content Marketing · Project Management · Audiovisual Production · Strategic Communication · Critical Thinking',
-    languages: [{ lang: 'Spanish', level: 'Native' }, { lang: 'English', level: 'Intermediate' }]
+    skills: 'HTML5 · CSS3 · JavaScript · React · WordPress · Figma · Adobe Suite · D3.js · Python · Power BI · Tableau · Moodle · Storyline 360 · DSpace · Git · UX/UI Design · Dashboard Design · Interactive Design · Responsive Design · Data Visualization · Storytelling · E-learning · Audiovisual Production · Project Management · Strategic Communication · Content Marketing · Critical Thinking',
+    languages: [{ lang: 'Spanish', level: 'Native' }, { lang: 'English', level: 'B1' }]
   }
 };
 
