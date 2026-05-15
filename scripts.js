@@ -17,13 +17,22 @@ window.addEventListener('scroll', () => {
 
 // ═══ SCROLL REVEAL
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      e.target.dataset.revealed = '1';
+      revealObserver.unobserve(e.target);
+    }
+  });
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
 function initReveals() {
   document.querySelectorAll('.page.active .reveal').forEach(el => {
-    el.classList.remove('visible');
-    revealObserver.observe(el);
+    if (el.dataset.revealed) {
+      el.classList.add('visible'); // ya visto: mostrar de inmediato sin animación
+    } else {
+      revealObserver.observe(el); // primera vez: animar al entrar al viewport
+    }
   });
 }
 initReveals();
@@ -48,6 +57,10 @@ document.querySelectorAll('.stat-num[data-target]').forEach(el => numObserver.ob
 
 // ═══ PAGE META (SEO: title + description por página)
 const pageMeta = {
+  landing: {
+    title: 'Wunder Designers — Natalia López Carmona | Diseño Web, Data Viz & UX',
+    description: 'Portafolio de Natalia López Carmona: diseñadora interactiva UX/UI, visualización de datos y e-learning. 12 años de experiencia en Manizales, Colombia.'
+  },
   portfolio: {
     title: 'Wunder Designers — Natalia López Carmona | Diseño Web, Data Viz & UX en Colombia',
     description: 'Portafolio de Natalia López Carmona: diseño web UX/UI, dashboards en Power BI, e-learning, branding y estrategia digital. +12 años de experiencia en Manizales, Colombia.'
@@ -119,12 +132,16 @@ function toggleMenu() {
 // ═══ TRANSLATIONS
 const translations = {
   es: {
-    'nav.portfolio':'Portafolio','nav.about':'Sobre Mí','nav.contact':'Contacto','nav.cv':'↓ Descargar CV',
+    'landing.h1':'¿Por dónde <span class="g">empezamos</span>?',
+    'landing.sub':'Diseñadora Interactiva · Datos · UX/UI · E-learning',
+    'landing.about.title':'Conóceme','landing.about.desc':'Mi historia, experiencia, formación y lo que me mueve.',
+    'landing.portfolio.title':'Mi Portafolio','landing.portfolio.desc':'Proyectos, servicios y demos interactivos.',
+    'nav.home':'⌂ Inicio','nav.portfolio':'Portafolio','nav.about':'Sobre Mí','nav.contact':'Contacto','nav.cv':'↓ Descargar CV',
     'hero.tag':'Diseño · Estrategia · Datos · Comunicación','hero.h1a':'Datos que','hero.h1b':'inspiran diseño',
-    'hero.sub':'Se transforma información compleja en experiencias visuales que impulsan decisiones. 12 años integrando pensamiento crítico, narrativa digital y tecnología.',
+    'hero.sub':'Transformamos información compleja en experiencias visuales que impulsan decisiones. 12 años integrando pensamiento crítico, narrativa digital y tecnología.',
     'hero.btn1':'Ver Proyectos →','hero.btn2':'Conóceme',
     'stat.projects':'Proyectos','stat.clients':'Clientes','stat.years':'Años Exp.','stat.degrees':'Títulos',
-    'srv.section.tag':'Servicios','srv.section.title':'Lo que <em>se puede hacer</em> por ti','srv.section.sub':'Se combinan diseño, estrategia y tecnología para crear experiencias que conectan.',
+    'srv.section.tag':'Servicios','srv.section.title':'Lo que <em>se puede hacer</em> por ti','srv.section.sub':'Combinamos diseño, estrategia y tecnología para crear experiencias significativas.',
     'srv.branding.title':'Branding & Identidad','srv.branding.desc':'Logos, paletas, sistemas visuales coherentes que comunican tu esencia.',
     'srv.estrategia.title':'Estrategia Digital','srv.estrategia.desc':'Marketing de contenidos, storytelling y posicionamiento digital.',
     'srv.dashboards.title':'Dashboards & Data Viz','srv.dashboards.desc':'Visualización interactiva que transforma números en decisiones.',
@@ -134,8 +151,8 @@ const translations = {
     'prj.tag':'Portafolio','prj.title':'Proyectos <em>Destacados</em>','prj.sub':'Intersección entre diseño, datos y comunicación estratégica.',
     'dash.tag':'Analytics en Acción','dash.title':'Dashboard <em>Demo</em>','dash.sub':'Así se transforman datos en visualizaciones accionables.',
     'contact.tag':'Contacto','contact.title':'¿Lista para <em>transformar</em> tu proyecto?',
-    'contact.sub':'Cuéntale sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.','contact.email':'✉ Escríbele',
-    'about.role':'Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning','about.download':'↓ Descargar CV en PDF (formato ATS)','about.download2':'↓ Descargar CV completo en PDF (formato ATS)',
+    'contact.sub':'Cuéntanos sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.','contact.email':'✉ Escríbeme',
+    'about.role':'Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning','about.download':'↓ Descargar CV en PDF','about.download2':'↓ Descargar CV completo en PDF',
     'about.profile.title':'Perfil Profesional',
     'about.profile.text':'Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y <strong>12 años de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y <strong>diseño UX/UI, visualización de datos e inteligencia artificial</strong> para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.',
     'about.exp.title':'Experiencia Profesional','about.edu.title':'Educación','about.comp.title':'Formación Complementaria','about.skills.title':'Habilidades Técnicas','about.softskills.title':'Habilidades Blandas','about.lang.title':'Idiomas','about.pub.title':'Publicaciones',
@@ -143,27 +160,31 @@ const translations = {
     'srv.back.btn':'← Portafolio','srv.page.includes':'¿Qué incluye?','srv.page.ready':'¿Lista?',
     'srv.page.cta':'Hablemos de tu proyecto →','srv.page.back':'Ver más servicios',
     'srv.branding.page.tag':'Servicios · Branding','srv.branding.page.h1a':'Tu marca,','srv.branding.page.h1b':'una historia coherente',
-    'srv.branding.page.sub':'Se construyen sistemas de identidad visual que van más allá del logo. Son la arquitectura visual de tu marca en todos los puntos de contacto.',
+    'srv.branding.page.sub':'Construímos sistemas de identidad visual que van más allá del logo. Son la arquitectura visual de tu marca en todos los puntos de contacto.',
     'srv.branding.page.title':'Lo que <em>se construye juntas</em>','srv.branding.page.cta.title':'¿Quieres una identidad <em>que dure</em>?',
     'srv.estrategia.page.tag':'Servicios · Estrategia','srv.estrategia.page.h1a':'Comunicación','srv.estrategia.page.h1b':'que posiciona',
-    'srv.estrategia.page.sub':'Se desarrollan estrategias de comunicación digital que articulan tu propuesta de valor, construyen audiencia y generan presencia con propósito.',
+    'srv.estrategia.page.sub':'Desarrollamos estrategias de comunicación digital que articulan tu propuesta de valor, construyen audiencia y generan presencia con propósito.',
     'srv.estrategia.page.title':'Estrategia <em>con foco</em>','srv.estrategia.page.cta.title':'¿Tu marca <em>necesita dirección</em>?',
     'srv.dashboards.page.tag':'Servicios · Data','srv.dashboards.page.h1a':'Datos que','srv.dashboards.page.h1b':'cuentan historias',
-    'srv.dashboards.page.sub':'Se diseñan y desarrollan dashboards e infográficos interactivos que convierten datos complejos en decisiones claras. Power BI, D3.js y visualización moderna.',
+    'srv.dashboards.page.sub':'Diseñamos y desarrollamos dashboards e infográficos interactivos que convierten datos complejos en decisiones claras. Power BI, D3.js y visualización moderna.',
     'srv.dashboards.page.title':'Visualización <em>con propósito</em>','srv.dashboards.page.cta.title':'¿Tus datos <em>merecen ser vistos</em>?',
     'srv.elearning.page.tag':'Servicios · E-Learning','srv.elearning.page.h1a':'Aprendizaje','srv.elearning.page.h1b':'que transforma',
-    'srv.elearning.page.sub':'Se diseñan experiencias de aprendizaje digital que combinan pedagogía, UX y narrativa para crear cursos que realmente funcionan.',
+    'srv.elearning.page.sub':'Diseñamos experiencias de aprendizaje digital que combinan pedagogía, UX y narrativa para crear cursos que realmente funcionan.',
     'srv.elearning.page.title':'Formación <em>con diseño</em>','srv.elearning.page.cta.title':'¿Tu conocimiento <em>merece un mejor formato</em>?',
     'srv.web.page.tag':'Servicios · Web & UX','srv.web.page.h1a':'Experiencias','srv.web.page.h1b':'que conectan',
-    'srv.web.page.sub':'Se diseñan y desarrollan sitios web con identidad editorial fuerte, código limpio y experiencias de usuario que las personas quieren recordar.',
+    'srv.web.page.sub':'Diseñamos y desarrollamos sitios web con identidad editorial fuerte, código limpio y experiencias de usuario que las personas quieren recordar.',
     'srv.web.page.title':'Web con <em>propósito y estética</em>','srv.web.page.cta.title':'¿Tu proyecto <em>merece un buen sitio</em>?',
     'srv.audiovisual.page.tag':'Servicios · Audiovisual','srv.audiovisual.page.h1a':'Conocimiento','srv.audiovisual.page.h1b':'que se ve',
-    'srv.audiovisual.page.sub':'Se producen y editan documentales y piezas audiovisuales que comunican conocimiento científico y cultural con rigor narrativo y sensibilidad estética.',
+    'srv.audiovisual.page.sub':'Producimos y editamos documentales y piezas audiovisuales que comunican conocimiento científico y cultural con rigor narrativo y sensibilidad estética.',
     'srv.audiovisual.page.title':'Narrativa <em>audiovisual</em>','srv.audiovisual.page.cta.title':'¿Tu historia <em>merece ser contada</em>?',
     'modal.deliverables':'Lo que se desarrolló','modal.tech':'Tecnologías & herramientas','modal.cta':'¿Tienes un proyecto similar? →',
   },
   en: {
-    'nav.portfolio':'Portfolio','nav.about':'About Me','nav.contact':'Contact','nav.cv':'↓ Download CV',
+    'landing.h1':'Where do we <span class="g">start</span>?',
+    'landing.sub':'Interactive Designer · Data · UX/UI · E-learning',
+    'landing.about.title':'Know Me','landing.about.desc':'My story, experience, background and what drives me.',
+    'landing.portfolio.title':'My Portfolio','landing.portfolio.desc':'Projects, services and interactive demos.',
+    'nav.home':'⌂ Home','nav.portfolio':'Portfolio','nav.about':'About Me','nav.contact':'Contact','nav.cv':'↓ Download CV',
     'hero.tag':'Design · Strategy · Data · Communication','hero.h1a':'Data that','hero.h1b':'inspires design',
     'hero.sub':'Transforming complex information into visual experiences that drive decisions. 12 years integrating critical thinking, digital storytelling and technology.',
     'hero.btn1':'View Projects →','hero.btn2':'About Me',
@@ -179,7 +200,7 @@ const translations = {
     'dash.tag':'Analytics in Action','dash.title':'Dashboard <em>Demo</em>','dash.sub':'Turning data into actionable visualizations.',
     'contact.tag':'Contact','contact.title':'Ready to <em>transform</em> your project?',
     'contact.sub':'Tell her about your project. Whether design, strategy, dashboards or training.','contact.email':'✉ Write to her',
-    'about.role':'Interactive UX/UI Designer · Data Visualization · E-learning','about.download':'↓ Download CV in PDF (ATS format)','about.download2':'↓ Download full CV in PDF (ATS format)',
+    'about.role':'Interactive UX/UI Designer · Data Visualization · E-learning','about.download':'↓ Download CV in PDF','about.download2':'↓ Download full CV in PDF',
     'about.profile.title':'Professional Profile',
     'about.profile.text':'Master\'s in Interactive Design & Creation, with a background in Philosophy and Computer Systems (Universidad de Caldas), and <strong>12 years of experience</strong> building web interfaces, interactive dashboards and digital educational experiences. Integrating humanistic critical thinking, technical foundation and <strong>UX/UI design, data visualization and AI</strong> to transform complex information into clear, actionable solutions. Collaborative, assertive communicator with a problem-solving orientation.',
     'about.exp.title':'Professional Experience','about.edu.title':'Education','about.comp.title':'Complementary Training','about.skills.title':'Technical Skills','about.softskills.title':'Soft Skills','about.lang.title':'Languages','about.pub.title':'Publications',
@@ -609,7 +630,7 @@ const HeroAnimationManager = {
     const inst = this.registry.get(pageId);
     this.activeId = inst ? pageId : null;
     if (inst) {
-      const hero = inst.canvas.closest('.hero');
+      const hero = inst.canvas.closest('section');
       inst.resize(hero.offsetWidth, hero.offsetHeight);
       inst.canvas.classList.add('hc-active');
     }
@@ -645,7 +666,7 @@ window.addEventListener('resize', () => {
     if (!HeroAnimationManager.activeId) return;
     const inst = HeroAnimationManager.registry.get(HeroAnimationManager.activeId);
     if (!inst) return;
-    const hero = inst.canvas.closest('.hero');
+    const hero = inst.canvas.closest('section');
     inst.resize(hero.offsetWidth, hero.offsetHeight);
   }, 120);
 });
@@ -1062,7 +1083,70 @@ class WaveformAnim extends HeroAnim {
   }
 }
 
+// ── DualOrbitAnim — Landing ───────────────────────────────────────────────────
+class DualOrbitAnim extends HeroAnim {
+  _init() {
+    const total = this.mobile ? 30 : 60;
+    this.pts = Array.from({length: total}, (_, i) => {
+      const side = i < total / 2 ? 'v' : 'l';
+      return {
+        side,
+        x: side === 'v'
+          ? Math.random() * this.w * 0.6
+          : this.w * 0.4 + Math.random() * this.w * 0.6,
+        y: Math.random() * this.h,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 2 + 1,
+      };
+    });
+  }
+
+  _draw() {
+    const {ctx, w, h, mx, my} = this;
+    ctx.clearRect(0, 0, w, h);
+    const mouseLeft = mx < w / 2;
+
+    for (const p of this.pts) {
+      const dx = mx - p.x, dy = my - p.y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      const sameZone = (p.side === 'v' && mouseLeft) || (p.side === 'l' && !mouseLeft);
+      if (d < 160 && sameZone) {
+        const f = (160 - d) / 160 * 0.018;
+        p.vx += dx * f; p.vy += dy * f;
+      }
+      const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if (spd > 1.2) { p.vx *= 1.2 / spd; p.vy *= 1.2 / spd; }
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -20) p.x = w + 20; if (p.x > w + 20) p.x = -20;
+      if (p.y < -20) p.y = h + 20; if (p.y > h + 20) p.y = -20;
+
+      const col = p.side === 'v' ? '123,97,217' : '204,255,0';
+      const alpha = sameZone ? 0.65 : 0.28;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${col},${alpha})`;
+      ctx.fill();
+    }
+
+    for (let i = 0; i < this.pts.length; i++) {
+      for (let j = i + 1; j < this.pts.length; j++) {
+        const a = this.pts[i], b = this.pts[j];
+        if (a.side !== b.side) continue;
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 90) {
+          ctx.strokeStyle = `rgba(${a.side === 'v' ? '123,97,217' : '204,255,0'},${(1 - d / 90) * 0.14})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+  }
+}
+
 // ── Registro e inicialización ─────────────────────────────────────────────────
+HeroAnimationManager.register('landing',        new DualOrbitAnim('hc-landing'));
 HeroAnimationManager.register('portfolio',      new NodeNetworkAnim('hc-portfolio'));
 HeroAnimationManager.register('srv-branding',   new MorphShapesAnim('hc-branding'));
 HeroAnimationManager.register('srv-estrategia', new SignalWavesAnim('hc-estrategia'));
@@ -1070,7 +1154,17 @@ HeroAnimationManager.register('srv-dashboards', new DataGridAnim('hc-dashboards'
 HeroAnimationManager.register('srv-elearning',  new ConstellationAnim('hc-elearning'));
 HeroAnimationManager.register('srv-web',        new WireframeAnim('hc-web'));
 HeroAnimationManager.register('srv-audiovisual',new WaveformAnim('hc-audiovisual'));
-HeroAnimationManager.activate('portfolio');
+HeroAnimationManager.activate('landing');
+
+// ═══ BFCACHE FIX — reinicia animaciones y reveals al volver con el botón atrás
+window.addEventListener('pageshow', e => {
+  if (e.persisted) {
+    const activePage = document.querySelector('.page.active');
+    const pageId = activePage ? activePage.id.replace('page-', '') : 'landing';
+    initReveals();
+    HeroAnimationManager.activate(pageId);
+  }
+});
 
 // ═══ CV DATA & PDF GENERATOR ════════════════════════════════════════════════
 const cvData = {

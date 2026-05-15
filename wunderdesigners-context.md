@@ -1,5 +1,5 @@
 # Contexto: Wunder Designers
-> Actualizado el 2026-05-14 | Fuente: `NataliaLopezCarmona_CV.docx` + archivos locales
+> Actualizado el 2026-05-15 (2) | Fuente: `NataliaLopezCarmona_CV.docx` + revisión directa de archivos locales
 > Archivos: `index.html`, `styles.css`, `scripts.js`, `NataliaLopezCarmona_CV.docx`
 
 ---
@@ -27,17 +27,6 @@
 | Behance | https://www.behance.net/natalialpez21 |
 | GitHub | https://natalia-lopez-carmona.github.io |
 | Ubicación | Manizales, Colombia |
-
----
-
-## Métricas / Stats del sitio
-
-| Indicador | Valor |
-|---|---|
-| Proyectos | 47+ |
-| Clientes | 32+ |
-| Años de experiencia | 12+ |
-| Títulos académicos | 3 |
 
 ---
 
@@ -200,7 +189,8 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 | `NataliaLopezCarmona_CV.docx` | CV fuente (información más actualizada) |
 
 ### Páginas (navegación por JS, no rutas)
-- **#page-portfolio** — Página principal: Hero, Stats, Servicios, Proyectos, Dashboard Demo, Contacto
+- **#page-landing** — Landing inicial: pregunta al visitante si quiere "Conóceme" o "Mi Portafolio" *(página activa por defecto al cargar)*
+- **#page-portfolio** — Página principal: Hero, Servicios, Proyectos, Dashboard Demo, Contacto
 - **#page-about** — CV completo: Perfil, Experiencia, Educación, Formación Complementaria, Habilidades Técnicas, Habilidades Blandas, Idiomas, Publicaciones, Descarga PDF
 - **#page-srv-branding** — Página de servicio: Branding & Identidad
 - **#page-srv-estrategia** — Página de servicio: Estrategia Digital
@@ -211,11 +201,10 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 
 ### Secciones de la página de portafolio
 1. **Hero** (dark) — Tagline, CTA, animación de órbitas CSS + canvas de red de nodos
-2. **Stats** (cream) — 47+ proyectos, 32+ clientes, 12+ años, 3 títulos
-3. **Servicios** (white) — 6 servicios en grid de 3 columnas
-4. **Proyectos** (dark) — 5 tarjetas con modal de detalle
-5. **Analytics en Acción** (cream) — Dashboard demo interactivo con barras y donut chart
-6. **Contacto** (violet) — Email, LinkedIn, Behance
+2. **Servicios** (white) — 6 servicios en grid de 3 columnas
+3. **Proyectos** (dark) — 5 tarjetas con modal de detalle
+4. **Analytics en Acción** (cream) — Dashboard demo interactivo con barras y donut chart
+5. **Contacto** (violet) — Email, LinkedIn, Behance
 
 ---
 
@@ -230,9 +219,14 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 | `--violet` | `#7B61D9` | Terciario, secciones, CV |
 | `--violet-dk` | `#5a45b0` | Hover del violet |
 | `--cream` | `#F5F3EE` | Fondos alternos cálidos |
-| `--dark` | `#111111` | Fondo principal |
+| `--cream2` | `#EBE8E0` | Cream más oscuro |
 | `--white` | `#FFFFFF` | Secciones blancas |
+| `--dark` | `#111111` | Fondo principal |
+| `--dark2` | `#181818` | Dark intermedio |
+| `--dark3` | `#1f1f1f` | Dark suave |
 | `--gray` | `#555555` | Texto secundario |
+| `--lgray` | `#999999` | Texto terciario/metadatos |
+| `--bg-light` | `#FAFAF7` | Fondo página Sobre Mí |
 
 ### Tipografía
 - **Headings:** Raleway (weight 900) — Google Fonts
@@ -240,10 +234,9 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 
 ### Efectos interactivos
 - **Canvas global** (`#shapes-canvas`, `position: fixed`): 30 formas geométricas flotantes con repulsión al mouse y líneas conectoras. Siempre activo como fondo decorativo.
-- **7 canvas hero temáticos** (uno por sección hero, `position: absolute` dentro del hero): se activan/desactivan al cambiar de página vía `HeroAnimationManager`.
+- **8 canvas hero temáticos** (landing + 7 hero de páginas, `position: absolute`): se activan/desactivan al cambiar de página vía `HeroAnimationManager`.
 - Glow del cursor (radial gradient `#CCFF00`)
-- Scroll reveal con IntersectionObserver
-- Números animados (conteo desde 0)
+- Scroll reveal con `IntersectionObserver` + `data-revealed` para no re-animar en visitas de retorno
 - Barras de habilidades con animación al hacer scroll
 - Gráfica de barras del dashboard animada
 - Donut chart SVG con leyenda
@@ -253,6 +246,7 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 
 | Página | Canvas ID | Clase JS | Descripción |
 |---|---|---|---|
+| landing | `hc-landing` | `DualOrbitAnim` | Partículas violet (izq) y lime (der) que se atraen al cursor según zona |
 | portfolio | `hc-portfolio` | `NodeNetworkAnim` | Red de nodos que se atraen al cursor, conectados con líneas lime |
 | srv-branding | `hc-branding` | `MorphShapesAnim` | Polígonos que morfan entre formas y se deforman al hover |
 | srv-estrategia | `hc-estrategia` | `SignalWavesAnim` | Curvas sinusoidales con perturbación al cursor y ripple de impacto |
@@ -261,10 +255,10 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 | srv-web | `hc-web` | `WireframeAnim` | Wireframe de interfaz que vibra y se ilumina al hover |
 | srv-audiovisual | `hc-audiovisual` | `WaveformAnim` | Waveform con barras que el mouse controla y amplifica |
 
-**Arquitectura del sistema:** Un único `requestAnimationFrame` maestro (`HeroAnimationManager._startLoop`) renderiza solo la animación de la página activa. Al llamar `switchPage(page)` se invoca `HeroAnimationManager.activate(page)` que desactiva el canvas anterior y activa el nuevo. En móvil, las animaciones reducen el número de elementos al 50–60%.
+**Arquitectura del sistema:** Un único `requestAnimationFrame` maestro (`HeroAnimationManager._startLoop`) renderiza solo la animación de la página activa. Al llamar `switchPage(page)` se invoca `HeroAnimationManager.activate(page)` que desactiva el canvas anterior y activa el nuevo. En móvil, las animaciones reducen el número de elementos al 50–60%. `activate()` usa `closest('section')` (no `.hero`) para soportar tanto `.hero` como `.landing-hero`.
 
-### Secciones alternantes
-`sec-dark` → `sec-cream` → `sec-white` → `sec-dark` → `sec-cream` → `sec-violet`
+### Secciones alternantes (portafolio)
+`sec-dark` (hero) → `sec-white` (servicios) → `sec-dark` (proyectos) → `sec-cream` (dashboard demo) → `sec-violet` (contacto)
 
 ---
 
@@ -285,3 +279,7 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 - La marca combina datos + diseño: no es solo diseñadora visual, sino también estratega y comunicadora científica con formación humanística.
 - Actualmente trabaja en paralelo: Consortia SAS (contrato reciente, feb 2026 finalizado) + Wunder Designers (freelance continuo) + Docente U. de Caldas (mar–may 2026).
 - El canvas global (`#shapes-canvas`) y el `HeroAnimationManager` son sistemas independientes — no tocar el canvas global al modificar las animaciones hero y viceversa.
+- La landing page usa `.landing-hero` (no `.hero`) — tener en cuenta al aplicar estilos heredados de hero.
+- El nav ya no tiene botón "Descargar CV" — solo existe dentro de la página Sobre Mí (`#cv-dl`). Los botones de descarga dicen "↓ Descargar CV en PDF" / "↓ Download CV in PDF" (sin mención de formato ATS).
+- Orden del nav: ⌂ Inicio → Sobre Mí → Portafolio → Contacto.
+- El scroll reveal usa `data-revealed` como flag persistente: elementos ya vistos no se re-animan al volver a la página.

@@ -151,6 +151,115 @@ body {
   opacity: 0; transition: opacity 0.8s ease;
 }
 .hero-canvas.hc-active { opacity: 1; }
+
+/* ═══════════════════════════════════════
+   LANDING PAGE
+   ═══════════════════════════════════════ */
+.landing-hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  background: var(--dark);
+}
+.landing-inner {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 720px; width: 100%;
+}
+.landing-name {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .72rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.32);
+  margin-bottom: 32px;
+}
+.landing-name .w-mark {
+  width: 28px; height: 28px;
+  background: var(--lime); color: var(--dark);
+  border-radius: 7px;
+  font-family: 'Raleway', sans-serif; font-weight: 900; font-size: .82rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.landing-q {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 900; line-height: 1; letter-spacing: -2px;
+  color: var(--cream); margin-bottom: 16px;
+}
+.landing-q .g {
+  background: linear-gradient(135deg, var(--lime), var(--violet));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.landing-sub {
+  font-size: .68rem; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255,255,255,.28); margin-bottom: 56px;
+}
+.landing-choices {
+  display: flex; align-items: center; justify-content: center; gap: 20px;
+}
+.lc-card {
+  flex: 1; max-width: 280px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 20px; padding: 36px 28px;
+  cursor: pointer; text-align: left;
+  transition: transform .3s ease, border-color .3s ease, background .3s ease;
+  position: relative; overflow: hidden;
+  color: var(--cream);
+}
+.lc-card::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  transition: opacity .35s ease; border-radius: 20px;
+}
+.lc-about::before    { background: radial-gradient(ellipse at 30% 70%, rgba(123,97,217,.35) 0%, transparent 65%); }
+.lc-portfolio::before { background: radial-gradient(ellipse at 70% 30%, rgba(204,255,0,.18) 0%, transparent 65%); }
+.lc-card:hover { transform: translateY(-8px); }
+.lc-card:hover::before { opacity: 1; }
+.lc-about:hover    { border-color: rgba(123,97,217,.55); background: rgba(123,97,217,.06); animation: none; }
+.lc-portfolio:hover { border-color: rgba(204,255,0,.4);  background: rgba(204,255,0,.04); animation: none; }
+.lc-about    { animation: pulseAbout 3.2s ease-in-out infinite; }
+.lc-portfolio { animation: pulseLime  3.2s ease-in-out infinite 1.6s; }
+@keyframes pulseAbout {
+  0%,100% { box-shadow: 0 4px 20px rgba(123,97,217,.06); }
+  50%     { box-shadow: 0 8px 36px rgba(123,97,217,.22); }
+}
+@keyframes pulseLime {
+  0%,100% { box-shadow: 0 4px 20px rgba(204,255,0,.04); }
+  50%     { box-shadow: 0 8px 36px rgba(204,255,0,.18); }
+}
+.lc-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
+.lc-card h2 {
+  font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 900; margin-bottom: 8px;
+}
+.lc-about h2     { color: #c8b8ff; }
+.lc-portfolio h2 { color: var(--lime); }
+.lc-card p {
+  font-size: .8rem; color: rgba(255,255,255,.42); line-height: 1.65; margin-bottom: 20px;
+}
+.lc-arrow {
+  display: inline-block; font-size: 1rem;
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.lc-about .lc-arrow     { color: #c8b8ff; }
+.lc-portfolio .lc-arrow { color: var(--lime); }
+.lc-card:hover .lc-arrow { opacity: 1; transform: translateX(0); animation: arrowBounce .7s ease infinite; }
+@keyframes arrowBounce {
+  0%,100% { transform: translateX(0); }
+  50%     { transform: translateX(5px); }
+}
+.lc-or {
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.18); flex-shrink: 0; font-style: italic;
+}
+@media (max-width: 580px) {
+  .landing-choices { flex-direction: column; align-items: stretch; }
+  .lc-card { max-width: 100%; }
+  .lc-or { text-align: center; }
+}
+
 .hero-tag {
   font-size: .6rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 5px; color: var(--orange); margin-bottom: 20px;

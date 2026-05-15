@@ -109,7 +109,7 @@
 
   <!-- ═══ NAV ═══ -->
   <nav class="nav" id="nav" aria-label="Navegación principal">
-    <a class="nav-logo" onclick="switchPage('portfolio')">
+    <a class="nav-logo" onclick="switchPage('landing')">
       <img src="logo.png" alt="Wunder Designers" class="nav-logo-img" style="display:none"
            onload="this.style.display='block';this.closest('.nav-logo').querySelector('.nav-logo-text').style.display='none'">
       <span class="nav-logo-text">
@@ -118,18 +118,50 @@
     </a>
     <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <button class="nav-pill active" data-page="portfolio" onclick="switchPage('portfolio')" data-i18n="nav.portfolio">Portafolio</button>
+      <button class="nav-pill active" data-page="landing" onclick="switchPage('landing')" data-i18n="nav.home">⌂ Inicio</button>
       <button class="nav-pill" data-page="about" onclick="switchPage('about')" data-i18n="nav.about">Sobre Mí</button>
+      <button class="nav-pill" data-page="portfolio" onclick="switchPage('portfolio')" data-i18n="nav.portfolio">Portafolio</button>
       <a href="#contacto" class="nav-pill" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="nav.contact">Contacto</a>
-      <button class="nav-cta" onclick="switchPage('about');setTimeout(()=>document.getElementById('cv-dl').scrollIntoView({behavior:'smooth'}),300)" data-i18n="nav.cv">↓ Descargar CV</button>
-      <button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Switch language / Cambiar idioma">EN</button>
+<button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Switch language / Cambiar idioma">EN</button>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════
+       PAGE 0: LANDING
+       ═══════════════════════════════════════════════════════ -->
+  <div class="page active" id="page-landing">
+    <section class="landing-hero">
+      <canvas class="hero-canvas" id="hc-landing" aria-hidden="true"></canvas>
+      <div class="landing-inner">
+        <p class="landing-name">
+          <span class="w-mark">N</span>
+          Natalia <em>López</em> Carmona
+        </p>
+        <h1 class="landing-q reveal" data-i18n-html="landing.h1">¿Por dónde <span class="g">empezamos</span>?</h1>
+        <p class="landing-sub reveal" data-i18n="landing.sub">Diseñadora Interactiva · Datos · UX/UI · E-learning</p>
+        <div class="landing-choices reveal">
+          <button class="lc-card lc-about" onclick="switchPage('about')">
+            <span class="lc-icon">👤</span>
+            <h2 data-i18n="landing.about.title">Conóceme</h2>
+            <p data-i18n="landing.about.desc">Mi historia, experiencia, formación y lo que me mueve.</p>
+            <span class="lc-arrow">→</span>
+          </button>
+          <span class="lc-or">o</span>
+          <button class="lc-card lc-portfolio" onclick="switchPage('portfolio')">
+            <span class="lc-icon">🚀</span>
+            <h2 data-i18n="landing.portfolio.title">Mi Portafolio</h2>
+            <p data-i18n="landing.portfolio.desc">Proyectos, servicios y demos interactivos.</p>
+            <span class="lc-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
        PAGE 1: PORTAFOLIO
        ═══════════════════════════════════════════════════════ -->
-  <div class="page active" id="page-portfolio">
+  <div class="page" id="page-portfolio">
 
     <!-- ▓▓▓ HERO — DARK ▓▓▓ --> //
     <section class="hero">
@@ -140,7 +172,7 @@
         <span class="l2" data-i18n="hero.h1b">inspiran diseño</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.24s" data-i18n="hero.sub">
-        Se transforma información compleja en experiencias visuales que impulsan decisiones.
+        Transformamos información compleja en experiencias visuales que impulsan decisiones.
         12 años integrando pensamiento crítico, narrativa digital y tecnología.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.36s">
@@ -155,40 +187,12 @@
       <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
 
-    <!-- ▓▓▓ STATS — CREAM ▓▓▓ --> 
-    <section class="section sec-cream">  
-      <div class="inner">
-        <div class="stats-grid">
-          <div class="stat-c s-dk reveal">
-            <div class="stat-icon">🚀</div>
-            <div class="stat-num" data-target="47">0</div>
-            <div class="stat-label" data-i18n="stat.projects">Proyectos</div>
-          </div>
-          <div class="stat-c s-cr reveal" style="transition-delay:.1s">
-            <div class="stat-icon">⭐</div>
-            <div class="stat-num" data-target="32">0</div>
-            <div class="stat-label" data-i18n="stat.clients">Clientes</div>
-          </div>
-          <div class="stat-c s-vt reveal" style="transition-delay:.2s">
-            <div class="stat-icon">📊</div>
-            <div class="stat-num" data-target="12">0</div>
-            <div class="stat-label" data-i18n="stat.years">Años Exp.</div>
-          </div>
-          <div class="stat-c s-or reveal" style="transition-delay:.3s">
-            <div class="stat-icon">🎓</div>
-            <div class="stat-num" data-target="3">0</div>
-            <div class="stat-label" data-i18n="stat.degrees">Títulos</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ▓▓▓ SERVICES — WHITE ▓▓▓ -->
     <section class="section sec-white" id="servicios">
       <div class="inner">
         <p class="s-tag reveal" data-i18n="srv.section.tag">Servicios</p>
         <h2 class="s-title reveal" data-i18n-html="srv.section.title">Lo que <em>se puede hacer</em> por ti</h2>
-        <p class="s-sub reveal" data-i18n="srv.section.sub">Se combinan diseño, estrategia y tecnología para crear experiencias que conectan.</p>
+        <p class="s-sub reveal" data-i18n="srv.section.sub">Combinamos diseño, estrategia y tecnología para crear experiencias significativas.</p>
         <div class="srv-grid">
           <div class="srv sw reveal" onclick="switchPage('srv-branding')">
             <div class="srv-icon">🎨</div>
@@ -347,12 +351,12 @@
     <section class="section sec-violet contact-sec" id="contacto">
       <div class="inner">
         <p class="s-tag reveal" style="justify-content:center" data-i18n="contact.tag">Contacto</p>
-        <h2 class="s-title reveal" style="text-align:center" data-i18n-html="contact.title">¿Lista para <em>transformar</em> tu proyecto?</h2>
+        <h2 class="s-title reveal" style="text-align:center" data-i18n-html="contact.title">¿<em>Transformamos</em> tu proyecto?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)" data-i18n="contact.sub">
-          Cuéntale sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.
+          Cuéntanos sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.
         </p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp" data-i18n="contact.email">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp" data-i18n="contact.email">✉ Escríbeme</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
           <a href="https://www.behance.net/natalialpez21" target="_blank" class="cs">Behance →</a>
         </div>
@@ -382,7 +386,7 @@
           <a href="https://natalia-lopez-carmona.github.io" target="_blank" class="cv-ci">GitHub</a>
         </div>
         <div class="cv-download-row" id="cv-dl">
-          <button class="btn-dl" onclick="generateCV()" data-i18n="about.download">↓ Descargar CV en PDF (formato ATS)</button>
+          <button class="btn-dl" onclick="generateCV()" data-i18n="about.download">↓ Descargar CV en PDF</button>
         </div>
       </div>
 
@@ -603,7 +607,7 @@
 
       <!-- Download CTA -->
       <div style="text-align:center;margin-top:40px" class="reveal">
-        <button class="btn-dl" onclick="generateCV()" data-i18n="about.download2">↓ Descargar CV completo en PDF (formato ATS)</button>
+        <button class="btn-dl" onclick="generateCV()" data-i18n="about.download2">↓ Descargar CV completo en PDF</button>
       </div>
     </div>
 
@@ -647,7 +651,7 @@
         <span class="l2" data-i18n="srv.branding.page.h1b">una historia coherente</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.branding.page.sub">
-        Se construyen sistemas de identidad visual que van más allá del logo. Son la arquitectura visual de tu marca en todos los puntos de contacto.
+        Construímos sistemas de identidad visual que van más allá del logo. Son la arquitectura visual de tu marca en todos los puntos de contacto.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -675,7 +679,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.branding.page.cta.title">¿Quieres una identidad <em>que dure</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale sobre tu proyecto y construirán tu marca juntas.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.behance.net/natalialpez21" target="_blank" class="cs">Behance →</a>
         </div>
       </div>
@@ -693,7 +697,7 @@
         <span class="l2" data-i18n="srv.estrategia.page.h1b">que posiciona</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.estrategia.page.sub">
-        Se desarrollan estrategias de comunicación digital que articulan tu propuesta de valor, construyen audiencia y generan presencia con propósito.
+        Desarrollamos estrategias de comunicación digital que articulan tu propuesta de valor, construyen audiencia y generan presencia con propósito.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -721,7 +725,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.estrategia.page.cta.title">¿Tu marca <em>necesita dirección</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale dónde estás y hacia dónde quieres ir.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
         </div>
       </div>
@@ -739,7 +743,7 @@
         <span class="l2" data-i18n="srv.dashboards.page.h1b">cuentan historias</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.dashboards.page.sub">
-        Se diseñan y desarrollan dashboards e infográficos interactivos que convierten datos complejos en decisiones claras. Power BI, D3.js y visualización moderna.
+        Diseñamos y desarrollamos dashboards e infográficos interactivos que convierten datos complejos en decisiones claras. Power BI, D3.js y visualización moderna.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -767,7 +771,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.dashboards.page.cta.title">¿Tus datos <em>merecen ser vistos</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale qué información tienes y qué decisiones necesitas tomar.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
         </div>
       </div>
@@ -785,7 +789,7 @@
         <span class="l2" data-i18n="srv.elearning.page.h1b">que transforma</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.elearning.page.sub">
-        Se diseñan experiencias de aprendizaje digital que combinan pedagogía, UX y narrativa para crear cursos que realmente funcionan.
+        Diseñamos experiencias de aprendizaje digital que combinan pedagogía, UX y narrativa para crear cursos que realmente funcionan.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -813,7 +817,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.elearning.page.cta.title">¿Tu conocimiento <em>merece un mejor formato</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale qué quieres enseñar y a quién.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
         </div>
       </div>
@@ -831,7 +835,7 @@
         <span class="l2" data-i18n="srv.web.page.h1b">que conectan</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.web.page.sub">
-        Se diseñan y desarrollan sitios web con identidad editorial fuerte, código limpio y experiencias de usuario que las personas quieren recordar.
+        Diseñamos y desarrollamos sitios web con identidad editorial fuerte, código limpio y experiencias de usuario que las personas quieren recordar.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -859,7 +863,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.web.page.cta.title">¿Tu proyecto <em>merece un buen sitio</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale qué necesitas construir.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.behance.net/natalialpez21" target="_blank" class="cs">Behance →</a>
         </div>
       </div>
@@ -877,7 +881,7 @@
         <span class="l2" data-i18n="srv.audiovisual.page.h1b">que se ve</span>
       </h1>
       <p class="hero-sub reveal" style="transition-delay:.16s" data-i18n="srv.audiovisual.page.sub">
-        Se producen y editan documentales y piezas audiovisuales que comunican conocimiento científico y cultural con rigor narrativo y sensibilidad estética.
+        Producimos y editamos documentales y piezas audiovisuales que comunican conocimiento científico y cultural con rigor narrativo y sensibilidad estética.
       </p>
       <div class="hero-btns reveal" style="transition-delay:.24s">
         <button class="btn-lime" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="srv.page.cta">Hablemos de tu proyecto →</button>
@@ -905,7 +909,7 @@
         <h2 class="s-title reveal" style="text-align:center" data-i18n-html="srv.audiovisual.page.cta.title">¿Tu historia <em>merece ser contada</em>?</h2>
         <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)">Cuéntale qué quieres comunicar y para quién.</p>
         <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbele</a>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp">✉ Escríbeme</a>
           <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
         </div>
       </div>
