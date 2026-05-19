@@ -136,6 +136,7 @@ const translations = {
     'landing.sub':'Diseñadora Interactiva · Datos · UX/UI · E-learning',
     'landing.about.title':'Conóceme','landing.about.desc':'Mi historia, experiencia, formación y lo que me mueve.',
     'landing.portfolio.title':'Mi Portafolio','landing.portfolio.desc':'Proyectos, servicios y demos interactivos.',
+    'landing.or':'o','fab.title':'Contactar',
     'nav.home':'⌂ Inicio','nav.portfolio':'Portafolio','nav.about':'Sobre Mí','nav.contact':'Contacto','nav.cv':'↓ Descargar CV',
     'hero.tag':'Diseño · Estrategia · Datos · Comunicación','hero.h1a':'Datos que','hero.h1b':'inspiran diseño',
     'hero.sub':'Transformamos información compleja en experiencias visuales que impulsan decisiones. 12 años integrando pensamiento crítico, narrativa digital y tecnología.',
@@ -178,12 +179,143 @@ const translations = {
     'srv.audiovisual.page.sub':'Producimos y editamos documentales y piezas audiovisuales que comunican conocimiento científico y cultural con rigor narrativo y sensibilidad estética.',
     'srv.audiovisual.page.title':'Narrativa <em>audiovisual</em>','srv.audiovisual.page.cta.title':'¿Tu historia <em>merece ser contada</em>?',
     'modal.deliverables':'Lo que se desarrolló','modal.tech':'Tecnologías & herramientas','modal.cta':'¿Tienes un proyecto similar? →',
+    'modal.close':'Cerrar',
+    // Project cards
+    'prj.ux.type':'UX · Interfaces Interactivas','prj.ux.title':'Interfaces Interactivas · U. Autónoma','prj.ux.tech':'UX · Diseño Interactivo · Multimedia',
+    'prj.view':'▲ Ver proyecto',
+    'prj.audiovisual.type':'Audiovisual','prj.audiovisual.title':'Documentales Divulgación Científica','prj.audiovisual.tech':'Producción · Edición · Narrativa',
+    'prj.dashboard.type':'Dashboard','prj.dashboard.title':'Dashboard Power BI · Consortia SAS','prj.dashboard.tech':'Power BI · Visualización · Datos',
+    'prj.biblioteca.type':'Branding · Web · Comunicación','prj.biblioteca.title':'Biblioteca Salmona · U. de Caldas','prj.biblioteca.tech':'Diseño · Difusión · Portal Repositorio · Eventos',
+    'prj.wunder.type':'Web Design','prj.wunder.tech':'HTML · CSS · JS · Animaciones',
+    // Dashboard demo
+    'dash.chart.title':'Crecimiento de Proyectos','dash.chart.sub':'Últimos 12 meses',
+    'dash.dist.title':'Distribución','dash.dist.sub':'Por servicio',
+    'dash.legend.design':'Diseño 35%','dash.legend.dashboards':'Dashboards 25%','dash.legend.strategy':'Estrategia 20%','dash.legend.elearning':'E-Learning 20%',
+    'dash.skills.title':'Competencias Técnicas','dash.skills.sub':'Nivel de dominio',
+    // Service pages – intro & CTA subs
+    'srv.branding.intro':'Una identidad visual completa y coherente para posicionar tu marca con solidez.',
+    'srv.branding.cta.sub':'Cuéntame sobre tu proyecto y construiremos tu marca juntos.',
+    'srv.estrategia.intro':'Una hoja de ruta clara para que tu comunicación digital genere resultados reales.',
+    'srv.estrategia.cta.sub':'Cuéntame dónde estás y hacia dónde quieres ir.',
+    'srv.dashboards.intro':'De los datos en bruto a la decisión clara, sin escalas innecesarias.',
+    'srv.dashboards.cta.sub':'Cuéntame qué información tienes y qué decisiones necesitas tomar.',
+    'srv.elearning.intro':'Cursos y plataformas que los estudiantes realmente quieren usar.',
+    'srv.elearning.cta.sub':'Cuéntame qué quieres enseñar y a quién.',
+    'srv.web.intro':'Desde el wireframe hasta el código: sitios que funcionan y se ven bien en cualquier pantalla.',
+    'srv.web.cta.sub':'Cuéntame qué necesitas construir.',
+    'srv.audiovisual.intro':'Piezas que comunican con profundidad, no solo con imagen.',
+    'srv.audiovisual.cta.sub':'Cuéntame qué quieres comunicar y para quién.',
+    // Service detail items – Branding
+    'srv.branding.item1.title':'Diseño de Logotipo','srv.branding.item1.desc':'Concepto, bocetos y versión final con variantes para diferentes contextos de uso.',
+    'srv.branding.item2.title':'Paleta & Tipografía','srv.branding.item2.desc':'Sistema de colores y tipografías que comunican la personalidad de tu marca.',
+    'srv.branding.item3.title':'Manual de Identidad','srv.branding.item3.desc':'Guía de uso: normas, proporciones, usos incorrectos y aplicaciones digitales e impresas.',
+    'srv.branding.item4.title':'Aplicaciones Digitales','srv.branding.item4.desc':'Adaptaciones para redes sociales, web, presentaciones y piezas digitales.',
+    'srv.branding.item5.title':'Materiales Impresos','srv.branding.item5.desc':'Tarjetas, papelería, señalética y cualquier pieza física que necesites.',
+    'srv.branding.item6.title':'Estrategia de Marca','srv.branding.item6.desc':'Análisis de posicionamiento, audiencia y diferencial competitivo de tu marca.',
+    // Service detail items – Estrategia
+    'srv.estrategia.item1.title':'Estrategia de Contenidos','srv.estrategia.item1.desc':'Plan editorial, temas clave, formatos y frecuencias adaptados a tu audiencia.',
+    'srv.estrategia.item2.title':'Storytelling de Marca','srv.estrategia.item2.desc':'Narrativa que conecta emocionalmente tu marca con las personas que importan.',
+    'srv.estrategia.item3.title':'Posicionamiento SEO','srv.estrategia.item3.desc':'Palabras clave, estructura de contenido y optimización para visibilidad orgánica.',
+    'srv.estrategia.item4.title':'Gestión de Redes Sociales','srv.estrategia.item4.desc':'Estrategia por plataforma, tono de voz y acompañamiento en la publicación.',
+    'srv.estrategia.item5.title':'Métricas & Seguimiento','srv.estrategia.item5.desc':'Definición de KPIs, análisis de resultados y ajuste continuo de la estrategia.',
+    'srv.estrategia.item6.title':'Propuesta de Valor','srv.estrategia.item6.desc':'Diagnóstico del diferencial competitivo y construcción del mensaje central.',
+    // Service detail items – Dashboards
+    'srv.dashboards.item1.title':'Dashboards en Power BI','srv.dashboards.item1.desc':'Diseño visual y funcional de reportes interactivos para equipos y directivos.',
+    'srv.dashboards.item2.title':'Visualización con D3.js','srv.dashboards.item2.desc':'Gráficas personalizadas e interactivas para web, con animaciones y datos dinámicos.',
+    'srv.dashboards.item3.title':'Diseño de KPIs','srv.dashboards.item3.desc':'Selección y jerarquización de métricas clave según los objetivos del negocio.',
+    'srv.dashboards.item4.title':'Reportes Ejecutivos','srv.dashboards.item4.desc':'Infografías y reportes visuales que comunican resultados a audiencias no técnicas.',
+    'srv.dashboards.item5.title':'Arquitectura de Datos','srv.dashboards.item5.desc':'Organización y limpieza de fuentes para que la visualización sea precisa y confiable.',
+    'srv.dashboards.item6.title':'Diseño Editorial de Datos','srv.dashboards.item6.desc':'Infografías estáticas e interactivas con identidad visual consistente.',
+    // Service detail items – E-Learning
+    'srv.elearning.item1.title':'Diseño Instruccional','srv.elearning.item1.desc':'Estructura pedagógica del contenido: objetivos, secuencia, evaluaciones y recursos.',
+    'srv.elearning.item2.title':'Interfaces Interactivas','srv.elearning.item2.desc':'Diseño UX/UI de plataformas y módulos de aprendizaje orientados al usuario.',
+    'srv.elearning.item3.title':'Integración con LMS','srv.elearning.item3.desc':'Implementación y configuración en Moodle, Canvas u otras plataformas de aprendizaje.',
+    'srv.elearning.item4.title':'Recursos Multimedia','srv.elearning.item4.desc':'Videos, animaciones, infografías y piezas interactivas para enriquecer el contenido.',
+    'srv.elearning.item5.title':'Evaluaciones & Seguimiento','srv.elearning.item5.desc':'Diseño de actividades, rúbricas y sistemas de seguimiento del aprendizaje.',
+    'srv.elearning.item6.title':'Accesibilidad','srv.elearning.item6.desc':'Cursos diseñados para ser inclusivos y accesibles para todo tipo de estudiante.',
+    // Service detail items – Web
+    'srv.web.item1.title':'UX Research & Wireframes','srv.web.item1.desc':'Investigación de usuarios, arquitectura de información y prototipado antes de diseñar.',
+    'srv.web.item2.title':'Diseño UI en Figma','srv.web.item2.desc':'Diseño visual de alta fidelidad con sistema de componentes y guías de estilo.',
+    'srv.web.item3.title':'Desarrollo HTML/CSS/JS','srv.web.item3.desc':'Código limpio, semántico y accesible. Animaciones, interacciones y rendimiento optimizado.',
+    'srv.web.item4.title':'WordPress','srv.web.item4.desc':'Implementación con temas a medida, plugins y panel de gestión fácil de usar.',
+    'srv.web.item5.title':'Diseño Responsivo','srv.web.item5.desc':'Experiencia impecable en móvil, tablet y escritorio desde el primer pixel.',
+    'srv.web.item6.title':'Portales Institucionales','srv.web.item6.desc':'Repositorios, portales académicos y sitios de organizaciones con necesidades específicas.',
+    // Service detail items – Audiovisual
+    'srv.audiovisual.item1.title':'Guion & Narrativa','srv.audiovisual.item1.desc':'Construcción del relato: estructura, arco narrativo, voz y ritmo del documental.',
+    'srv.audiovisual.item2.title':'Producción','srv.audiovisual.item2.desc':'Planificación, logística de rodaje, dirección y coordinación del equipo técnico.',
+    'srv.audiovisual.item3.title':'Edición de Video','srv.audiovisual.item3.desc':'Montaje narrativo, corrección de color, sonido y entrega en formatos requeridos.',
+    'srv.audiovisual.item4.title':'Divulgación Científica','srv.audiovisual.item4.desc':'Traducción de investigación académica en narrativas visuales accesibles al público general.',
+    'srv.audiovisual.item5.title':'Piezas Institucionales','srv.audiovisual.item5.desc':'Videos corporativos y registro de eventos académicos y culturales.',
+    'srv.audiovisual.item6.title':'Distribución & Difusión','srv.audiovisual.item6.desc':'Estrategia para llevar el contenido audiovisual a las audiencias correctas.',
+    // About – experience roles & companies (Spanish)
+    'about.exp.docente1.role':'Docente – Comunicación Digital y Analítica Web',
+    'about.exp.docente1.company':'Universidad de Caldas – Técnico Profesional en Marketing Digital',
+    'about.exp.blue.company':'Blue Studies International (Australia, remoto)',
+    'about.exp.stanton.role':'Diseñadora Gráfica y Contenido Digital',
+    'about.exp.stanton.company':'Stanton Optical (EE.UU., remoto)',
+    'about.exp.risaralda.role':'Consultora – Visualización de Datos y Dashboards',
+    'about.exp.risaralda.date':'May – Dic 2023',
+    'about.exp.uautonoma.role':'Diseñadora de Unidad Virtual – E-learning y Estrategia Digital',
+    'about.exp.uautonoma.date':'Ene – Nov 2023',
+    'about.exp.wunder.role':'Proyectos Independientes – Diseño Web y Datos',
+    'about.exp.wunder.company':'Wunder Designers – Independiente',
+    'about.exp.wunder.date':'2022 – Presente',
+    'about.exp.docente2.role':'Docente – Producción Audiovisual y Herramientas Digitales',
+    'about.exp.biblioteca.role':'Coordinadora de Diseño y Comunicación Digital',
+    'about.exp.biblioteca.date':'Ago 2014 – Sep 2022',
+    'about.exp.audiovisual.role':'Productora Audiovisual y Editora de Documentales',
+    // About – experience bullets
+    'about.exp.consortia.li1':'Diseño y estructuración visual del dashboard de Acuerdos Transformativos en Power BI, centralizando métricas de publicación en acceso abierto para más de 30 IES en Colombia.',
+    'about.exp.consortia.li2':'Análisis de producción académica institucional y elaboración de informes estratégicos sobre comportamiento editorial.',
+    'about.exp.consortia.li3':'Apoyo a procesos de fidelización institucional y gestión de acuerdos transformativos.',
+    'about.exp.docente1.li1':'Diseño y dictado de los módulos de Comunicación Digital y Analítica Web.',
+    'about.exp.docente1.li2':'Apoyo en construcción de propuesta de valor y presencia digital para estudiantes.',
+    'about.exp.blue.li1':'Dirección creativa y diseño de interfaces digitales para proyectos internacionales.',
+    'about.exp.blue.li2':'Desarrollo de identidad visual y coordinación con equipos multidisciplinarios remotos.',
+    'about.exp.stanton.li1':'Diseño de piezas gráficas y animadas para campañas en redes sociales en múltiples estados.',
+    'about.exp.stanton.li2':'Producción en flujos ágiles manteniendo consistencia de marca.',
+    'about.exp.risaralda.li1':'Diseño y estructuración visual de tableros de indicadores socioeconómicos por municipio en Tableau, traduciendo datasets complejos en narrativas visuales accesibles.',
+    'about.exp.risaralda.li2':'Definición de arquitectura de información y jerarquía visual para tomadores de decisión no técnicos.',
+    'about.exp.risaralda.li3':'Colaboración interdisciplinaria con analistas de datos para alinear análisis y comunicación visual.',
+    'about.exp.uautonoma.li1':'Diseño y creación de interfaces interactivas para múltiples cursos virtuales en Moodle y Storyline 360.',
+    'about.exp.uautonoma.li2':'Estructuración visual y narrativa de cursos para educación superior con enfoque en usabilidad.',
+    'about.exp.uautonoma.li3':'Optimización de experiencia de usuario en plataformas educativas digitales.',
+    'about.exp.wunder.li1':'Diseño y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.',
+    'about.exp.wunder.li2':'Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.',
+    'about.exp.wunder.li3':'Estrategias de comunicación, branding e identidad visual.',
+    'about.exp.wunder.li4':'Diseño de experiencias de aprendizaje digital (e-learning).',
+    'about.exp.docente2.li1':'Formación en producción audiovisual, narrativas visuales y herramientas digitales.',
+    'about.exp.docente2.li2':'Acompañamiento a estudiantes en construcción de narrativas visuales y sonoras.',
+    'about.exp.biblioteca.li1':'Creación e implementación del primer sistema de diseño y comunicación institucional de la biblioteca, estableciendo identidad visual coherente y lineamientos para todas las plataformas.',
+    'about.exp.biblioteca.li2':'Generación y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.',
+    'about.exp.biblioteca.li3':'Diseño y facilitación de talleres de formación en herramientas digitales.',
+    'about.exp.biblioteca.li4':'Participación en implementación del Repositorio Institucional (DSpace) y acompañamiento a investigadores en visibilidad académica (Scopus, WoS, Google Scholar).',
+    'about.exp.biblioteca.li5':'Diseño web y gestión de plataformas digitales institucionales.',
+    'about.exp.audiovisual.li1':'Producción y edición de documentales de divulgación científica e institucional.',
+    // About – education
+    'about.edu.master':'Maestría en Diseño y Creación Interactiva',
+    'about.edu.bachelor':'Profesional en Filosofía y Letras',
+    'about.edu.tech':'Tecnóloga en Sistemas Informáticos',
+    // About – complementary training
+    'about.comp.ai':'Bootcamp de Programación con Inteligencia Artificial',
+    'about.comp.powerbi':'Fundamentos de Power BI',
+    'about.comp.jsanim':'JavaScript: Animación Web',
+    // About – skills cloud
+    'skill.responsive':'Diseño Responsivo','skill.dataviz':'Visualización de Datos',
+    'skill.estrategia':'Estrategia Digital','skill.comest':'Comunicación Estratégica',
+    'skill.mktcont':'Marketing de Contenidos','skill.pensamiento':'Pensamiento Crítico',
+    'skill.gestion':'Gestión de Proyectos','skill.audiovisual.prod':'Producción Audiovisual',
+    // About – soft skills
+    'softskill.teamwork':'Trabajo en equipo','softskill.comms':'Comunicación asertiva',
+    'softskill.conflict':'Resolución de conflictos','softskill.critical':'Pensamiento crítico',
+    'softskill.collab':'Colaboración interdisciplinaria','softskill.adapt':'Adaptabilidad',
   },
   en: {
     'landing.h1':'Where do we <span class="g">start</span>?',
     'landing.sub':'Interactive Designer · Data · UX/UI · E-learning',
     'landing.about.title':'Know Me','landing.about.desc':'My story, experience, background and what drives me.',
     'landing.portfolio.title':'My Portfolio','landing.portfolio.desc':'Projects, services and interactive demos.',
+    'landing.or':'or','fab.title':'Contact',
     'nav.home':'⌂ Home','nav.portfolio':'Portfolio','nav.about':'About Me','nav.contact':'Contact','nav.cv':'↓ Download CV',
     'hero.tag':'Design · Strategy · Data · Communication','hero.h1a':'Data that','hero.h1b':'inspires design',
     'hero.sub':'Transforming complex information into visual experiences that drive decisions. 12 years integrating critical thinking, digital storytelling and technology.',
@@ -199,7 +331,7 @@ const translations = {
     'prj.tag':'Portfolio','prj.title':'<em>Featured</em> Projects','prj.sub':'Intersection of design, data and strategic communication.',
     'dash.tag':'Analytics in Action','dash.title':'Dashboard <em>Demo</em>','dash.sub':'Turning data into actionable visualizations.',
     'contact.tag':'Contact','contact.title':'Ready to <em>transform</em> your project?',
-    'contact.sub':'Tell her about your project. Whether design, strategy, dashboards or training.','contact.email':'✉ Write to her',
+    'contact.sub':'Tell me about your project. Whether design, strategy, dashboards or training.','contact.email':'✉ Write to me',
     'about.role':'Interactive UX/UI Designer · Data Visualization · E-learning','about.download':'↓ Download CV in PDF','about.download2':'↓ Download full CV in PDF',
     'about.profile.title':'Professional Profile',
     'about.profile.text':'Master\'s in Interactive Design & Creation, with a background in Philosophy and Computer Systems (Universidad de Caldas), and <strong>12 years of experience</strong> building web interfaces, interactive dashboards and digital educational experiences. Integrating humanistic critical thinking, technical foundation and <strong>UX/UI design, data visualization and AI</strong> to transform complex information into clear, actionable solutions. Collaborative, assertive communicator with a problem-solving orientation.',
@@ -226,7 +358,147 @@ const translations = {
     'srv.audiovisual.page.sub':'Producing and editing documentaries and audiovisual pieces that communicate scientific and cultural knowledge with narrative rigor and aesthetic sensibility.',
     'srv.audiovisual.page.title':'<em>Audiovisual</em> narrative','srv.audiovisual.page.cta.title':'Does your story <em>deserve to be told</em>?',
     'modal.deliverables':'What was developed','modal.tech':'Technologies & tools','modal.cta':'Have a similar project? →',
+    'modal.close':'Close',
+    // Project cards
+    'prj.ux.type':'UX · Interactive Interfaces','prj.ux.title':'Interactive Interfaces · U. Autónoma','prj.ux.tech':'UX · Interactive Design · Multimedia',
+    'prj.view':'▲ View project',
+    'prj.audiovisual.type':'Audiovisual','prj.audiovisual.title':'Scientific Outreach Documentaries','prj.audiovisual.tech':'Production · Editing · Narrative',
+    'prj.dashboard.type':'Dashboard','prj.dashboard.title':'Power BI Dashboard · Consortia SAS','prj.dashboard.tech':'Power BI · Visualization · Data',
+    'prj.biblioteca.type':'Branding · Web · Communication','prj.biblioteca.title':'Biblioteca Salmona · U. de Caldas','prj.biblioteca.tech':'Design · Outreach · Repository Portal · Events',
+    'prj.wunder.type':'Web Design','prj.wunder.tech':'HTML · CSS · JS · Animations',
+    // Dashboard demo
+    'dash.chart.title':'Project Growth','dash.chart.sub':'Last 12 months',
+    'dash.dist.title':'Distribution','dash.dist.sub':'By service',
+    'dash.legend.design':'Design 35%','dash.legend.dashboards':'Dashboards 25%','dash.legend.strategy':'Strategy 20%','dash.legend.elearning':'E-Learning 20%',
+    'dash.skills.title':'Technical Skills','dash.skills.sub':'Proficiency level',
+    // Service pages – intro & CTA subs
+    'srv.branding.intro':'A complete, coherent visual identity to position your brand with confidence.',
+    'srv.branding.cta.sub':'Tell me about your project and we\'ll build your brand together.',
+    'srv.estrategia.intro':'A clear roadmap so your digital communication delivers real results.',
+    'srv.estrategia.cta.sub':'Tell me where you are and where you want to go.',
+    'srv.dashboards.intro':'From raw data to clear decisions, without unnecessary steps.',
+    'srv.dashboards.cta.sub':'Tell me what data you have and what decisions you need to make.',
+    'srv.elearning.intro':'Courses and platforms that students actually want to use.',
+    'srv.elearning.cta.sub':'Tell me what you want to teach and who your learners are.',
+    'srv.web.intro':'From wireframe to code: sites that work and look great on any screen.',
+    'srv.web.cta.sub':'Tell me what you need to build.',
+    'srv.audiovisual.intro':'Pieces that communicate with depth, not just with images.',
+    'srv.audiovisual.cta.sub':'Tell me what you want to communicate and for whom.',
+    // Service detail items – Branding
+    'srv.branding.item1.title':'Logo Design','srv.branding.item1.desc':'Concept, sketches and final version with variants for different usage contexts.',
+    'srv.branding.item2.title':'Palette & Typography','srv.branding.item2.desc':'Color and type system that communicates your brand\'s personality.',
+    'srv.branding.item3.title':'Brand Identity Manual','srv.branding.item3.desc':'Usage guide: rules, proportions, incorrect uses and digital/print applications.',
+    'srv.branding.item4.title':'Digital Applications','srv.branding.item4.desc':'Adaptations for social media, web, presentations and digital assets.',
+    'srv.branding.item5.title':'Print Materials','srv.branding.item5.desc':'Cards, stationery, signage and any physical piece you need.',
+    'srv.branding.item6.title':'Brand Strategy','srv.branding.item6.desc':'Positioning analysis, audience and competitive differentiator for your brand.',
+    // Service detail items – Estrategia
+    'srv.estrategia.item1.title':'Content Strategy','srv.estrategia.item1.desc':'Editorial plan, key topics, formats and frequency adapted to your audience.',
+    'srv.estrategia.item2.title':'Brand Storytelling','srv.estrategia.item2.desc':'Narrative that emotionally connects your brand with the people who matter.',
+    'srv.estrategia.item3.title':'SEO Positioning','srv.estrategia.item3.desc':'Keywords, content structure and optimization for organic visibility.',
+    'srv.estrategia.item4.title':'Social Media Management','srv.estrategia.item4.desc':'Platform strategy, tone of voice and publishing support.',
+    'srv.estrategia.item5.title':'Metrics & Tracking','srv.estrategia.item5.desc':'KPI definition, results analysis and continuous strategy adjustment.',
+    'srv.estrategia.item6.title':'Value Proposition','srv.estrategia.item6.desc':'Competitive differentiator diagnosis and core message building.',
+    // Service detail items – Dashboards
+    'srv.dashboards.item1.title':'Power BI Dashboards','srv.dashboards.item1.desc':'Visual and functional design of interactive reports for teams and executives.',
+    'srv.dashboards.item2.title':'D3.js Visualization','srv.dashboards.item2.desc':'Custom interactive charts for the web, with animations and dynamic data.',
+    'srv.dashboards.item3.title':'KPI Design','srv.dashboards.item3.desc':'Selection and prioritization of key metrics aligned with business goals.',
+    'srv.dashboards.item4.title':'Executive Reports','srv.dashboards.item4.desc':'Infographics and visual reports that communicate results to non-technical audiences.',
+    'srv.dashboards.item5.title':'Data Architecture','srv.dashboards.item5.desc':'Source organization and cleanup so visualizations are accurate and reliable.',
+    'srv.dashboards.item6.title':'Data Editorial Design','srv.dashboards.item6.desc':'Static and interactive infographics with consistent visual identity.',
+    // Service detail items – E-Learning
+    'srv.elearning.item1.title':'Instructional Design','srv.elearning.item1.desc':'Pedagogical content structure: objectives, sequence, assessments and resources.',
+    'srv.elearning.item2.title':'Interactive Interfaces','srv.elearning.item2.desc':'UX/UI design of user-centered learning platforms and modules.',
+    'srv.elearning.item3.title':'LMS Integration','srv.elearning.item3.desc':'Implementation and setup in Moodle, Canvas or other learning platforms.',
+    'srv.elearning.item4.title':'Multimedia Resources','srv.elearning.item4.desc':'Videos, animations, infographics and interactive pieces to enrich the content.',
+    'srv.elearning.item5.title':'Assessments & Tracking','srv.elearning.item5.desc':'Activity design, rubrics and learning progress tracking systems.',
+    'srv.elearning.item6.title':'Accessibility','srv.elearning.item6.desc':'Courses designed to be inclusive and accessible for all types of learners.',
+    // Service detail items – Web
+    'srv.web.item1.title':'UX Research & Wireframes','srv.web.item1.desc':'User research, information architecture and prototyping before design begins.',
+    'srv.web.item2.title':'UI Design in Figma','srv.web.item2.desc':'High-fidelity visual design with a component system and style guides.',
+    'srv.web.item3.title':'HTML/CSS/JS Development','srv.web.item3.desc':'Clean, semantic and accessible code. Animations, interactions and optimized performance.',
+    'srv.web.item4.title':'WordPress','srv.web.item4.desc':'Implementation with custom themes, plugins and an easy-to-use management panel.',
+    'srv.web.item5.title':'Responsive Design','srv.web.item5.desc':'Flawless experience on mobile, tablet and desktop from the very first pixel.',
+    'srv.web.item6.title':'Institutional Portals','srv.web.item6.desc':'Repositories, academic portals and organizational sites with specific needs.',
+    // Service detail items – Audiovisual
+    'srv.audiovisual.item1.title':'Script & Narrative','srv.audiovisual.item1.desc':'Story construction: structure, narrative arc, voice and documentary pace.',
+    'srv.audiovisual.item2.title':'Production','srv.audiovisual.item2.desc':'Planning, shooting logistics, direction and technical team coordination.',
+    'srv.audiovisual.item3.title':'Video Editing','srv.audiovisual.item3.desc':'Narrative editing, color grading, sound and delivery in required formats.',
+    'srv.audiovisual.item4.title':'Science Outreach','srv.audiovisual.item4.desc':'Translating academic research into visual narratives accessible to general audiences.',
+    'srv.audiovisual.item5.title':'Institutional Pieces','srv.audiovisual.item5.desc':'Corporate videos and documentation of academic and cultural events.',
+    'srv.audiovisual.item6.title':'Distribution & Outreach','srv.audiovisual.item6.desc':'Strategy to reach the right audiences with your audiovisual content.',
+    // About – experience roles & companies (EN)
+    'about.exp.docente1.role':'Lecturer – Digital Communication & Web Analytics',
+    'about.exp.docente1.company':'Universidad de Caldas – Professional Technical Program in Digital Marketing',
+    'about.exp.blue.company':'Blue Studies International (Australia, remote)',
+    'about.exp.stanton.role':'Graphic Designer & Digital Content',
+    'about.exp.stanton.company':'Stanton Optical (USA, remote)',
+    'about.exp.risaralda.role':'Data Visualization & Dashboard Consultant',
+    'about.exp.risaralda.date':'May – Dec 2023',
+    'about.exp.uautonoma.role':'Virtual Unit Designer – E-learning & Digital Strategy',
+    'about.exp.uautonoma.date':'Jan – Nov 2023',
+    'about.exp.wunder.role':'Independent Projects – Web Design & Data',
+    'about.exp.wunder.company':'Wunder Designers – Freelance',
+    'about.exp.wunder.date':'2022 – Present',
+    'about.exp.docente2.role':'Lecturer – Audiovisual Production & Digital Tools',
+    'about.exp.biblioteca.role':'Design & Digital Communication Coordinator',
+    'about.exp.biblioteca.date':'Aug 2014 – Sep 2022',
+    'about.exp.audiovisual.role':'Audiovisual Producer & Documentary Editor',
+    // About – experience bullets (EN)
+    'about.exp.consortia.li1':'Design and visual structuring of the Transformative Agreements Power BI dashboard, centralizing open access publishing metrics for 30+ HEIs in Colombia.',
+    'about.exp.consortia.li2':'Institutional academic production analysis and strategic reporting on editorial behavior.',
+    'about.exp.consortia.li3':'Support for institutional retention processes and transformative agreement management.',
+    'about.exp.docente1.li1':'Design and delivery of the Digital Communication and Web Analytics modules.',
+    'about.exp.docente1.li2':'Support in value proposition building and digital presence for students.',
+    'about.exp.blue.li1':'Creative direction and digital interface design for international projects.',
+    'about.exp.blue.li2':'Visual identity development and coordination with remote multidisciplinary teams.',
+    'about.exp.stanton.li1':'Design of graphic and animated assets for social media campaigns across multiple states.',
+    'about.exp.stanton.li2':'Production in agile workflows while maintaining brand consistency.',
+    'about.exp.risaralda.li1':'Design and visual structuring of socioeconomic indicator dashboards by municipality in Tableau, translating complex datasets into accessible visual narratives.',
+    'about.exp.risaralda.li2':'Information architecture and visual hierarchy definition for non-technical decision-makers.',
+    'about.exp.risaralda.li3':'Interdisciplinary collaboration with data analysts to align analysis and visual communication.',
+    'about.exp.uautonoma.li1':'Design and development of interactive interfaces for multiple virtual courses in Moodle and Storyline 360.',
+    'about.exp.uautonoma.li2':'Visual and narrative structuring of higher education courses with a usability focus.',
+    'about.exp.uautonoma.li3':'User experience optimization on digital educational platforms.',
+    'about.exp.wunder.li1':'Design and development of websites with HTML5, CSS3, JavaScript and WordPress.',
+    'about.exp.wunder.li2':'Interactive dashboards and data visualizations with D3.js and Power BI.',
+    'about.exp.wunder.li3':'Communication strategies, branding and visual identity.',
+    'about.exp.wunder.li4':'Digital learning experience design (e-learning).',
+    'about.exp.docente2.li1':'Training in audiovisual production, visual narratives and digital tools.',
+    'about.exp.docente2.li2':'Student support in building visual and sound narratives.',
+    'about.exp.biblioteca.li1':'Creation and implementation of the library\'s first institutional design and communication system, establishing coherent visual identity and guidelines across all platforms.',
+    'about.exp.biblioteca.li2':'Leadership of cultural and digital humanities community spaces.',
+    'about.exp.biblioteca.li3':'Design and delivery of digital tools training workshops.',
+    'about.exp.biblioteca.li4':'Participation in implementing the Institutional Repository (DSpace) and researcher support for academic visibility (Scopus, WoS, Google Scholar).',
+    'about.exp.biblioteca.li5':'Web design and management of institutional digital platforms.',
+    'about.exp.audiovisual.li1':'Production and editing of scientific outreach and institutional documentaries.',
+    // About – education (EN)
+    'about.edu.master':"Master's in Interactive Design & Creation",
+    'about.edu.bachelor':"Bachelor's in Philosophy and Letters",
+    'about.edu.tech':'Technical Degree in Computer Systems',
+    // About – complementary training (EN)
+    'about.comp.ai':'AI Programming Bootcamp',
+    'about.comp.powerbi':'Power BI Fundamentals',
+    'about.comp.jsanim':'JavaScript: Web Animation',
+    // About – skills cloud (EN)
+    'skill.responsive':'Responsive Design','skill.dataviz':'Data Visualization',
+    'skill.estrategia':'Digital Strategy','skill.comest':'Strategic Communication',
+    'skill.mktcont':'Content Marketing','skill.pensamiento':'Critical Thinking',
+    'skill.gestion':'Project Management','skill.audiovisual.prod':'Audiovisual Production',
+    // About – soft skills (EN)
+    'softskill.teamwork':'Teamwork','softskill.comms':'Assertive communication',
+    'softskill.conflict':'Conflict resolution','softskill.critical':'Critical thinking',
+    'softskill.collab':'Interdisciplinary collaboration','softskill.adapt':'Adaptability',
   }
+};
+
+const monthLabels = {
+  es: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+  en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+};
+
+const skillLabels = {
+  es: ['Estrategia Digital','Branding & Diseño','UX / E-Learning','Data Visualization','Producción Audiovisual','Comunicación'],
+  en: ['Digital Strategy','Branding & Design','UX / E-Learning','Data Visualization','Audiovisual Production','Communication']
 };
 
 let currentLang = 'es';
@@ -243,6 +515,22 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const v = t[el.dataset.i18nHtml];
     if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const v = t[el.dataset.i18nAria];
+    if (v !== undefined) el.setAttribute('aria-label', v);
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const v = t[el.dataset.i18nTitle];
+    if (v !== undefined) el.setAttribute('title', v);
+  });
+  // Update dynamically generated chart month labels
+  document.querySelectorAll('#mainChart .bl').forEach((el, i) => {
+    if (monthLabels[lang][i]) el.textContent = monthLabels[lang][i];
+  });
+  // Update dynamically generated skill bar labels
+  document.querySelectorAll('#skillBars .mb-label').forEach((el, i) => {
+    if (skillLabels[lang][i]) el.textContent = skillLabels[lang][i];
   });
   const btn = document.getElementById('langBtn');
   btn.textContent = lang === 'es' ? 'EN' : 'ES';
