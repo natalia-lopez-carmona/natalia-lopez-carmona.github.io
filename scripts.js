@@ -309,6 +309,40 @@ const translations = {
     'softskill.teamwork':'Trabajo en equipo','softskill.comms':'Comunicación asertiva',
     'softskill.conflict':'Resolución de conflictos','softskill.critical':'Pensamiento crítico',
     'softskill.collab':'Colaboración interdisciplinaria','softskill.adapt':'Adaptabilidad',
+    // Portfolio page – Hero
+    'pflio.hero.badge':'Diseñadora Interactiva · Manizales, Colombia · 2026',
+    'pflio.hero.tagline':'Diseño web, visualización de datos y experiencias digitales que transforman información compleja en decisiones claras.',
+    'pflio.hero.pill.web':'Diseño Web','pflio.hero.pill.strategy':'Estrategia Digital',
+    'pflio.hero.cta1':'Ver proyectos →','pflio.hero.cta2':'Hablemos',
+    'pflio.hero.stat1':'años de experiencia','pflio.hero.stat2':'áreas de servicio','pflio.hero.stat3':'proyectos destacados',
+    // Portfolio page – Sobre mí
+    'sobre.tag':'Sobre mí',
+    'sobre.title':'Datos que <em style="color:var(--violet)">inspiran diseño</em>',
+    'sobre.bio1':'Soy Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos. Con más de 12 años de experiencia, combino diseño UX/UI, visualización de datos e inteligencia artificial para transformar información compleja en experiencias visuales que impulsan decisiones.',
+    'sobre.bio2':'Desde dashboards en Power BI y D3.js hasta e-learning, branding y documentales científicos — mi trabajo vive en la intersección entre estética, datos y comunicación estratégica.',
+    'sobre.cta':'Ver CV completo →',
+    'sobre.exp1':'Años de experiencia','sobre.exp2':'Estrategia Digital','sobre.exp3':'UX / E-Learning','sobre.exp4':'Data Visualization',
+    'sobre.location':'📍 Manizales, Colombia &nbsp;·&nbsp; Español nativo · Inglés B1',
+    // Portfolio page – Servicios (nuevo título)
+    'srv.section.title2':'Lo que puedo <em>hacer por ti</em>',
+    // Portfolio page – Impacto
+    'impact.tag':'Impacto tangible',
+    'impact.title':'Los números <em>que importan</em>',
+    'impact.stat1':'Años de experiencia profesional','impact.stat2':'Branding & Diseño',
+    'impact.stat3':'Comunicación estratégica','impact.stat4':'Proyectos destacados',
+    'impact.cta.text':'Combinamos diseño, estrategia y tecnología para que tu comunicación genere resultados reales.',
+    'impact.cta.btn':'Hablemos de tu proyecto',
+    // Portfolio page – Habilidades
+    'skills.tag':'Competencias',
+    'skills.title':'Habilidades <em>Técnicas</em>',
+    'skills.col1':'Nivel de dominio','skills.col2':'Stack Tecnológico','skills.col3':'Habilidades Blandas',
+    'skills.bar1':'Comunicación Estratégica','skills.bar2':'Estrategia Digital',
+    'skills.bar3':'Branding & Diseño','skills.bar4':'Producción Audiovisual',
+    'skills.bar5':'UX / E-Learning','skills.bar6':'Data Visualization',
+    // Portfolio page – Contacto (formulario)
+    'contact.ph.name':'Tu nombre','contact.ph.email':'Tu correo electrónico',
+    'contact.ph.subject':'Asunto','contact.ph.message':'Cuéntame sobre tu proyecto…',
+    'contact.form.btn':'Enviar mensaje →',
   },
   en: {
     'landing.h1':'Where do we <span class="g">start</span>?',
@@ -488,6 +522,40 @@ const translations = {
     'softskill.teamwork':'Teamwork','softskill.comms':'Assertive communication',
     'softskill.conflict':'Conflict resolution','softskill.critical':'Critical thinking',
     'softskill.collab':'Interdisciplinary collaboration','softskill.adapt':'Adaptability',
+    // Portfolio page – Hero (EN)
+    'pflio.hero.badge':'Interactive Designer · Manizales, Colombia · 2026',
+    'pflio.hero.tagline':'Web design, data visualization and digital experiences that turn complex information into clear decisions.',
+    'pflio.hero.pill.web':'Web Design','pflio.hero.pill.strategy':'Digital Strategy',
+    'pflio.hero.cta1':'View projects →','pflio.hero.cta2':"Let's talk",
+    'pflio.hero.stat1':'years of experience','pflio.hero.stat2':'service areas','pflio.hero.stat3':'featured projects',
+    // Portfolio page – About (EN)
+    'sobre.tag':'About me',
+    'sobre.title':'Data that <em style="color:var(--violet)">inspires design</em>',
+    'sobre.bio1':"I hold a Master's in Interactive Design & Creation, with a background in Philosophy and Computer Systems. With over 12 years of experience, I combine UX/UI design, data visualization and AI to transform complex information into visual experiences that drive decisions.",
+    'sobre.bio2':'From Power BI and D3.js dashboards to e-learning, branding and scientific documentaries — my work lives at the intersection of aesthetics, data and strategic communication.',
+    'sobre.cta':'View full CV →',
+    'sobre.exp1':'Years of experience','sobre.exp2':'Digital Strategy','sobre.exp3':'UX / E-Learning','sobre.exp4':'Data Visualization',
+    'sobre.location':'📍 Manizales, Colombia &nbsp;·&nbsp; Native Spanish · English B1',
+    // Portfolio page – Services (EN)
+    'srv.section.title2':'What I can <em>do for you</em>',
+    // Portfolio page – Impact (EN)
+    'impact.tag':'Tangible impact',
+    'impact.title':'The numbers <em>that matter</em>',
+    'impact.stat1':'Years of professional experience','impact.stat2':'Branding & Design',
+    'impact.stat3':'Strategic communication','impact.stat4':'Featured projects',
+    'impact.cta.text':'Combining design, strategy and technology so your communication delivers real results.',
+    'impact.cta.btn':"Let's talk about your project",
+    // Portfolio page – Skills (EN)
+    'skills.tag':'Skills',
+    'skills.title':'Technical <em>Skills</em>',
+    'skills.col1':'Proficiency level','skills.col2':'Tech Stack','skills.col3':'Soft Skills',
+    'skills.bar1':'Strategic Communication','skills.bar2':'Digital Strategy',
+    'skills.bar3':'Branding & Design','skills.bar4':'Audiovisual Production',
+    'skills.bar5':'UX / E-Learning','skills.bar6':'Data Visualization',
+    // Portfolio page – Contact form (EN)
+    'contact.ph.name':'Your name','contact.ph.email':'Your email address',
+    'contact.ph.subject':'Subject','contact.ph.message':'Tell me about your project…',
+    'contact.form.btn':'Send message →',
   }
 };
 
@@ -523,6 +591,10 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-title]').forEach(el => {
     const v = t[el.dataset.i18nTitle];
     if (v !== undefined) el.setAttribute('title', v);
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = t[el.dataset.i18nPlaceholder];
+    if (v !== undefined) el.setAttribute('placeholder', v);
   });
   // Update dynamically generated chart month labels
   document.querySelectorAll('#mainChart .bl').forEach((el, i) => {
@@ -795,6 +867,20 @@ if (skillContainer) {
   });
   skillObserver.observe(skillContainer);
 }
+
+// ═══ SKILL BARS (nueva sección habilidades)
+const skillRowObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.animated) {
+      e.target.dataset.animated = '1';
+      e.target.querySelectorAll('.skill-row-fill').forEach(f => {
+        f.style.width = (f.dataset.width || '0') + '%';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+const skillBarCol = document.getElementById('skillsBarCol');
+if (skillBarCol) skillRowObserver.observe(skillBarCol);
 
 // ═══ INTERACTIVE CANVAS SHAPES
 const canvas = document.getElementById('shapes-canvas');
@@ -1434,7 +1520,6 @@ class DualOrbitAnim extends HeroAnim {
 }
 
 // ── Registro e inicialización ─────────────────────────────────────────────────
-HeroAnimationManager.register('landing',        new DualOrbitAnim('hc-landing'));
 HeroAnimationManager.register('portfolio',      new NodeNetworkAnim('hc-portfolio'));
 HeroAnimationManager.register('srv-branding',   new MorphShapesAnim('hc-branding'));
 HeroAnimationManager.register('srv-estrategia', new SignalWavesAnim('hc-estrategia'));
@@ -1442,13 +1527,13 @@ HeroAnimationManager.register('srv-dashboards', new DataGridAnim('hc-dashboards'
 HeroAnimationManager.register('srv-elearning',  new ConstellationAnim('hc-elearning'));
 HeroAnimationManager.register('srv-web',        new WireframeAnim('hc-web'));
 HeroAnimationManager.register('srv-audiovisual',new WaveformAnim('hc-audiovisual'));
-HeroAnimationManager.activate('landing');
+HeroAnimationManager.activate('portfolio');
 
 // ═══ BFCACHE FIX — reinicia animaciones y reveals al volver con el botón atrás
 window.addEventListener('pageshow', e => {
   if (e.persisted) {
     const activePage = document.querySelector('.page.active');
-    const pageId = activePage ? activePage.id.replace('page-', '') : 'landing';
+    const pageId = activePage ? activePage.id.replace('page-', '') : 'portfolio';
     initReveals();
     HeroAnimationManager.activate(pageId);
   }
