@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Natalia López Carmona</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark:#1A1A2E; --violet:#7B61D9; --lime:#C6F135; --lime-dk:#8AB800;
+      --orange:#FF5733; --cream:#F5F3EE; --cream2:#EBE8E0;
+      --white:#FFFFFF; --bg:#FAFAF7; --gray:#666677; --lgray:#999;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--dark); }
+
+    /* ── TOOLBAR ── */
+    #cv-toolbar {
+      position:sticky; top:0; z-index:100; background:var(--dark);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; gap:1rem; flex-wrap:wrap;
+    }
+    .toolbar-label {
+      font-size:.75rem; font-weight:600; color:rgba(255,255,255,.5);
+      text-transform:uppercase; letter-spacing:3px;
+    }
+    .toolbar-actions { display:flex; gap:.75rem; align-items:center; }
+    .btn-print {
+      padding:.7rem 1.8rem; border-radius:100px; border:none;
+      background:var(--lime); color:var(--dark); font-family:'Poppins',sans-serif;
+      font-weight:700; font-size:.78rem; cursor:pointer; transition:all .2s;
+    }
+    .btn-print:hover { background:var(--orange); color:var(--white); }
+    .btn-word {
+      padding:.7rem 1.8rem; border-radius:100px; border:none;
+      background:rgba(255,255,255,.12); color:var(--white); font-family:'Poppins',sans-serif;
+      font-weight:700; font-size:.78rem; cursor:pointer; transition:all .2s;
+    }
+    .btn-word:hover { background:#2B5BE8; }
+
+    /* ── CV PAGE ── */
+    .cv-page {
+      max-width:860px; margin:0 auto;
+      padding:60px 48px 80px;
+    }
+    .cv-header { text-align:center; margin-bottom:40px; }
+    .cv-ring {
+      width:110px; height:110px; border-radius:50%;
+      background:conic-gradient(var(--lime),var(--orange),var(--violet),var(--lime));
+      padding:3px; margin:0 auto 18px; animation:spin 10s linear infinite;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .cv-ring-inner {
+      width:100%; height:100%; border-radius:50%; background:var(--bg);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Raleway',sans-serif; font-size:2.4rem; font-weight:900; color:var(--violet);
+    }
+    .cv-name {
+      font-family:'Raleway',sans-serif; font-size:2.2rem; font-weight:900;
+      letter-spacing:-1px; color:var(--dark); line-height:1.1;
+    }
+    .cv-name span { color:var(--violet); }
+    .cv-role {
+      font-size:.68rem; font-weight:600; text-transform:uppercase;
+      letter-spacing:4px; color:var(--orange); margin-top:4px;
+    }
+    .cv-contact-row {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:16px;
+    }
+    .cv-ci {
+      font-size:.7rem; color:var(--gray); padding:6px 14px; border-radius:100px;
+      background:var(--white); border:1px solid rgba(0,0,0,.06);
+      text-decoration:none; transition:all .3s;
+    }
+    .cv-ci:hover { background:var(--dark); color:var(--lime); }
+    .cv-sec { margin-bottom:36px; }
+    .cv-sec-title {
+      font-family:'Raleway',sans-serif; font-size:1.1rem; font-weight:900;
+      text-transform:uppercase; letter-spacing:2px; color:var(--violet);
+      padding-bottom:8px; border-bottom:2px solid var(--violet);
+      margin-bottom:18px; display:flex; align-items:center; gap:10px;
+    }
+    .cv-sec-title::after { content:''; flex:1; height:1px; background:rgba(0,0,0,.08); }
+    .cv-profile {
+      font-size:.88rem; line-height:1.85; color:var(--gray);
+      padding:22px 26px; border-radius:16px; background:var(--white);
+      border:1px solid rgba(0,0,0,.06); position:relative; overflow:hidden;
+    }
+    .cv-profile::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(90deg,var(--violet),var(--orange),var(--lime));
+    }
+    .cv-profile strong { color:var(--violet); font-weight:600; }
+    .cv-exp {
+      margin-bottom:18px; padding:22px 24px; border-radius:16px;
+      background:var(--white); border:1px solid rgba(0,0,0,.06);
+      border-left:3px solid var(--violet); transition:all .35s;
+    }
+    .cv-exp:hover { box-shadow:0 8px 28px rgba(0,0,0,.06); transform:translateY(-3px); }
+    .cv-exp:nth-child(even) { border-left-color:var(--orange); }
+    .cv-exp-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:6px; }
+    .cv-exp-role { font-family:'Raleway',sans-serif; font-size:.95rem; font-weight:800; color:var(--dark); }
+    .cv-exp-date { font-size:.62rem; font-weight:700; padding:4px 12px; border-radius:100px; background:var(--cream2); color:var(--gray); white-space:nowrap; }
+    .cv-exp-company { font-size:.78rem; font-weight:500; color:var(--violet); margin-top:2px; }
+    .cv-exp-list { list-style:none; margin-top:10px; }
+    .cv-exp-list li {
+      position:relative; padding-left:16px; margin-bottom:4px;
+      font-size:.78rem; line-height:1.7; color:var(--gray);
+    }
+    .cv-exp-list li::before {
+      content:''; position:absolute; left:0; top:8px;
+      width:6px; height:6px; border-radius:2px; background:var(--violet);
+    }
+    .cv-exp:nth-child(even) .cv-exp-list li::before { background:var(--orange); }
+    .cv-edu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .cv-edu {
+      padding:20px; border-radius:14px; background:var(--white);
+      border:1px solid rgba(0,0,0,.06); border-top:3px solid var(--violet);
+    }
+    .cv-edu:nth-child(2) { border-top-color:var(--orange); }
+    .cv-edu:nth-child(3) { border-top-color:var(--lime-dk); }
+    .cv-edu-year { font-size:.65rem; font-weight:700; color:var(--violet); }
+    .cv-edu:nth-child(2) .cv-edu-year { color:var(--orange); }
+    .cv-edu:nth-child(3) .cv-edu-year { color:var(--lime-dk); }
+    .cv-edu h4 { font-family:'Raleway',sans-serif; font-size:.82rem; font-weight:700; margin-top:3px; line-height:1.3; color:var(--dark); }
+    .cv-edu p { font-size:.68rem; color:var(--lgray); margin-top:2px; }
+    .cv-skills-cloud { display:flex; flex-wrap:wrap; gap:7px; }
+    .cv-sk {
+      font-size:.65rem; font-weight:600; padding:6px 14px; border-radius:100px;
+      border:1px solid rgba(0,0,0,.08); color:var(--gray);
+    }
+    .cv-sk.tv { border-color:rgba(123,97,217,.3); color:var(--violet); }
+    .cv-sk.to { border-color:rgba(255,87,51,.3); color:var(--orange); }
+    .cv-sk.tl { border-color:rgba(138,184,0,.3); color:var(--lime-dk); }
+
+    /* ── PRINT ── */
+    @media print {
+      #cv-toolbar { display:none; }
+      body { background:white; }
+      .cv-page { padding:20px; max-width:100%; }
+      .cv-exp, .cv-edu, .cv-profile { break-inside:avoid; }
+      .cv-ring { animation:none; }
+      @page { margin:1.5cm; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:600px) {
+      .cv-page { padding:40px 20px 60px; }
+      .cv-edu-grid { grid-template-columns:1fr; }
+      .cv-name { font-size:1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cv-toolbar">
+    <span class="toolbar-label">CV — Natalia López Carmona</span>
+    <div class="toolbar-actions">
+      <button class="btn-word" onclick="downloadWord()">↓ Descargar Word</button>
+      <button class="btn-print" onclick="window.print()">↓ Imprimir / Guardar PDF</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="cv-page">
+
+      <div class="cv-header">
+        <div class="cv-ring"><div class="cv-ring-inner">NL</div></div>
+        <h1 class="cv-name">Natalia <span>López</span> Carmona</h1>
+        <p class="cv-role">Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning</p>
+        <div class="cv-contact-row">
+          <span class="cv-ci">📍 Manizales, Colombia</span>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="cv-ci">✉ natalia.lopez.wd@gmail.com</a>
+          <a href="tel:+573024260911" class="cv-ci">📱 +57 302 426 0911</a>
+          <a href="tel:+573137486249" class="cv-ci">📱 +57 313 748 6249</a>
+          <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cv-ci">LinkedIn</a>
+          <a href="https://www.behance.net/natalialpez21" target="_blank" class="cv-ci">Behance</a>
+          <a href="https://github.com/natalia-lopez-carmona" target="_blank" class="cv-ci">GitHub</a>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Perfil Profesional</h2>
+        <div class="cv-profile">
+          Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y <strong>12 años de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y <strong>diseño UX/UI, visualización de datos e inteligencia artificial</strong> para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Experiencia Profesional</h2>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Research &amp; Data Analyst</p><p class="cv-exp-company">Consortia Colombia</p></div>
+            <span class="cv-exp-date">Mar 2025 – Feb 2026</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y estructuración visual del dashboard de Acuerdos Transformativos en Power BI, centralizando métricas de publicación en acceso abierto para más de 30 IES en Colombia.</li>
+            <li>Análisis de producción académica institucional y elaboración de informes estratégicos sobre comportamiento editorial.</li>
+            <li>Apoyo a procesos de fidelización institucional y gestión de acuerdos transformativos.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Docente – Comunicación Digital y Analítica Web</p><p class="cv-exp-company">Universidad de Caldas – Técnico Profesional en Marketing Digital</p></div>
+            <span class="cv-exp-date">Feb–Mar 2025 / Mar–May 2026</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y dictado de los módulos de Comunicación Digital y Analítica Web.</li>
+            <li>Apoyo en construcción de propuesta de valor y presencia digital para estudiantes.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Design Lead</p><p class="cv-exp-company">Blue Studies International (Australia, remoto)</p></div>
+            <span class="cv-exp-date">Mar – Oct 2024</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Dirección creativa y diseño de interfaces digitales para proyectos internacionales.</li>
+            <li>Desarrollo de identidad visual y coordinación con equipos multidisciplinarios remotos.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Diseñadora Gráfica y Contenido Digital</p><p class="cv-exp-company">Stanton Optical (EE.UU., remoto)</p></div>
+            <span class="cv-exp-date">Nov 2023 – Feb 2024</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño de piezas gráficas y animadas para campañas en redes sociales en múltiples estados.</li>
+            <li>Producción en flujos ágiles manteniendo consistencia de marca.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Consultora – Visualización de Datos y Dashboards</p><p class="cv-exp-company">Laboratorio de Desarrollo Territorial de Risaralda</p></div>
+            <span class="cv-exp-date">May – Dic 2023</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y estructuración visual de tableros de indicadores socioeconómicos por municipio en Tableau, traduciendo datasets complejos en narrativas visuales accesibles.</li>
+            <li>Definición de arquitectura de información y jerarquía visual para tomadores de decisión no técnicos.</li>
+            <li>Colaboración interdisciplinaria con analistas de datos para alinear análisis y comunicación visual.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Diseñadora de Unidad Virtual – E-learning y Estrategia Digital</p><p class="cv-exp-company">Universidad Autónoma de Manizales</p></div>
+            <span class="cv-exp-date">Ene – Nov 2023</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y creación de interfaces interactivas para múltiples cursos virtuales en Moodle y Storyline 360.</li>
+            <li>Estructuración visual y narrativa de cursos para educación superior con enfoque en usabilidad.</li>
+            <li>Optimización de experiencia de usuario en plataformas educativas digitales.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Proyectos Independientes – Diseño Web y Datos</p><p class="cv-exp-company">Freelance</p></div>
+            <span class="cv-exp-date">2022 – Presente</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Diseño y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.</li>
+            <li>Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.</li>
+            <li>Estrategias de comunicación, branding e identidad visual.</li>
+            <li>Diseño de experiencias de aprendizaje digital (e-learning).</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Docente – Producción Audiovisual y Herramientas Digitales</p><p class="cv-exp-company">Universidad Católica Luis Amigó / Unitécnica</p></div>
+            <span class="cv-exp-date">2022 – 2023</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Formación en producción audiovisual, narrativas visuales y herramientas digitales.</li>
+            <li>Acompañamiento a estudiantes en construcción de narrativas visuales y sonoras.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Coordinadora de Diseño y Comunicación Digital</p><p class="cv-exp-company">Centro de Bibliotecas Rogelio Salmona – U. de Caldas</p></div>
+            <span class="cv-exp-date">Ago 2014 – Sep 2022</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Creación e implementación del primer sistema de diseño y comunicación institucional de la biblioteca.</li>
+            <li>Generación y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.</li>
+            <li>Diseño y facilitación de talleres de formación en herramientas digitales.</li>
+            <li>Participación en implementación del Repositorio Institucional (DSpace) y acompañamiento a investigadores en visibilidad académica (Scopus, WoS, Google Scholar).</li>
+            <li>Diseño web y gestión de plataformas digitales institucionales.</li>
+          </ul>
+        </div>
+
+        <div class="cv-exp">
+          <div class="cv-exp-header">
+            <div><p class="cv-exp-role">Productora Audiovisual y Editora de Documentales</p><p class="cv-exp-company">Universidad de Caldas</p></div>
+            <span class="cv-exp-date">2004 – 2014</span>
+          </div>
+          <ul class="cv-exp-list">
+            <li>Producción y edición de documentales de divulgación científica e institucional.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Educación</h2>
+        <div class="cv-edu-grid">
+          <div class="cv-edu"><span class="cv-edu-year">2013 – 2018</span><h4>Maestría en Diseño y Creación Interactiva</h4><p>Universidad de Caldas</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2002 – 2010</span><h4>Profesional en Filosofía y Letras</h4><p>Universidad de Caldas</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2007 – 2009</span><h4>Tecnóloga en Sistemas Informáticos</h4><p>Universidad de Caldas</p></div>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Formación Complementaria</h2>
+        <div class="cv-edu-grid">
+          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4>Bootcamp de Programación con Inteligencia Artificial</h4><p></p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4>AI Literacy</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2025</span><h4>Fundamentos de Power BI</h4><p>CONFA</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Enterprise Design Thinking Practitioner</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Agile Explorer</h4><p>IBM</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>User Experience for Web Design</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>Figma for UX Design</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>JavaScript: Animación Web</h4><p>LinkedIn Learning</p></div>
+          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>SEO</h4><p>HubSpot Academy</p></div>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Habilidades Técnicas</h2>
+        <div class="cv-skills-cloud">
+          <span class="cv-sk tv">HTML5 / CSS3 / JS</span>
+          <span class="cv-sk tl">Diseño Responsivo</span>
+          <span class="cv-sk to">SVG / Canvas</span>
+          <span class="cv-sk tv">WordPress</span>
+          <span class="cv-sk tl">React</span>
+          <span class="cv-sk to">Python</span>
+          <span class="cv-sk tv">Visualización de Datos</span>
+          <span class="cv-sk tl">Dashboard Design</span>
+          <span class="cv-sk to">Power BI</span>
+          <span class="cv-sk tv">Tableau</span>
+          <span class="cv-sk tl">D3.js</span>
+          <span class="cv-sk to">UX/UI Design</span>
+          <span class="cv-sk tv">Figma</span>
+          <span class="cv-sk tl">Adobe Suite</span>
+          <span class="cv-sk to">Moodle</span>
+          <span class="cv-sk tv">Storyline 360</span>
+          <span class="cv-sk tl">DSpace</span>
+          <span class="cv-sk to">Git / GitHub</span>
+          <span class="cv-sk tv">Estrategia Digital</span>
+          <span class="cv-sk tl">Branding</span>
+          <span class="cv-sk to">Storytelling</span>
+          <span class="cv-sk tv">E-Learning</span>
+          <span class="cv-sk tl">Comunicación Estratégica</span>
+          <span class="cv-sk to">Marketing de Contenidos</span>
+          <span class="cv-sk tv">Pensamiento Crítico</span>
+          <span class="cv-sk tl">Gestión de Proyectos</span>
+          <span class="cv-sk to">Producción Audiovisual</span>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Habilidades Blandas</h2>
+        <div class="cv-skills-cloud">
+          <span class="cv-sk tv">Trabajo en equipo</span>
+          <span class="cv-sk tl">Comunicación asertiva</span>
+          <span class="cv-sk to">Resolución de conflictos</span>
+          <span class="cv-sk tv">Pensamiento crítico</span>
+          <span class="cv-sk tl">Colaboración interdisciplinaria</span>
+          <span class="cv-sk to">Adaptabilidad</span>
+          <span class="cv-sk tv">Gestión de proyectos</span>
+        </div>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Idiomas</h2>
+        <p style="font-size:.85rem;color:#666677">Español — Nativo &nbsp;·&nbsp; Inglés — B1</p>
+      </div>
+
+      <div class="cv-sec">
+        <h2 class="cv-sec-title">Publicaciones</h2>
+        <p style="font-size:.85rem;color:#666677"><em>Exploraciones Hermenéutico-Ricoeurianas en Diseño</em> — Universidad de Caldas</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+  function downloadWord() {
+    const doc = `<html xmlns:o='urn:schemas-microsoft-com:office:office'
+xmlns:w='urn:schemas-microsoft-com:office:word'
+xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>CV ATS - Natalia Lopez Carmona</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Normal</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->
+<style>
+  body  { font-family:Calibri,Arial,sans-serif; font-size:11pt; color:#111; margin:2cm 2.5cm; line-height:1.4; }
+  h1    { font-size:18pt; font-weight:700; color:#111; margin:0 0 2pt; }
+  .role { font-size:10pt; color:#333; margin:0 0 6pt; }
+  .contact { font-size:9.5pt; color:#333; margin:0 0 18pt; }
+  h2    { font-size:11pt; font-weight:700; text-transform:uppercase; letter-spacing:1pt;
+          color:#111; border-bottom:1pt solid #111; padding-bottom:2pt; margin:16pt 0 8pt; }
+  h3    { font-size:11pt; font-weight:700; color:#111; margin:10pt 0 1pt; }
+  .co   { font-size:10pt; color:#333; margin:0 0 4pt; }
+  ul    { margin:4pt 0 0 16pt; padding:0; }
+  li    { font-size:10pt; color:#222; margin-bottom:2pt; line-height:1.5; }
+  .edu-item { margin-bottom:8pt; }
+  .edu-item h3 { margin-bottom:0; }
+  .skills { font-size:10pt; color:#222; margin:0; line-height:1.7; }
+  p     { margin:0 0 4pt; }
+</style>
+</head>
+<body>
+
+<h1>Natalia L&#xF3;pez Carmona</h1>
+<p class="role">Dise&#xF1;adora Interactiva UX/UI &nbsp;|&nbsp; Visualizaci&#xF3;n de Datos &nbsp;|&nbsp; E-learning</p>
+<p class="contact">
+  Manizales, Colombia &nbsp;|&nbsp;
+  natalia.lopez.wd@gmail.com &nbsp;|&nbsp;
+  +57 302 426 0911 &nbsp;|&nbsp; +57 313 748 6249<br>
+  linkedin.com/in/natalia-lopez-carmona &nbsp;|&nbsp;
+  behance.net/natalialpez21 &nbsp;|&nbsp;
+  github.com/natalia-lopez-carmona
+</p>
+
+<h2>Perfil Profesional</h2>
+<p>Mag&#xED;ster en Dise&#xF1;o y Creaci&#xF3;n Interactiva, con formaci&#xF3;n en Filosof&#xED;a y Letras y Tecnolog&#xED;a en Sistemas Inform&#xE1;ticos (Universidad de Caldas), y <strong>12 a&#xF1;os de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento cr&#xED;tico human&#xED;stico, base tecnol&#xF3;gica y dise&#xF1;o UX/UI, visualizaci&#xF3;n de datos e inteligencia artificial para transformar informaci&#xF3;n compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicaci&#xF3;n asertiva y orientaci&#xF3;n a la resoluci&#xF3;n de problemas.</p>
+
+<h2>Experiencia Profesional</h2>
+
+<h3>Research &amp; Data Analyst</h3>
+<p class="co">Consortia Colombia &nbsp;|&nbsp; Mar 2025 &#x2013; Feb 2026</p>
+<ul>
+  <li>Dise&#xF1;o y estructuraci&#xF3;n visual del dashboard de Acuerdos Transformativos en Power BI, centralizando m&#xE9;tricas de publicaci&#xF3;n en acceso abierto para m&#xE1;s de 30 IES en Colombia.</li>
+  <li>An&#xE1;lisis de producci&#xF3;n acad&#xE9;mica institucional y elaboraci&#xF3;n de informes estrat&#xE9;gicos sobre comportamiento editorial.</li>
+  <li>Apoyo a procesos de fidelizaci&#xF3;n institucional y gesti&#xF3;n de acuerdos transformativos.</li>
+</ul>
+
+<h3>Docente &#x2013; Comunicaci&#xF3;n Digital y Anal&#xED;tica Web</h3>
+<p class="co">Universidad de Caldas &#x2013; T&#xE9;cnico Profesional en Marketing Digital &nbsp;|&nbsp; Feb&#x2013;Mar 2025 / Mar&#x2013;May 2026</p>
+<ul>
+  <li>Dise&#xF1;o y dictado de los m&#xF3;dulos de Comunicaci&#xF3;n Digital y Anal&#xED;tica Web.</li>
+  <li>Apoyo en construcci&#xF3;n de propuesta de valor y presencia digital para estudiantes.</li>
+</ul>
+
+<h3>Design Lead</h3>
+<p class="co">Blue Studies International (Australia, remoto) &nbsp;|&nbsp; Mar &#x2013; Oct 2024</p>
+<ul>
+  <li>Direcci&#xF3;n creativa y dise&#xF1;o de interfaces digitales para proyectos internacionales.</li>
+  <li>Desarrollo de identidad visual y coordinaci&#xF3;n con equipos multidisciplinarios remotos.</li>
+</ul>
+
+<h3>Dise&#xF1;adora Gr&#xE1;fica y Contenido Digital</h3>
+<p class="co">Stanton Optical (EE.UU., remoto) &nbsp;|&nbsp; Nov 2023 &#x2013; Feb 2024</p>
+<ul>
+  <li>Dise&#xF1;o de piezas gr&#xE1;ficas y animadas para campa&#xF1;as en redes sociales en m&#xFA;ltiples estados.</li>
+  <li>Producci&#xF3;n en flujos &#xE1;giles manteniendo consistencia de marca.</li>
+</ul>
+
+<h3>Consultora &#x2013; Visualizaci&#xF3;n de Datos y Dashboards</h3>
+<p class="co">Laboratorio de Desarrollo Territorial de Risaralda &nbsp;|&nbsp; May &#x2013; Dic 2023</p>
+<ul>
+  <li>Dise&#xF1;o y estructuraci&#xF3;n visual de tableros de indicadores socioecon&#xF3;micos por municipio en Tableau, traduciendo datasets complejos en narrativas visuales accesibles.</li>
+  <li>Definici&#xF3;n de arquitectura de informaci&#xF3;n y jerarqu&#xED;a visual para tomadores de decisi&#xF3;n no t&#xE9;cnicos.</li>
+  <li>Colaboraci&#xF3;n interdisciplinaria con analistas de datos para alinear an&#xE1;lisis y comunicaci&#xF3;n visual.</li>
+</ul>
+
+<h3>Dise&#xF1;adora de Unidad Virtual &#x2013; E-learning y Estrategia Digital</h3>
+<p class="co">Universidad Aut&#xF3;noma de Manizales &nbsp;|&nbsp; Ene &#x2013; Nov 2023</p>
+<ul>
+  <li>Dise&#xF1;o y creaci&#xF3;n de interfaces interactivas para m&#xFA;ltiples cursos virtuales en Moodle y Storyline 360.</li>
+  <li>Estructuraci&#xF3;n visual y narrativa de cursos para educaci&#xF3;n superior con enfoque en usabilidad.</li>
+  <li>Optimizaci&#xF3;n de experiencia de usuario en plataformas educativas digitales.</li>
+</ul>
+
+<h3>Proyectos Independientes &#x2013; Dise&#xF1;o Web y Datos</h3>
+<p class="co">Freelance &nbsp;|&nbsp; 2022 &#x2013; Presente</p>
+<ul>
+  <li>Dise&#xF1;o y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.</li>
+  <li>Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.</li>
+  <li>Estrategias de comunicaci&#xF3;n, branding e identidad visual.</li>
+  <li>Dise&#xF1;o de experiencias de aprendizaje digital (e-learning).</li>
+</ul>
+
+<h3>Docente &#x2013; Producci&#xF3;n Audiovisual y Herramientas Digitales</h3>
+<p class="co">Universidad Cat&#xF3;lica Luis Amig&#xF3; / Unit&#xE9;cnica &nbsp;|&nbsp; 2022 &#x2013; 2023</p>
+<ul>
+  <li>Formaci&#xF3;n en producci&#xF3;n audiovisual, narrativas visuales y herramientas digitales.</li>
+  <li>Acompa&#xF1;amiento a estudiantes en construcci&#xF3;n de narrativas visuales y sonoras.</li>
+</ul>
+
+<h3>Coordinadora de Dise&#xF1;o y Comunicaci&#xF3;n Digital</h3>
+<p class="co">Centro de Bibliotecas Rogelio Salmona &#x2013; U. de Caldas &nbsp;|&nbsp; Ago 2014 &#x2013; Sep 2022</p>
+<ul>
+  <li>Creaci&#xF3;n e implementaci&#xF3;n del primer sistema de dise&#xF1;o y comunicaci&#xF3;n institucional de la biblioteca.</li>
+  <li>Generaci&#xF3;n y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.</li>
+  <li>Dise&#xF1;o y facilitaci&#xF3;n de talleres de formaci&#xF3;n en herramientas digitales.</li>
+  <li>Participaci&#xF3;n en implementaci&#xF3;n del Repositorio Institucional (DSpace) y acompa&#xF1;amiento a investigadores en visibilidad acad&#xE9;mica (Scopus, WoS, Google Scholar).</li>
+  <li>Dise&#xF1;o web y gesti&#xF3;n de plataformas digitales institucionales.</li>
+</ul>
+
+<h3>Productora Audiovisual y Editora de Documentales</h3>
+<p class="co">Universidad de Caldas &nbsp;|&nbsp; 2004 &#x2013; 2014</p>
+<ul>
+  <li>Producci&#xF3;n y edici&#xF3;n de documentales de divulgaci&#xF3;n cient&#xED;fica e institucional.</li>
+</ul>
+
+<h2>Educaci&#xF3;n</h2>
+
+<div class="edu-item">
+  <h3>Maestr&#xED;a en Dise&#xF1;o y Creaci&#xF3;n Interactiva</h3>
+  <p class="co">Universidad de Caldas &nbsp;|&nbsp; 2013 &#x2013; 2018</p>
+</div>
+<div class="edu-item">
+  <h3>Profesional en Filosof&#xED;a y Letras</h3>
+  <p class="co">Universidad de Caldas &nbsp;|&nbsp; 2002 &#x2013; 2010</p>
+</div>
+<div class="edu-item">
+  <h3>Tecn&#xF3;loga en Sistemas Inform&#xE1;ticos</h3>
+  <p class="co">Universidad de Caldas &nbsp;|&nbsp; 2007 &#x2013; 2009</p>
+</div>
+
+<h2>Formaci&#xF3;n Complementaria</h2>
+<ul>
+  <li>2026 &#x2013; Bootcamp de Programaci&#xF3;n con Inteligencia Artificial</li>
+  <li>2026 &#x2013; AI Literacy &mdash; IBM</li>
+  <li>2025 &#x2013; Fundamentos de Power BI &mdash; CONFA</li>
+  <li>2024 &#x2013; Enterprise Design Thinking Practitioner &mdash; IBM</li>
+  <li>2024 &#x2013; Agile Explorer &mdash; IBM</li>
+  <li>2022 &#x2013; User Experience for Web Design &mdash; LinkedIn Learning</li>
+  <li>2022 &#x2013; Figma for UX Design &mdash; LinkedIn Learning</li>
+  <li>2022 &#x2013; JavaScript: Animaci&#xF3;n Web &mdash; LinkedIn Learning</li>
+  <li>2022 &#x2013; SEO &mdash; HubSpot Academy</li>
+</ul>
+
+<h2>Habilidades T&#xE9;cnicas</h2>
+<p class="skills">HTML5 / CSS3 / JS, Dise&#xF1;o Responsivo, SVG / Canvas, WordPress, React, Python, Visualizaci&#xF3;n de Datos, Dashboard Design, Power BI, Tableau, D3.js, UX/UI Design, Figma, Adobe Suite, Moodle, Storyline 360, DSpace, Git / GitHub, Estrategia Digital, Branding, Storytelling, E-Learning, Comunicaci&#xF3;n Estrat&#xE9;gica, Marketing de Contenidos, Pensamiento Cr&#xED;tico, Gesti&#xF3;n de Proyectos, Producci&#xF3;n Audiovisual</p>
+
+<h2>Habilidades Blandas</h2>
+<p class="skills">Trabajo en equipo, Comunicaci&#xF3;n asertiva, Resoluci&#xF3;n de conflictos, Pensamiento cr&#xED;tico, Colaboraci&#xF3;n interdisciplinaria, Adaptabilidad, Gesti&#xF3;n de proyectos</p>
+
+<h2>Idiomas</h2>
+<p>Espa&#xF1;ol: Nativo &nbsp;|&nbsp; Ingl&#xE9;s: B1</p>
+
+<h2>Publicaciones</h2>
+<p>Exploraciones Hermen&#xE9;utico-Ricoeurianas en Dise&#xF1;o &mdash; Universidad de Caldas</p>
+
+</body></html>`;
+
+    const blob = new Blob(['﻿', doc], { type: 'application/msword;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'CV_ATS_Natalia_Lopez_Carmona.doc';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+  </script>
+
+</body>
+</html>
