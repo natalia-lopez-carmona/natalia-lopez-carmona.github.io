@@ -262,7 +262,7 @@ body {
 
 .hero-tag {
   font-size: .6rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 5px; color: var(--orange); margin-bottom: 20px;
+  letter-spacing: 5px; color: var(--orange); margin-bottom: 20px; margin-left: 6px;
 }
 .hero h1 {
   font-family: 'Raleway', sans-serif;
@@ -711,8 +711,8 @@ body {
 .hero-inner { position: relative; z-index: 2; max-width: 1160px; width: 100%; }
 .hero-name {
   font-family: 'Raleway', sans-serif; font-weight: 900;
-  font-size: clamp(4.5rem, 13vw, 13rem);
-  line-height: 0.92; letter-spacing: -0.03em;
+  font-size: clamp(4.5rem, 10vw, 12rem);
+  line-height: 0.85; letter-spacing: -0.03em;
   color: var(--lime); display: block;
 }
 .hero-name-sub {
