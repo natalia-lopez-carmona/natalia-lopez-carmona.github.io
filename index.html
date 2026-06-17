@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
   <meta name="keywords" content="diseño web Colombia, UX UI Manizales, branding Colombia, visualización de datos, dashboard Power BI, e-learning diseño instruccional, estrategia digital, producción audiovisual, diseñadora freelance Colombia">
   <meta name="author" content="Natalia López Carmona">
   <meta name="robots" content="index, follow">
-  <!-- <link rel="canonical" href="https://wunderdesigners.com/"> -->
+  <!-- <link rel="canonical" href=""> -->
   <meta name="theme-color" content="#111111">
 
   <!-- ═══ GEO / LOCAL SEO ═══ -->
@@ -21,17 +21,17 @@
 
   <!-- ═══ OPEN GRAPH (LinkedIn, WhatsApp, Facebook) ═══ -->
   <meta property="og:type" content="website">
-  <!-- <meta property="og:url" content="https://wunderdesigners.com/"> -->
-  <meta property="og:site_name" content="Wunder Designers">
-  <meta property="og:title" content="Wunder Designers — Natalia López Carmona | Diseño Web, Data Viz & UX">
+  <!-- <meta property="og:url" content=""> -->
+  <meta property="og:site_name" content="Natalia Lopez Carmona Portfolio">
+  <meta property="og:title" content="Natalia López Carmona | Diseño Web, Data Viz & UX">
   <meta property="og:description" content="Diseño web UX/UI, dashboards en Power BI, e-learning, branding y estrategia digital. +12 años de experiencia en Manizales, Colombia.">
   <meta property="og:locale" content="es_CO">
 
   <!-- ═══ TWITTER CARD ═══ -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wunder Designers — Natalia López Carmona">
+  <meta name="twitter:title" content="Natalia López Carmona | Diseño Web, Data Viz & UX">
   <meta name="twitter:description" content="Diseño web UX/UI, dashboards en Power BI, e-learning y estrategia digital. +12 años de experiencia en Manizales, Colombia.">
-  <meta name="twitter:creator" content="@wunderdesigners">
+  <meta name="twitter:creator" content="@natalialopez">
 
   <!-- ═══ DATOS ESTRUCTURADOS JSON-LD ═══ -->
   <script type="application/ld+json">
@@ -53,7 +53,7 @@
       "sameAs": [
         "https://www.linkedin.com/in/natalia-lopez-carmona/",
         "https://www.behance.net/natalialpez21",
-        "https://natalia-lopez-carmona.github.io"
+        "https://github.com/natalia-lopez-carmona"
       ],
       "knowsAbout": [
         "Diseño Web", "UX/UI", "Branding", "Identidad Visual",
@@ -109,501 +109,279 @@
 
   <!-- ═══ NAV ═══ -->
   <nav class="nav" id="nav" aria-label="Navegación principal">
-    <a class="nav-logo" onclick="switchPage('landing')">
-      <img src="logo.png" alt="Wunder Designers" class="nav-logo-img" style="display:none"
+    <a class="nav-logo" onclick="switchPage('portfolio')">
+      <img src="logo.png" alt="Natalia López Carmona" class="nav-logo-img" style="display:none"
            onload="this.style.display='block';this.closest('.nav-logo').querySelector('.nav-logo-text').style.display='none'">
       <span class="nav-logo-text">
-        <div class="w-mark">N</div>Natalia<em>López</em>Carmona
+        <div class="w-mark">NLC</div>Natalia<em>López</em>Carmona
       </span>
     </a>
     <button class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <button class="nav-pill active" data-page="landing" onclick="switchPage('landing')" data-i18n="nav.home">⌂ Inicio</button>
-      <button class="nav-pill" data-page="about" onclick="switchPage('about')" data-i18n="nav.about">Sobre Mí</button>
-      <button class="nav-pill" data-page="portfolio" onclick="switchPage('portfolio')" data-i18n="nav.portfolio">Portafolio</button>
+      <button class="nav-pill active" data-page="portfolio" onclick="switchPage('portfolio')" data-i18n="nav.portfolio">Portafolio</button>
       <a href="#contacto" class="nav-pill" onclick="switchPage('portfolio');setTimeout(()=>scrollToEl('contacto'),300)" data-i18n="nav.contact">Contacto</a>
-<button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Switch language / Cambiar idioma">EN</button>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()" title="Switch language / Cambiar idioma">EN</button>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════
-       PAGE 0: LANDING
-       ═══════════════════════════════════════════════════════ -->
-  <div class="page active" id="page-landing">
-    <section class="landing-hero">
-      <canvas class="hero-canvas" id="hc-landing" aria-hidden="true"></canvas>
-      <div class="landing-inner">
-        <p class="landing-name">
-          <span class="w-mark">N</span>
-          Natalia <em>López</em> Carmona
-        </p>
-        <h1 class="landing-q reveal" data-i18n-html="landing.h1">¿Por dónde <span class="g">empezamos</span>?</h1>
-        <p class="landing-sub reveal" data-i18n="landing.sub">Diseñadora Interactiva · Datos · UX/UI · E-learning</p>
-        <div class="landing-choices reveal">
-          <button class="lc-card lc-about" onclick="switchPage('about')">
-            <span class="lc-icon">👤</span>
-            <h2 data-i18n="landing.about.title">Conóceme</h2>
-            <p data-i18n="landing.about.desc">Mi historia, experiencia, formación y lo que me mueve.</p>
-            <span class="lc-arrow">→</span>
-          </button>
-          <span class="lc-or" data-i18n="landing.or">o</span>
-          <button class="lc-card lc-portfolio" onclick="switchPage('portfolio')">
-            <span class="lc-icon">🚀</span>
-            <h2 data-i18n="landing.portfolio.title">Mi Portafolio</h2>
-            <p data-i18n="landing.portfolio.desc">Proyectos, servicios y demos interactivos.</p>
-            <span class="lc-arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════
        PAGE 1: PORTAFOLIO
        ═══════════════════════════════════════════════════════ -->
-  <div class="page" id="page-portfolio">
+  <div class="page active" id="page-portfolio">
 
-    <!-- ▓▓▓ HERO — DARK ▓▓▓ --> //
+    <!-- ▓▓▓ HERO — TIPOGRAFÍA GIGANTE ▓▓▓ -->
     <section class="hero">
       <canvas class="hero-canvas" id="hc-portfolio" aria-hidden="true"></canvas>
-      <p class="hero-tag reveal" data-i18n="hero.tag">Diseño · Estrategia · Datos · Comunicación</p>
-      <h1 class="reveal" style="transition-delay:.12s">
-        <span class="g" data-i18n="hero.h1a">Datos que</span>
-        <span class="l2" data-i18n="hero.h1b">inspiran diseño</span>
-      </h1>
-      <p class="hero-sub reveal" style="transition-delay:.24s" data-i18n="hero.sub">
-        Transformamos información compleja en experiencias visuales que impulsan decisiones.
-        12 años integrando pensamiento crítico, narrativa digital y tecnología.
-      </p>
-      <div class="hero-btns reveal" style="transition-delay:.36s">
-        <button class="btn-lime" onclick="scrollToEl('proyectos')" data-i18n="hero.btn1">Ver Proyectos →</button>
-        <button class="btn-ghost-light" onclick="switchPage('about')" data-i18n="hero.btn2">Conóceme</button>
+      <div class="hero-inner">
+        <p class="hero-tag reveal" style="margin-bottom:1.5rem;" data-i18n="pflio.hero.badge">Diseñadora Interactiva · Manizales, Colombia · 2026</p>
+        <span class="hero-name reveal" style="transition-delay:.05s">NATALIA</span>
+        <span class="hero-name-sub reveal" style="transition-delay:.1s">López <em>Carmona</em></span>
+        <p class="hero-tagline reveal" style="transition-delay:.18s" data-i18n="pflio.hero.tagline">
+          Diseño web, visualización de datos y experiencias digitales que transforman información compleja en decisiones claras.
+        </p>
+        <div class="hero-pills reveal" style="transition-delay:.24s">
+          <span class="pill" data-i18n="pflio.hero.pill.web">Diseño Web</span>
+          <span class="pill">UX / UI</span>
+          <span class="pill">Data Viz</span>
+          <span class="pill">E-Learning</span>
+          <span class="pill">Branding</span>
+          <span class="pill" data-i18n="pflio.hero.pill.strategy">Estrategia Digital</span>
+        </div>
+        <div class="hero-cta-row reveal" style="transition-delay:.32s">
+          <button class="btn-lime" onclick="scrollToEl('proyectos')" data-i18n="pflio.hero.cta1">Ver proyectos →</button>
+          <button class="btn-ghost-light" onclick="scrollToEl('contacto')" data-i18n="pflio.hero.cta2">Hablemos</button>
+        </div>
       </div>
-      <div class="orbit-box">
-        <div class="o-ring r1"><div class="o-dot"></div></div>
-        <div class="o-ring r2"><div class="o-dot"></div></div>
-        <div class="o-ring r3"><div class="o-dot"></div></div>
+      <div class="hero-stat-bar">
+        <div class="hero-stat"><strong>12+</strong><span data-i18n="pflio.hero.stat1">años de experiencia</span></div>
+        <div class="hero-stat"><strong>6</strong><span data-i18n="pflio.hero.stat2">áreas de servicio</span></div>
+        <div class="hero-stat"><strong>5</strong><span data-i18n="pflio.hero.stat3">proyectos destacados</span></div>
       </div>
-      <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
     </section>
 
-    <!-- ▓▓▓ SERVICES — WHITE ▓▓▓ -->
-    <section class="section sec-white" id="servicios">
+    <!-- ▓▓▓ SOBRE MÍ — CREAM ▓▓▓ -->
+    <section class="section sec-cream" id="sobre">
+      <div class="inner">
+        <div class="sobre-grid">
+          <div>
+            <p class="s-tag reveal" style="color:var(--violet)" data-i18n="sobre.tag">Sobre mí</p>
+            <h2 class="s-title reveal" style="color:var(--dark)" data-i18n-html="sobre.title">Datos que <em style="color:var(--violet)">inspiran diseño</em></h2>
+            <p class="sobre-bio reveal" data-i18n="sobre.bio1">Soy Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos. Con más de 12 años de experiencia, combino diseño UX/UI, visualización de datos e inteligencia artificial para transformar información compleja en experiencias visuales que impulsan decisiones.</p>
+            <p class="sobre-bio reveal" data-i18n="sobre.bio2">Desde dashboards en Power BI y D3.js hasta e-learning, branding y documentales científicos — mi trabajo vive en la intersección entre estética, datos y comunicación estratégica.</p>
+          </div>
+          <div class="reveal" style="transition-delay:.1s">
+            <div class="exp-grid">
+              <div class="exp-card"><h3>12+</h3><p data-i18n="sobre.exp1">Años de experiencia</p></div>
+              <div class="exp-card"><h3>95%</h3><p data-i18n="sobre.exp2">Estrategia Digital</p></div>
+              <div class="exp-card"><h3>88%</h3><p data-i18n="sobre.exp3">UX / E-Learning</p></div>
+              <div class="exp-card"><h3>85%</h3><p data-i18n="sobre.exp4">Data Visualization</p></div>
+            </div>
+            <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--gray);" data-i18n-html="sobre.location">📍 Manizales, Colombia &nbsp;·&nbsp; Español nativo · Inglés B1</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ▓▓▓ SERVICIOS — DARK GRID ▓▓▓ -->
+    <section class="section sec-dark" id="servicios">
       <div class="inner">
         <p class="s-tag reveal" data-i18n="srv.section.tag">Servicios</p>
-        <h2 class="s-title reveal" data-i18n-html="srv.section.title">Lo que <em>se puede hacer</em> por ti</h2>
-        <p class="s-sub reveal" data-i18n="srv.section.sub">Combinamos diseño, estrategia y tecnología para crear experiencias significativas.</p>
-        <div class="srv-grid">
-          <div class="srv sw reveal" onclick="switchPage('srv-branding')">
-            <div class="srv-icon">🎨</div>
-            <h3 data-i18n="srv.branding.title">Branding & Identidad</h3>
+        <h2 class="s-title reveal" data-i18n-html="srv.section.title2">Lo que puedo <em>hacer por ti</em></h2>
+        <p class="s-sub reveal" data-i18n="srv.section.sub">Diseño, estrategia y tecnología para crear experiencias significativas.</p>
+        <div class="services-grid-ref">
+          <div class="service-card-ref reveal" onclick="switchPage('srv-branding')">
+            <span class="svc-icon">✦</span>
+            <h3 data-i18n="srv.branding.title">Branding &amp; Identidad</h3>
             <p data-i18n="srv.branding.desc">Logos, paletas, sistemas visuales coherentes que comunican tu esencia.</p>
-            <div class="srv-tags"><span>Identidad</span><span>Branding</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
-          <div class="srv sd reveal" style="transition-delay:.1s" onclick="switchPage('srv-estrategia')">
-            <div class="srv-icon">📱</div>
+          <div class="service-card-ref reveal" onclick="switchPage('srv-estrategia')">
+            <span class="svc-icon">◈</span>
             <h3 data-i18n="srv.estrategia.title">Estrategia Digital</h3>
             <p data-i18n="srv.estrategia.desc">Marketing de contenidos, storytelling y posicionamiento digital.</p>
-            <div class="srv-tags"><span>Estrategia</span><span>SEO</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
-          <div class="srv sv reveal" style="transition-delay:.2s" onclick="switchPage('srv-dashboards')">
-            <div class="srv-icon">📊</div>
-            <h3 data-i18n="srv.dashboards.title">Dashboards & Data Viz</h3>
+          <div class="service-card-ref reveal" onclick="switchPage('srv-dashboards')">
+            <span class="svc-icon">▣</span>
+            <h3 data-i18n="srv.dashboards.title">Dashboards &amp; Data Viz</h3>
             <p data-i18n="srv.dashboards.desc">Visualización interactiva que transforma números en decisiones.</p>
-            <div class="srv-tags"><span>Analytics</span><span>Data</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
-          <div class="srv so reveal" onclick="switchPage('srv-elearning')">
-            <div class="srv-icon">🎓</div>
+          <div class="service-card-ref reveal" onclick="switchPage('srv-elearning')">
+            <span class="svc-icon">◉</span>
             <h3 data-i18n="srv.elearning.title">E-Learning</h3>
             <p data-i18n="srv.elearning.desc">Experiencias de aprendizaje digital y cursos interactivos.</p>
-            <div class="srv-tags"><span>E-Learning</span><span>UX</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
-          <div class="srv sw reveal" style="transition-delay:.1s" onclick="switchPage('srv-web')">
-            <div class="srv-icon">💻</div>
-            <h3 data-i18n="srv.web.title">Diseño Web & UX</h3>
+          <div class="service-card-ref reveal" onclick="switchPage('srv-web')">
+            <span class="svc-icon">⬡</span>
+            <h3 data-i18n="srv.web.title">Diseño Web &amp; UX</h3>
             <p data-i18n="srv.web.desc">Sitios con diseño editorial y experiencias memorables.</p>
-            <div class="srv-tags"><span>Web</span><span>UX/UI</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
-          <div class="srv sd reveal" style="transition-delay:.2s" onclick="switchPage('srv-audiovisual')">
-            <div class="srv-icon">🎬</div>
+          <div class="service-card-ref reveal" onclick="switchPage('srv-audiovisual')">
+            <span class="svc-icon">▶</span>
             <h3 data-i18n="srv.audiovisual.title">Producción Audiovisual</h3>
             <p data-i18n="srv.audiovisual.desc">Documentales y narrativas para divulgación científica.</p>
-            <div class="srv-tags"><span>Video</span><span>Narrativa</span></div>
+            <span class="svc-arrow">↗</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ▓▓▓ PROJECTS — DARK ▓▓▓ -->
-    <section class="section sec-dark" id="proyectos">
+    <!-- ▓▓▓ PROYECTOS — LISTA NUMERADA ▓▓▓ -->
+    <section class="section" id="proyectos" style="background:var(--dark2);color:var(--cream);">
       <div class="inner">
-        <p class="s-tag reveal" data-i18n="prj.tag">Portafolio</p>
-        <h2 class="s-title reveal" data-i18n-html="prj.title">Proyectos <em>Destacados</em></h2>
-        <p class="s-sub reveal" data-i18n="prj.sub">Intersección entre diseño, datos y comunicación estratégica.</p>
-        <div class="prj-grid">
-          <div class="prj reveal" onclick="openProject('ux-autonoma')">
-            <div class="prj-thumb" style="background:linear-gradient(135deg,var(--violet),#4a3a8a)">
-              <span style="position:relative;z-index:1">🖥️</span>
-            </div>
-            <div class="prj-over">
-              <p class="prj-type" style="color:#c8b8ff" data-i18n="prj.ux.type">UX · Interfaces Interactivas</p>
+        <p class="s-tag reveal" data-i18n="prj.tag" style="color:var(--lime)">Portafolio</p>
+        <h2 class="s-title reveal" style="color:var(--cream)" data-i18n-html="prj.title">Proyectos <em style="color:var(--lime)">Destacados</em></h2>
+        <p class="s-sub reveal" style="color:rgba(240,237,229,.45)" data-i18n="prj.sub">Intersección entre diseño, datos y comunicación estratégica.</p>
+        <div class="projects-list">
+          <div class="project-row reveal" onclick="openProject('ux-autonoma')">
+            <span class="proj-num">01</span>
+            <div class="proj-info">
+              <div class="proj-tags"><span class="proj-tag">UX</span><span class="proj-tag">·</span><span class="proj-tag" data-i18n="prj.ux.tag">Interfaces Interactivas</span></div>
               <h3 data-i18n="prj.ux.title">Interfaces Interactivas · U. Autónoma</h3>
-              <p class="prj-tech" data-i18n="prj.ux.tech">UX · Diseño Interactivo · Multimedia</p>
-              <div class="prj-impact" style="background:rgba(123,97,217,.2);color:#c8b8ff" data-i18n="prj.view">▲ Ver proyecto</div>
             </div>
+            <span class="proj-arrow-icon">→</span>
           </div>
-          <div class="prj reveal" style="transition-delay:.1s" onclick="openProject('audiovisual-caldas')">
-            <div class="prj-thumb" style="background:linear-gradient(135deg,var(--orange),#c24520)">
-              <span style="position:relative;z-index:1">🎬</span>
+          <div class="project-row reveal" onclick="openProject('audiovisual-caldas')">
+            <span class="proj-num">02</span>
+            <div class="proj-info">
+              <div class="proj-tags"><span class="proj-tag">Audiovisual</span><span class="proj-tag">·</span><span class="proj-tag" data-i18n="prj.audiovisual.tag">Narrativa</span></div>
+              <h3 data-i18n="prj.audiovisual.title">Documentales de Divulgación Científica</h3>
             </div>
-            <div class="prj-over">
-              <p class="prj-type" style="color:#ffa088" data-i18n="prj.audiovisual.type">Audiovisual</p>
-              <h3 data-i18n="prj.audiovisual.title">Documentales Divulgación Científica</h3>
-              <p class="prj-tech" data-i18n="prj.audiovisual.tech">Producción · Edición · Narrativa</p>
-              <div class="prj-impact" style="background:rgba(255,87,51,.15);color:#ffa088" data-i18n="prj.view">▲ Ver proyecto</div>
-            </div>
+            <span class="proj-arrow-icon">→</span>
           </div>
-          <div class="prj reveal" style="transition-delay:.2s" onclick="openProject('dashboard-consortia')">
-            <div class="prj-thumb" style="background:linear-gradient(135deg,#1a1a2e,#111)">
-              <span style="position:relative;z-index:1">📊</span>
-            </div>
-            <div class="prj-over">
-              <p class="prj-type" style="color:var(--lime)" data-i18n="prj.dashboard.type">Dashboard</p>
+          <div class="project-row reveal" onclick="openProject('dashboard-consortia')">
+            <span class="proj-num">03</span>
+            <div class="proj-info">
+              <div class="proj-tags"><span class="proj-tag">Dashboard</span><span class="proj-tag">·</span><span class="proj-tag">Power BI</span></div>
               <h3 data-i18n="prj.dashboard.title">Dashboard Power BI · Consortia SAS</h3>
-              <p class="prj-tech" data-i18n="prj.dashboard.tech">Power BI · Visualización · Datos</p>
-              <div class="prj-impact" style="background:rgba(204,255,0,.15);color:var(--lime)" data-i18n="prj.view">▲ Ver proyecto</div>
             </div>
+            <span class="proj-arrow-icon">→</span>
           </div>
-          <div class="prj reveal" onclick="openProject('biblioteca-salmona')">
-            <div class="prj-thumb" style="background:linear-gradient(135deg,var(--cream),var(--cream2))">
-              <span style="position:relative;z-index:1">🏛️</span>
-            </div>
-            <div class="prj-over">
-              <p class="prj-type" style="color:var(--violet)" data-i18n="prj.biblioteca.type">Branding · Web · Comunicación</p>
+          <div class="project-row reveal" onclick="openProject('biblioteca-salmona')">
+            <span class="proj-num">04</span>
+            <div class="proj-info">
+              <div class="proj-tags"><span class="proj-tag">Branding</span><span class="proj-tag">·</span><span class="proj-tag">Web</span></div>
               <h3 data-i18n="prj.biblioteca.title">Biblioteca Salmona · U. de Caldas</h3>
-              <p class="prj-tech" data-i18n="prj.biblioteca.tech">Diseño · Difusión · Portal Repositorio · Eventos</p>
-              <div class="prj-impact" style="background:rgba(123,97,217,.15);color:var(--violet)" data-i18n="prj.view">▲ Ver proyecto</div>
             </div>
+            <span class="proj-arrow-icon">→</span>
           </div>
-          <div class="prj reveal" style="transition-delay:.1s" onclick="openProject('wunder-portfolio')">
-            <div class="prj-thumb" style="background:linear-gradient(135deg,var(--lime),#a8cc00)">
-              <span style="position:relative;z-index:1">💻</span>
-            </div>
-            <div class="prj-over">
-              <p class="prj-type" style="color:var(--dark)" data-i18n="prj.wunder.type">Web Design</p>
+          <div class="project-row reveal" onclick="openProject('wunder-portfolio')">
+            <span class="proj-num">05</span>
+            <div class="proj-info">
+              <div class="proj-tags"><span class="proj-tag">Web Design</span><span class="proj-tag">·</span><span class="proj-tag">HTML · CSS · JS</span></div>
               <h3>Wunder Designers Portfolio</h3>
-              <p class="prj-tech" data-i18n="prj.wunder.tech">HTML · CSS · JS · Animaciones</p>
-              <div class="prj-impact" style="background:rgba(0,0,0,.2);color:var(--lime)" data-i18n="prj.view">▲ Ver proyecto</div>
             </div>
+            <span class="proj-arrow-icon">→</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ▓▓▓ DASHBOARD DEMO — CREAM ▓▓▓ -->
-    <section class="section sec-cream" id="analytics">
+    <!-- ▓▓▓ IMPACTO — LIME ▓▓▓ -->
+    <section class="section sec-lime" id="impacto">
       <div class="inner">
-        <p class="s-tag reveal" data-i18n="dash.tag">Analytics en Acción</p>
-        <h2 class="s-title reveal" data-i18n-html="dash.title">Dashboard <em>Demo</em></h2>
-        <p class="s-sub reveal" data-i18n="dash.sub">Así se transforman datos en visualizaciones accionables.</p>
-        <div class="dash-grid">
-          <!-- Revenue chart - dark card -->
-          <div class="dash dd reveal">
-            <div class="dash-h">
-              <div><h3 data-i18n="dash.chart.title">Crecimiento de Proyectos</h3><small style="color:rgba(255,255,255,.3)" data-i18n="dash.chart.sub">Últimos 12 meses</small></div>
-              <div class="dash-big" style="color:var(--lime)">$148K</div>
-            </div>
-            <div class="chart-bars" id="mainChart"></div>
-          </div>
-          <!-- Donut - white card -->
-          <div class="dash dw reveal" style="transition-delay:.12s">
-            <div class="dash-h">
-              <div><h3 data-i18n="dash.dist.title">Distribución</h3><small style="color:var(--lgray)" data-i18n="dash.dist.sub">Por servicio</small></div>
-            </div>
-            <div class="donut-wrap">
-              <svg width="160" height="160" viewBox="0 0 160 160">
-                <circle cx="80" cy="80" r="62" fill="none" stroke="#eee" stroke-width="20"/>
-                <circle cx="80" cy="80" r="62" fill="none" stroke="var(--violet)" stroke-width="20" stroke-dasharray="136 254" stroke-dashoffset="0" transform="rotate(-90 80 80)"/>
-                <circle cx="80" cy="80" r="62" fill="none" stroke="var(--orange)" stroke-width="20" stroke-dasharray="97 293" stroke-dashoffset="-136" transform="rotate(-90 80 80)"/>
-                <circle cx="80" cy="80" r="62" fill="none" stroke="var(--lime-dk)" stroke-width="20" stroke-dasharray="78 312" stroke-dashoffset="-233" transform="rotate(-90 80 80)"/>
-                <circle cx="80" cy="80" r="62" fill="none" stroke="var(--dark)" stroke-width="20" stroke-dasharray="78 312" stroke-dashoffset="-311" transform="rotate(-90 80 80)"/>
-              </svg>
-            </div>
-            <div class="donut-legend">
-              <span style="color:var(--gray)"><span class="dot" style="background:var(--violet)"></span><span data-i18n="dash.legend.design">Diseño 35%</span></span>
-              <span style="color:var(--gray)"><span class="dot" style="background:var(--orange)"></span><span data-i18n="dash.legend.dashboards">Dashboards 25%</span></span>
-              <span style="color:var(--gray)"><span class="dot" style="background:var(--lime-dk)"></span><span data-i18n="dash.legend.strategy">Estrategia 20%</span></span>
-              <span style="color:var(--gray)"><span class="dot" style="background:var(--dark)"></span><span data-i18n="dash.legend.elearning">E-Learning 20%</span></span>
-            </div>
-          </div>
-          <!-- Skills - white card full width -->
-          <div class="dash dw dash-full reveal">
-            <div class="dash-h">
-              <div><h3 data-i18n="dash.skills.title">Competencias Técnicas</h3><small style="color:var(--lgray)" data-i18n="dash.skills.sub">Nivel de dominio</small></div>
-            </div>
-            <div id="skillBars"></div>
-          </div>
+        <p class="s-tag reveal" data-i18n="impact.tag">Impacto tangible</p>
+        <h2 class="s-title reveal" data-i18n-html="impact.title">Los números <em>que importan</em></h2>
+        <div class="impact-grid">
+          <div class="impact-item reveal"><strong>12+</strong><p data-i18n="impact.stat1">Años de experiencia profesional</p></div>
+          <div class="impact-item reveal" style="transition-delay:.08s"><strong>92%</strong><p data-i18n="impact.stat2">Branding &amp; Diseño</p></div>
+          <div class="impact-item reveal" style="transition-delay:.16s"><strong>96%</strong><p data-i18n="impact.stat3">Comunicación estratégica</p></div>
+          <div class="impact-item reveal" style="transition-delay:.24s"><strong>5+</strong><p data-i18n="impact.stat4">Proyectos destacados</p></div>
+        </div>
+        <div class="impact-cta reveal">
+          <p class="impact-cta-text" data-i18n="impact.cta.text">Combinamos diseño, estrategia y tecnología para que tu comunicación genere resultados reales.</p>
+          <a href="mailto:natalia.lopez.wd@gmail.com" class="btn-dark" data-i18n="impact.cta.btn">Hablemos de tu proyecto</a>
         </div>
       </div>
     </section>
 
-    <!-- ▓▓▓ CONTACT — VIOLET ▓▓▓ -->
-    <section class="section sec-violet contact-sec" id="contacto">
+    <!-- ▓▓▓ HABILIDADES — DARK ▓▓▓ -->
+    <section class="section sec-dark" id="habilidades">
       <div class="inner">
-        <p class="s-tag reveal" style="justify-content:center" data-i18n="contact.tag">Contacto</p>
-        <h2 class="s-title reveal" style="text-align:center" data-i18n-html="contact.title">¿<em>Transformamos</em> tu proyecto?</h2>
-        <p class="s-sub reveal" style="text-align:center;margin:0 auto 30px;color:rgba(255,255,255,.6)" data-i18n="contact.sub">
-          Cuéntanos sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.
-        </p>
-        <div class="contact-links reveal">
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cp" data-i18n="contact.email">✉ Escríbeme</a>
-          <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cs">LinkedIn →</a>
-          <a href="https://www.behance.net/natalialpez21" target="_blank" class="cs">Behance →</a>
+        <p class="s-tag reveal" data-i18n="skills.tag">Competencias</p>
+        <h2 class="s-title reveal" data-i18n-html="skills.title">Habilidades <em>Técnicas</em></h2>
+        <div class="skills-outer">
+          <div class="skills-col reveal" id="skillsBarCol">
+            <h3 data-i18n="skills.col1">Nivel de dominio</h3>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar1">Comunicación Estratégica</span><span>96%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="96"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar2">Estrategia Digital</span><span>95%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar3">Branding &amp; Diseño</span><span>92%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar4">Producción Audiovisual</span><span>90%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar5">UX / E-Learning</span><span>88%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-label"><span data-i18n="skills.bar6">Data Visualization</span><span>85%</span></div>
+              <div class="skill-row-track"><div class="skill-row-fill" data-width="85"></div></div>
+            </div>
+          </div>
+          <div class="skills-col reveal" style="transition-delay:.12s">
+            <h3 data-i18n="skills.col2">Stack Tecnológico</h3>
+            <div class="tags-cloud">
+              <span class="tag-chip">HTML5 / CSS3 / JS</span><span class="tag-chip">Figma</span>
+              <span class="tag-chip">Power BI</span><span class="tag-chip">Tableau</span>
+              <span class="tag-chip">D3.js</span><span class="tag-chip">React</span>
+              <span class="tag-chip">Python</span><span class="tag-chip">WordPress</span>
+              <span class="tag-chip">Moodle</span><span class="tag-chip">Storyline 360</span>
+              <span class="tag-chip">Adobe Suite</span><span class="tag-chip">DSpace</span>
+              <span class="tag-chip">Git / GitHub</span><span class="tag-chip">SVG / Canvas</span>
+            </div>
+            <h3 style="margin-top:2rem;" data-i18n="skills.col3">Habilidades Blandas</h3>
+            <div class="tags-cloud">
+              <span class="tag-chip" data-i18n="softskill.teamwork">Trabajo en equipo</span>
+              <span class="tag-chip" data-i18n="softskill.comms">Comunicación asertiva</span>
+              <span class="tag-chip" data-i18n="softskill.critical">Pensamiento crítico</span>
+              <span class="tag-chip" data-i18n="softskill.adapt">Adaptabilidad</span>
+              <span class="tag-chip" data-i18n="softskill.collab">Colaboración interdisciplinaria</span>
+              <span class="tag-chip" data-i18n="softskill.mgmt">Gestión de proyectos</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-  </div>
-
-  <!-- ═══════════════════════════════════════════════════════
-       PAGE 2: SOBRE MÍ / CV
-       ═══════════════════════════════════════════════════════ -->
-  <div class="page" id="page-about" style="background:var(--bg-light)">
-
-    <div class="cv-page">
-      <!-- Header -->
-      <div class="cv-header reveal">
-        <div class="cv-ring"><div class="cv-ring-inner">NL</div></div>
-        <h1 class="cv-name">Natalia <span>López</span> Carmona</h1>
-        <p class="cv-role" data-i18n="about.role">Diseñadora Interactiva UX/UI · Visualización de Datos · E-learning</p>
-        <div class="cv-contact-row">
-          <span class="cv-ci">📍 Manizales, Colombia</span>
-          <a href="mailto:natalia.lopez.wd@gmail.com" class="cv-ci">✉ natalia.lopez.wd@gmail.com</a>
-          <a href="tel:+573024260911" class="cv-ci">📱 +57 302 426 0911</a>
-          <a href="tel:+573137486249" class="cv-ci">📱 +57 313 748 6249</a>
-          <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank" class="cv-ci">LinkedIn</a>
-          <a href="https://www.behance.net/natalialpez21" target="_blank" class="cv-ci">Behance</a>
-          <a href="https://natalia-lopez-carmona.github.io" target="_blank" class="cv-ci">GitHub</a>
-        </div>
-
-      </div>
-
-      <!-- Perfil -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.profile.title">Perfil Profesional</h2>
-        <div class="cv-profile" data-i18n-html="about.profile.text">
-          Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y <strong>12 años de experiencia</strong> construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y <strong>diseño UX/UI, visualización de datos e inteligencia artificial</strong> para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.
+    <!-- ▓▓▓ CONTACTO — CREAM CON FORMULARIO ▓▓▓ -->
+    <section class="section sec-cream" id="contacto">
+      <div class="inner">
+        <p class="s-tag reveal" style="color:var(--orange)" data-i18n="contact.tag">Contacto</p>
+        <h2 class="s-title reveal" style="color:var(--dark)" data-i18n-html="contact.title">¿<em style="color:var(--violet)">Transformamos</em> tu proyecto?</h2>
+        <p class="s-sub reveal" style="color:var(--gray)" data-i18n="contact.sub">Cuéntame sobre tu proyecto. Ya sea diseño, estrategia, dashboards o formación.</p>
+        <div class="contact-inner">
+          <div class="reveal">
+            <div class="contact-links-col">
+              <a class="contact-link-item" href="mailto:natalia.lopez.wd@gmail.com"><span class="contact-link-icon">✉</span>natalia.lopez.wd@gmail.com</a>
+              <a class="contact-link-item" href="tel:+573024260911"><span class="contact-link-icon">📱</span>+57 302 426 0911</a>
+              <a class="contact-link-item" href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank"><span class="contact-link-icon">in</span>LinkedIn</a>
+              <a class="contact-link-item" href="https://www.behance.net/natalialpez21" target="_blank"><span class="contact-link-icon">Be</span>Behance</a>
+              <a class="contact-link-item" href="https://github.com/natalia-lopez-carmona" target="_blank"><span class="contact-link-icon">&lt;/&gt;</span>GitHub</a>
+            </div>
+          </div>
+          <div class="contact-form reveal" style="transition-delay:.1s">
+            <input type="text" placeholder="Tu nombre" data-i18n-placeholder="contact.ph.name">
+            <input type="email" placeholder="Tu correo electrónico" data-i18n-placeholder="contact.ph.email">
+            <input type="text" placeholder="Asunto" data-i18n-placeholder="contact.ph.subject">
+            <textarea placeholder="Cuéntame sobre tu proyecto…" data-i18n-placeholder="contact.ph.message"></textarea>
+            <a href="mailto:natalia.lopez.wd@gmail.com" class="btn-send" data-i18n="contact.form.btn">Enviar mensaje →</a>
+          </div>
         </div>
       </div>
-
-      <!-- Experiencia -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.exp.title">Experiencia Profesional</h2>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Research & Data Analyst</p><p class="cv-exp-company">Consortia Colombia</p></div>
-            <span class="cv-exp-date">Mar 2025 – Feb 2026</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.consortia.li1">Diseño y estructuración visual del dashboard de Acuerdos Transformativos en Power BI, centralizando métricas de publicación en acceso abierto para más de 30 IES en Colombia.</li>
-            <li data-i18n="about.exp.consortia.li2">Análisis de producción académica institucional y elaboración de informes estratégicos sobre comportamiento editorial.</li>
-            <li data-i18n="about.exp.consortia.li3">Apoyo a procesos de fidelización institucional y gestión de acuerdos transformativos.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.docente1.role">Docente – Comunicación Digital y Analítica Web</p><p class="cv-exp-company" data-i18n="about.exp.docente1.company">Universidad de Caldas – Técnico Profesional en Marketing Digital</p></div>
-            <span class="cv-exp-date">Feb–Mar 2025 / Mar–May 2026</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.docente1.li1">Diseño y dictado de los módulos de Comunicación Digital y Analítica Web.</li>
-            <li data-i18n="about.exp.docente1.li2">Apoyo en construcción de propuesta de valor y presencia digital para estudiantes.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role">Design Lead</p><p class="cv-exp-company" data-i18n="about.exp.blue.company">Blue Studies International (Australia, remoto)</p></div>
-            <span class="cv-exp-date">Mar – Oct 2024</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.blue.li1">Dirección creativa y diseño de interfaces digitales para proyectos internacionales.</li>
-            <li data-i18n="about.exp.blue.li2">Desarrollo de identidad visual y coordinación con equipos multidisciplinarios remotos.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.stanton.role">Diseñadora Gráfica y Contenido Digital</p><p class="cv-exp-company" data-i18n="about.exp.stanton.company">Stanton Optical (EE.UU., remoto)</p></div>
-            <span class="cv-exp-date">Nov 2023 – Feb 2024</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.stanton.li1">Diseño de piezas gráficas y animadas para campañas en redes sociales en múltiples estados.</li>
-            <li data-i18n="about.exp.stanton.li2">Producción en flujos ágiles manteniendo consistencia de marca.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.risaralda.role">Consultora – Visualización de Datos y Dashboards</p><p class="cv-exp-company">Laboratorio de Desarrollo Territorial de Risaralda</p></div>
-            <span class="cv-exp-date" data-i18n="about.exp.risaralda.date">May – Dic 2023</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.risaralda.li1">Diseño y estructuración visual de tableros de indicadores socioeconómicos por municipio en Tableau, traduciendo datasets complejos en narrativas visuales accesibles.</li>
-            <li data-i18n="about.exp.risaralda.li2">Definición de arquitectura de información y jerarquía visual para tomadores de decisión no técnicos.</li>
-            <li data-i18n="about.exp.risaralda.li3">Colaboración interdisciplinaria con analistas de datos para alinear análisis y comunicación visual.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.uautonoma.role">Diseñadora de Unidad Virtual – E-learning y Estrategia Digital</p><p class="cv-exp-company">Universidad Autónoma de Manizales</p></div>
-            <span class="cv-exp-date" data-i18n="about.exp.uautonoma.date">Ene – Nov 2023</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.uautonoma.li1">Diseño y creación de interfaces interactivas para múltiples cursos virtuales en Moodle y Storyline 360.</li>
-            <li data-i18n="about.exp.uautonoma.li2">Estructuración visual y narrativa de cursos para educación superior con enfoque en usabilidad.</li>
-            <li data-i18n="about.exp.uautonoma.li3">Optimización de experiencia de usuario en plataformas educativas digitales.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.wunder.role">Proyectos Independientes – Diseño Web y Datos</p><p class="cv-exp-company" data-i18n="about.exp.wunder.company">Wunder Designers – Independiente</p></div>
-            <span class="cv-exp-date" data-i18n="about.exp.wunder.date">2022 – Presente</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.wunder.li1">Diseño y desarrollo de sitios web con HTML5, CSS3, JavaScript y WordPress.</li>
-            <li data-i18n="about.exp.wunder.li2">Dashboards interactivos y visualizaciones de datos con D3.js y Power BI.</li>
-            <li data-i18n="about.exp.wunder.li3">Estrategias de comunicación, branding e identidad visual.</li>
-            <li data-i18n="about.exp.wunder.li4">Diseño de experiencias de aprendizaje digital (e-learning).</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.docente2.role">Docente – Producción Audiovisual y Herramientas Digitales</p><p class="cv-exp-company">Universidad Católica Luis Amigó / Unitécnica</p></div>
-            <span class="cv-exp-date">2022 – 2023</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.docente2.li1">Formación en producción audiovisual, narrativas visuales y herramientas digitales.</li>
-            <li data-i18n="about.exp.docente2.li2">Acompañamiento a estudiantes en construcción de narrativas visuales y sonoras.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.biblioteca.role">Coordinadora de Diseño y Comunicación Digital</p><p class="cv-exp-company">Centro de Bibliotecas Rogelio Salmona – U. de Caldas</p></div>
-            <span class="cv-exp-date" data-i18n="about.exp.biblioteca.date">Ago 2014 – Sep 2022</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.biblioteca.li1">Creación e implementación del primer sistema de diseño y comunicación institucional de la biblioteca, estableciendo identidad visual coherente y lineamientos para todas las plataformas.</li>
-            <li data-i18n="about.exp.biblioteca.li2">Generación y liderazgo de espacios de encuentro en torno a la cultura y las humanidades digitales.</li>
-            <li data-i18n="about.exp.biblioteca.li3">Diseño y facilitación de talleres de formación en herramientas digitales.</li>
-            <li data-i18n="about.exp.biblioteca.li4">Participación en implementación del Repositorio Institucional (DSpace) y acompañamiento a investigadores en visibilidad académica (Scopus, WoS, Google Scholar).</li>
-            <li data-i18n="about.exp.biblioteca.li5">Diseño web y gestión de plataformas digitales institucionales.</li>
-          </ul>
-        </div>
-
-        <div class="cv-exp">
-          <div class="cv-exp-header">
-            <div><p class="cv-exp-role" data-i18n="about.exp.audiovisual.role">Productora Audiovisual y Editora de Documentales</p><p class="cv-exp-company">Universidad de Caldas</p></div>
-            <span class="cv-exp-date">2004 – 2014</span>
-          </div>
-          <ul class="cv-exp-list">
-            <li data-i18n="about.exp.audiovisual.li1">Producción y edición de documentales de divulgación científica e institucional.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Educación -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.edu.title">Educación</h2>
-        <div class="cv-edu-grid">
-          <div class="cv-edu"><span class="cv-edu-year">2013 – 2018</span><h4 data-i18n="about.edu.master">Maestría en Diseño y Creación Interactiva</h4><p>Universidad de Caldas</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2002 – 2010</span><h4 data-i18n="about.edu.bachelor">Profesional en Filosofía y Letras</h4><p>Universidad de Caldas</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2007 – 2009</span><h4 data-i18n="about.edu.tech">Tecnóloga en Sistemas Informáticos</h4><p>Universidad de Caldas</p></div>
-        </div>
-      </div>
-
-      <!-- Formación Complementaria -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.comp.title">Formación Complementaria</h2>
-        <div class="cv-edu-grid">
-          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4 data-i18n="about.comp.ai">Bootcamp de Programación con Inteligencia Artificial</h4><p></p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2026</span><h4>AI Literacy</h4><p>IBM</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2025</span><h4 data-i18n="about.comp.powerbi">Fundamentos de Power BI</h4><p>CONFA</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Enterprise Design Thinking Practitioner</h4><p>IBM</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2024</span><h4>Agile Explorer</h4><p>IBM</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>User Experience for Web Design</h4><p>LinkedIn Learning</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>Figma for UX Design</h4><p>LinkedIn Learning</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4 data-i18n="about.comp.jsanim">JavaScript: Animación Web</h4><p>LinkedIn Learning</p></div>
-          <div class="cv-edu"><span class="cv-edu-year">2022</span><h4>SEO</h4><p>HubSpot Academy</p></div>
-        </div>
-      </div>
-
-      <!-- Habilidades -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.skills.title">Habilidades Técnicas</h2>
-        <div class="cv-skills-cloud">
-          <span class="cv-sk tv">HTML5 / CSS3 / JS</span>
-          <span class="cv-sk tl" data-i18n="skill.responsive">Diseño Responsivo</span>
-          <span class="cv-sk to">SVG / Canvas</span>
-          <span class="cv-sk tv">WordPress</span>
-          <span class="cv-sk tl">React</span>
-          <span class="cv-sk to">Python</span>
-          <span class="cv-sk tv" data-i18n="skill.dataviz">Visualización de Datos</span>
-          <span class="cv-sk tl">Dashboard Design</span>
-          <span class="cv-sk to">Power BI</span>
-          <span class="cv-sk tv">Tableau</span>
-          <span class="cv-sk tl">D3.js</span>
-          <span class="cv-sk to">UX/UI Design</span>
-          <span class="cv-sk tv">Figma</span>
-          <span class="cv-sk tl">Adobe Suite</span>
-          <span class="cv-sk to">Moodle</span>
-          <span class="cv-sk tv">Storyline 360</span>
-          <span class="cv-sk tl">DSpace</span>
-          <span class="cv-sk to">Git / GitHub</span>
-          <span class="cv-sk tv" data-i18n="skill.estrategia">Estrategia Digital</span>
-          <span class="cv-sk tl">Branding</span>
-          <span class="cv-sk to">Storytelling</span>
-          <span class="cv-sk tv">E-Learning</span>
-          <span class="cv-sk tl" data-i18n="skill.comest">Comunicación Estratégica</span>
-          <span class="cv-sk to" data-i18n="skill.mktcont">Marketing de Contenidos</span>
-          <span class="cv-sk tv" data-i18n="skill.pensamiento">Pensamiento Crítico</span>
-          <span class="cv-sk tl" data-i18n="skill.gestion">Gestión de Proyectos</span>
-          <span class="cv-sk to" data-i18n="skill.audiovisual.prod">Producción Audiovisual</span>
-        </div>
-      </div>
-
-      <!-- Habilidades Blandas -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.softskills.title">Habilidades Blandas</h2>
-        <div class="cv-skills-cloud">
-          <span class="cv-sk tv" data-i18n="softskill.teamwork">Trabajo en equipo</span>
-          <span class="cv-sk tl" data-i18n="softskill.comms">Comunicación asertiva</span>
-          <span class="cv-sk to" data-i18n="softskill.conflict">Resolución de conflictos</span>
-          <span class="cv-sk tv" data-i18n="softskill.critical">Pensamiento crítico</span>
-          <span class="cv-sk tl" data-i18n="softskill.collab">Colaboración interdisciplinaria</span>
-          <span class="cv-sk to" data-i18n="softskill.adapt">Adaptabilidad</span>
-        </div>
-      </div>
-
-      <!-- Idiomas -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.lang.title">Idiomas</h2>
-        <p style="font-size:.85rem;color:var(--gray)" data-i18n-html="about.lang.text">Español — Nativo &nbsp;·&nbsp; Inglés — B1</p>
-      </div>
-
-      <!-- Publicaciones -->
-      <div class="cv-sec reveal">
-        <h2 class="cv-sec-title" data-i18n="about.pub.title">Publicaciones</h2>
-        <p style="font-size:.85rem;color:var(--gray)"><em>Exploraciones Hermenéutico-Ricoeurianas en Diseño</em> — Universidad de Caldas</p>
-      </div>
-
-    </div>
+    </section>
 
   </div>
 
@@ -911,8 +689,14 @@
   </div>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="footer">
-    <span>Wunder Designers</span> · Natalia López Carmona · Manizales, Colombia · 2026
+  <footer class="footer-new">
+    <div class="footer-brand">Natalia López Carmona</div>
+    <div class="footer-copy">© 2026 · Manizales, Colombia</div>
+    <div class="footer-links-row">
+      <a href="https://www.linkedin.com/in/natalia-lopez-carmona/" target="_blank">LinkedIn</a>
+      <a href="https://www.behance.net/natalialpez21" target="_blank">Behance</a>
+      <a href="https://github.com/natalia-lopez-carmona" target="_blank">GitHub</a>
+    </div>
   </footer>
 
   <!-- ═══ FAB ═══ -->

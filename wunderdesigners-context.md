@@ -1,6 +1,5 @@
-# Contexto: Wunder Designers
-> Actualizado el 2026-05-15 (2) | Fuente: `NataliaLopezCarmona_CV.docx` + revisión directa de archivos locales
-> Archivos: `index.html`, `styles.css`, `scripts.js`, `NataliaLopezCarmona_CV.docx`
+﻿# Contexto: Wunder Designers
+> Actualizado el 2026-06-01 | Archivos activos: `index.html`, `styles.css`, `scripts.js`, `cv.html`
 
 ---
 
@@ -25,7 +24,7 @@
 | Teléfono 2 | +57 313 748 6249 |
 | LinkedIn | https://www.linkedin.com/in/natalia-lopez-carmona/ |
 | Behance | https://www.behance.net/natalialpez21 |
-| GitHub | https://natalia-lopez-carmona.github.io |
+| GitHub | https://github.com/natalia-lopez-carmona |
 | Ubicación | Manizales, Colombia |
 
 ---
@@ -41,30 +40,24 @@
 | Diseño Web & UX | Sitios con diseño editorial y experiencias memorables. | Web, UX/UI |
 | Producción Audiovisual | Documentales y narrativas para divulgación científica. | Video, Narrativa |
 
-**Distribución real de trabajo (por servicio):**
-- Diseño: 35%
-- Dashboards: 25%
-- Estrategia: 20%
-- E-Learning: 20%
-
 ---
 
-## Habilidades técnicas (con niveles — barras del dashboard demo)
+## Habilidades técnicas
 
 | Habilidad | Nivel |
 |---|---|
+| Comunicación Estratégica | 96% |
 | Estrategia Digital | 95% |
 | Branding & Diseño | 92% |
+| Producción Audiovisual | 90% |
 | UX / E-Learning | 88% |
 | Data Visualization | 85% |
-| Producción Audiovisual | 90% |
-| Comunicación | 96% |
 
 **Stack técnico completo:**
 HTML5, CSS3, JavaScript (vanilla), React, SVG/Canvas, WordPress, Figma, Adobe Suite, D3.js, Python, Power BI, Tableau, Moodle, Storyline 360, DSpace, Git, Diseño Responsivo, UX/UI, Dashboard Design, Storytelling, Marketing de Contenidos, Gestión de Proyectos, Producción Audiovisual, Comunicación Estratégica, Pensamiento Crítico
 
 **Habilidades blandas:**
-Trabajo en equipo, Comunicación asertiva, Resolución de conflictos, Pensamiento crítico, Colaboración interdisciplinaria, Adaptabilidad
+Trabajo en equipo, Comunicación asertiva, Resolución de conflictos, Pensamiento crítico, Colaboración interdisciplinaria, Adaptabilidad, Gestión de proyectos
 
 **Idiomas:**
 - Español — Nativo
@@ -72,7 +65,7 @@ Trabajo en equipo, Comunicación asertiva, Resolución de conflictos, Pensamient
 
 ---
 
-## Perfil profesional completo
+## Perfil profesional
 
 > Magíster en Diseño y Creación Interactiva, con formación en Filosofía y Letras y Tecnología en Sistemas Informáticos (Universidad de Caldas), y **12 años de experiencia** construyendo interfaces web, dashboards interactivos y experiencias educativas digitales. Integro pensamiento crítico humanístico, base tecnológica y diseño UX/UI, visualización de datos e inteligencia artificial para transformar información compleja en soluciones claras y accionables. Trabajo colaborativamente, con comunicación asertiva y orientación a la resolución de problemas.
 
@@ -176,22 +169,23 @@ Trabajo en equipo, Comunicación asertiva, Resolución de conflictos, Pensamient
 
 ---
 
-## Arquitectura del sitio web
+## Arquitectura del sitio
 
 El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frameworks de frontend.
 
 ### Archivos
+
 | Archivo | Descripción |
 |---|---|
-| `index.html` | Estructura completa del sitio |
-| `styles.css` | Estilos con variables CSS |
-| `scripts.js` | Interactividad: canvas global, animaciones hero, gráficas, i18n, generador PDF |
-| `NataliaLopezCarmona_CV.docx` | CV fuente (información más actualizada) |
+| `index.html` | Portafolio público completo |
+| `styles.css` | Estilos globales con variables CSS |
+| `scripts.js` | Interactividad: canvas, animaciones hero, gráficas, i18n |
+| `cv.html` | CV privado (solo accede Natalia vía URL directa). Standalone — no depende de styles.css ni scripts.js. Incluye botones de descarga PDF e Word. |
 
-### Páginas (navegación por JS, no rutas)
-- **#page-landing** — Landing inicial: pregunta al visitante si quiere "Conóceme" o "Mi Portafolio" *(página activa por defecto al cargar)*
-- **#page-portfolio** — Página principal: Hero, Servicios, Proyectos, Dashboard Demo, Contacto
-- **#page-about** — CV completo: Perfil, Experiencia, Educación, Formación Complementaria, Habilidades Técnicas, Habilidades Blandas, Idiomas, Publicaciones, Descarga PDF
+### Páginas del portafolio (navegación por JS, no rutas)
+
+- **#page-landing** — Landing inicial: pregunta al visitante si quiere "Conóceme" o "Mi Portafolio"
+- **#page-portfolio** — Página principal: Hero, Servicios, Proyectos, Dashboard Demo, Contacto *(activa por defecto)*
 - **#page-srv-branding** — Página de servicio: Branding & Identidad
 - **#page-srv-estrategia** — Página de servicio: Estrategia Digital
 - **#page-srv-dashboards** — Página de servicio: Dashboards & Data Viz
@@ -199,24 +193,35 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 - **#page-srv-web** — Página de servicio: Diseño Web & UX
 - **#page-srv-audiovisual** — Página de servicio: Producción Audiovisual
 
-### Secciones de la página de portafolio
+> **Nota:** `#page-about` fue eliminada. El CV completo vive en `cv.html` (acceso privado por URL directa).
+
+### Nav
+
+Orden actual: **Portafolio → Contacto → [toggle idioma]**. Sin botón CV ni Sobre Mí en el nav público.
+
+### Secciones del portafolio
+
 1. **Hero** (dark) — Tagline, CTA, animación de órbitas CSS + canvas de red de nodos
-2. **Servicios** (white) — 6 servicios en grid de 3 columnas
-3. **Proyectos** (dark) — 5 tarjetas con modal de detalle
-4. **Analytics en Acción** (cream) — Dashboard demo interactivo con barras y donut chart
-5. **Contacto** (violet) — Email, LinkedIn, Behance
+2. **Sobre mí** (white) — Bio corta + stats de experiencia
+3. **Servicios** (white) — 6 servicios en grid
+4. **Proyectos** (dark) — 5 filas con modal de detalle
+5. **Impacto** (lime) — Métricas numéricas
+6. **Habilidades** (dark) — Barras de nivel + stack técnico + soft skills
+7. **Dashboard Demo** (cream) — Demo interactivo con barras y donut chart
+8. **Contacto** (cream) — Formulario + links directos
 
 ---
 
 ## Sistema de diseño
 
 ### Paleta de colores (variables CSS)
+
 | Variable | Valor | Uso |
 |---|---|---|
 | `--lime` | `#CCFF00` | Acento principal, CTA primario |
 | `--lime-dk` | `#8AB800` | Acento lime oscuro |
 | `--orange` | `#FF5733` | Acento secundario, hover, tags |
-| `--violet` | `#7B61D9` | Terciario, secciones, CV |
+| `--violet` | `#7B61D9` | Terciario, secciones |
 | `--violet-dk` | `#5a45b0` | Hover del violet |
 | `--cream` | `#F5F3EE` | Fondos alternos cálidos |
 | `--cream2` | `#EBE8E0` | Cream más oscuro |
@@ -226,23 +231,24 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 | `--dark3` | `#1f1f1f` | Dark suave |
 | `--gray` | `#555555` | Texto secundario |
 | `--lgray` | `#999999` | Texto terciario/metadatos |
-| `--bg-light` | `#FAFAF7` | Fondo página Sobre Mí |
+| `--bg-light` | `#FAFAF7` | Fondo claro |
 
 ### Tipografía
+
 - **Headings:** Raleway (weight 900) — Google Fonts
 - **Body:** Poppins (weights 300–900) — Google Fonts
 
 ### Efectos interactivos
-- **Canvas global** (`#shapes-canvas`, `position: fixed`): 30 formas geométricas flotantes con repulsión al mouse y líneas conectoras. Siempre activo como fondo decorativo.
-- **8 canvas hero temáticos** (landing + 7 hero de páginas, `position: absolute`): se activan/desactivan al cambiar de página vía `HeroAnimationManager`.
+
+- **Canvas global** (`#shapes-canvas`, `position: fixed`): 30 formas geométricas flotantes con repulsión al mouse y líneas conectoras. Siempre activo.
+- **8 canvas hero temáticos** (landing + 7 páginas, `position: absolute`): se activan/desactivan al cambiar de página vía `HeroAnimationManager`.
 - Glow del cursor (radial gradient `#CCFF00`)
-- Scroll reveal con `IntersectionObserver` + `data-revealed` para no re-animar en visitas de retorno
-- Barras de habilidades con animación al hacer scroll
+- Scroll reveal con `IntersectionObserver` + `data-revealed`
+- Barras de habilidades animadas al hacer scroll
 - Gráfica de barras del dashboard animada
 - Donut chart SVG con leyenda
-- Fondos con glows animados (violet, lime, orange)
 
-### Animaciones hero temáticas (scripts.js — HeroAnimationManager)
+### Animaciones hero temáticas
 
 | Página | Canvas ID | Clase JS | Descripción |
 |---|---|---|---|
@@ -255,31 +261,27 @@ El sitio es una **SPA (Single Page Application) en HTML/CSS/JS puro**, sin frame
 | srv-web | `hc-web` | `WireframeAnim` | Wireframe de interfaz que vibra y se ilumina al hover |
 | srv-audiovisual | `hc-audiovisual` | `WaveformAnim` | Waveform con barras que el mouse controla y amplifica |
 
-**Arquitectura del sistema:** Un único `requestAnimationFrame` maestro (`HeroAnimationManager._startLoop`) renderiza solo la animación de la página activa. Al llamar `switchPage(page)` se invoca `HeroAnimationManager.activate(page)` que desactiva el canvas anterior y activa el nuevo. En móvil, las animaciones reducen el número de elementos al 50–60%. `activate()` usa `closest('section')` (no `.hero`) para soportar tanto `.hero` como `.landing-hero`.
-
-### Secciones alternantes (portafolio)
-`sec-dark` (hero) → `sec-white` (servicios) → `sec-dark` (proyectos) → `sec-cream` (dashboard demo) → `sec-violet` (contacto)
+**Arquitectura:** Un único `requestAnimationFrame` maestro renderiza solo la animación activa. `HeroAnimationManager.activate(page)` desactiva el canvas anterior y activa el nuevo. En móvil, los elementos se reducen al 50–60%. `activate()` usa `closest('section')` para soportar `.hero` y `.landing-hero`.
 
 ---
 
-## Sistema de internacionalización (i18n)
+## Sistema i18n
 
 - Objeto `translations` en `scripts.js` con claves para `es` y `en`.
-- Elementos HTML con `data-i18n="clave"` (texto) o `data-i18n-html="clave"` (HTML).
-- `toggleLang()` / `setLang(lang)` aplican las traducciones en tiempo real.
-- El generador de PDF (`generateCV()`) usa el objeto `cvData` (también bilingüe) para producir el CV descargable.
+- Elementos HTML con `data-i18n="clave"` (texto), `data-i18n-html="clave"` (HTML), `data-i18n-placeholder`, `data-i18n-aria`, `data-i18n-title`.
+- `toggleLang()` / `setLang(lang)` aplican traducciones en tiempo real sin recargar.
+- `cv.html` es independiente del sistema i18n — está fijo en español.
 
 ---
 
 ## Notas para Claude
 
-- El CV fuente autoritativo es `NataliaLopezCarmona_CV.docx`. Siempre tiene prioridad sobre versiones anteriores del context.
-- Al editar información del CV/perfil hay que actualizar en 4 lugares: (1) HTML inline de `index.html`, (2) `translations.es` y `translations.en` en `scripts.js`, (3) `cvData.es` y `cvData.en` en `scripts.js`, (4) este archivo de contexto.
+- **Fuente autoritativa del CV:** `cv.html`. Al actualizar información profesional (cargos, fechas, logros) editar `cv.html` directamente — el Word se genera dinámicamente desde el DOM.
+- Al editar textos del portafolio hay que actualizar en 2 lugares: (1) HTML inline de `index.html`, (2) `translations.es` y `translations.en` en `scripts.js`.
 - El tono es: profesional, multidisciplinar, con rigor académico y sensibilidad estética.
 - La marca combina datos + diseño: no es solo diseñadora visual, sino también estratega y comunicadora científica con formación humanística.
-- Actualmente trabaja en paralelo: Consortia SAS (contrato reciente, feb 2026 finalizado) + Wunder Designers (freelance continuo) + Docente U. de Caldas (mar–may 2026).
+- Actualmente trabaja en paralelo: Wunder Designers (freelance continuo) + Docente U. de Caldas (mar–may 2026).
 - El canvas global (`#shapes-canvas`) y el `HeroAnimationManager` son sistemas independientes — no tocar el canvas global al modificar las animaciones hero y viceversa.
 - La landing page usa `.landing-hero` (no `.hero`) — tener en cuenta al aplicar estilos heredados de hero.
-- El nav ya no tiene botón "Descargar CV" — solo existe dentro de la página Sobre Mí (`#cv-dl`). Los botones de descarga dicen "↓ Descargar CV en PDF" / "↓ Download CV in PDF" (sin mención de formato ATS).
-- Orden del nav: ⌂ Inicio → Sobre Mí → Portafolio → Contacto.
-- El scroll reveal usa `data-revealed` como flag persistente: elementos ya vistos no se re-animan al volver a la página.
+- El scroll reveal usa `data-revealed` como flag persistente: elementos ya vistos no se re-animan al volver a la sección.
+- `cv.html` tiene sus propios estilos inline completos — no depende de `styles.css`.
